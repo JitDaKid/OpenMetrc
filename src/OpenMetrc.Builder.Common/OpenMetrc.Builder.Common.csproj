@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.1-rc1" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OpenMetrc.Builder.Domain\OpenMetrc.Builder.Domain.csproj" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-ri.metrc.com/</code></h3>
 	<h3 id="post_transporters_v2_vehicles">POST /transporters/v2/vehicles</h3>
-	<p></p>
+	<p>Creates new vehicle records for a Facility.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,16 +28,30 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to create a vehicle.</td></tr><tr><td><strong>data</strong><br></td><td></td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to create a Vehicle.</td></tr>
 		</tbody>
 	</table>
 
 	<h4>Example Request</h4>
-	<pre>POST /transporters/v2/vehicles?licenseNumber=123-ABC</pre>
+	<pre>POST /transporters/v2/vehicles?licenseNumber=123-ABC<code>[
+  {
+    "Make": "Mazda",
+    "Model": "3",
+    "LicensePlateNumber": "ABC1234"
+  },
+  {
+    "Make": "Toyota",
+    "Model": "Supra",
+    "LicensePlateNumber": "ACB4321"
+  }
+]</code></pre>
 
 	<h4>Example Response</h4>
 	<pre><code>{
-  "Ids": [],
+  "Ids": [
+    1,
+    2
+  ],
   "Warnings": null
 }</code></pre>
 </section>

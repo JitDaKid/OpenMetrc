@@ -1,0 +1,76 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="additivestemplates">
+		Additives Templates
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-la.metrc.com/</code></h3>
+	<h3 id="get_additivestemplates_v2_active">GET /additivestemplates/v2/active</h3>
+	<p>Retrieves a list of active additive templates for a specified Facility.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>Manage Additives</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to return the list of active additives.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>GET /additivestemplates/v2/active?licenseNumber=123-ABC&lastModifiedStart=2018-01-17T06:30:00Z&lastModifiedEnd=2018-01-17T17:30:00Z&pageNumber=1&pageSize=10</pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "Data": [
+    {
+      "Id": 0,
+      "FacilityId": 0,
+      "Name": null,
+      "AdditiveType": "Fertilizer",
+      "AdditiveTypeName": null,
+      "ApplicationDevice": "Device 1",
+      "EpaRegistrationNumber": "EPA NO 1",
+      "Note": null,
+      "ProductSupplier": "Supplier 1",
+      "ProductTradeName": "Product Name 1",
+      "RestrictiveEntryIntervalQuantityDescription": null,
+      "RestrictiveEntryIntervalTimeDescription": null,
+      "ActiveIngredients": [
+        {
+          "Name": "Additive 1 1",
+          "Percentage": 1.1
+        },
+        {
+          "Name": "Additive 1 2",
+          "Percentage": 1.2
+        }
+      ],
+      "LastModified": "0001-01-01T00:00:00+00:00",
+      "IsActive": false
+    }
+  ],
+  "Total": 1,
+  "TotalRecords": 1,
+  "PageSize": 1,
+  "RecordsOnPage": 1,
+  "Page": 1,
+  "CurrentPage": 1,
+  "TotalPages": 1
+}</code></pre>
+</section>

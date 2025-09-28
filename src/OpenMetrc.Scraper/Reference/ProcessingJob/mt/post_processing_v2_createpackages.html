@@ -10,13 +10,13 @@
 	</div>
 
 	<h1 id="processingjob">
-		Processing Job
+		Processing Jobs
 	</h1>
 	<p class="lead"></p>
 
 	<h3>Server: <code>https://api-mt.metrc.com/</code></h3>
 	<h3 id="post_processing_v2_createpackages">POST /processing/v2/createpackages</h3>
-	<p></p>
+	<p>Creates packages from processing jobs at a Facility, including optional location and note assignments.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to create the packages.</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to create the packages.</td></tr>
 		</tbody>
 	</table>
 
@@ -38,6 +38,7 @@
     "JobName": "Job 1",
     "Tag": "ABCDEFG11232131",
     "Location": null,
+    "Sublocation": null,
     "Item": null,
     "Quantity": 12.0,
     "UnitOfMeasure": "Grams",

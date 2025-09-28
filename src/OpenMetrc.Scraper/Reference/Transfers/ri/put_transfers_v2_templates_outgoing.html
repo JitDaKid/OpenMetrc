@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-ri.metrc.com/</code></h3>
 	<h3 id="put_transfers_v2_templates_outgoing">PUT /transfers/v2/templates/outgoing</h3>
-	<p></p>
+	<p>Updates existing transfer templates for a Facility.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to update shipment plan templates.</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to update shipment plan templates.</td></tr>
 		</tbody>
 	</table>
 
@@ -49,6 +49,7 @@
       {
         "TransferDestinationId": 0,
         "RecipientLicenseNumber": "123-XYZ",
+        "InvoiceNumber": "INV-001-0236521",
         "TransferTypeName": "Transfer",
         "PlannedRoute": "I will drive down the road to the place.",
         "EstimatedDepartureDateTime": "2018-03-06T09:15:00.000",
@@ -83,11 +84,15 @@
         "Packages": [
           {
             "PackageLabel": "ABCDEF012345670000010026",
-            "WholesalePrice": null
+            "WholesalePrice": null,
+            "GrossWeight": 20.5,
+            "GrossUnitOfWeightName": "Grams"
           },
           {
             "PackageLabel": "ABCDEF012345670000010027",
-            "WholesalePrice": null
+            "WholesalePrice": null,
+            "GrossWeight": 30.6,
+            "GrossUnitOfWeightName": "Milligrams"
           }
         ]
       }

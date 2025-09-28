@@ -1,0 +1,72 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="retailid">
+		Retail Id
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-ky.metrc.com/</code></h3>
+	<h3 id="post_retailid_v2_associate">POST /retailid/v2/associate</h3>
+	<p>Facilitate association of QR codes and Package labels. This will return the count of packages and QR codes associated that were added or replaced.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>External Sources(ThirdPartyVendorV2)/Retail ID(Write)</strong></td></tr><tr><td><strong>WebApi Retail ID Read Write State (All or WriteOnly)</strong></td></tr><tr><td><strong>Industry/View Packages</strong></td></tr><tr><td><strong>One of the following: Industry/Facility Type/Can Receive Associate Product Label, Licensee/Receive Associate Product Label or Admin/Employees/Packages Page/Product Labels(Manage)</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to associate the packages and QR codes provided.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>POST /retailid/v2/associate?licenseNumber=123-ABC<code>[
+  {
+    "PackageLabel": "ABCDEF012345670000010041",
+    "QrUrls": [
+      "https://id.14a.com/3W5E11264SGPN",
+      "https://id.14a.com/3W5E11264SGPO",
+      "https://id.14a.com/3W5E11264SGPP"
+    ]
+  },
+  {
+    "PackageLabel": "ABCDEF012345670000010042",
+    "QrUrls": [
+      "https://id.14a.com/3W5E11264SGPR",
+      "https://id.14a.com/3W5E11264SGPS",
+      "https://id.14a.com/3W5E11264SGPT"
+    ]
+  },
+  {
+    "PackageLabel": "ABCDEF012345670000010043",
+    "QrUrls": [
+      "https://id.14a.com/3W5E11264SGPU",
+      "https://id.14a.com/3W5E11264SGPv",
+      "https://id.14a.com/3W5E11264SGPW"
+    ]
+  }
+]</code></pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "Ids": [
+    1,
+    2,
+    3
+  ],
+  "Warnings": null
+}</code></pre>
+</section>

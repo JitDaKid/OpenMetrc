@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-nj.metrc.com/</code></h3>
 	<h3 id="get_plants_v2_additives">GET /plants/v2/additives</h3>
-	<p></p>
+	<p>Retrieves additive records applied to plants at a specified Facility.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to retrieve plant additives.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to retrieve plant additives.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
 		</tbody>
 	</table>
 
@@ -48,7 +48,12 @@
       "TotalAmountApplied": 5.0,
       "PlantBatchId": null,
       "PlantBatchName": null,
-      "PlantCount": 83
+      "PlantCount": 83,
+      "RestrictiveEntryIntervalQuantityDescription": null,
+      "RestrictiveEntryIntervalTimeDescription": null,
+      "Rate": null,
+      "Volume": null,
+      "Note": null
     }
   ],
   "Total": 1,

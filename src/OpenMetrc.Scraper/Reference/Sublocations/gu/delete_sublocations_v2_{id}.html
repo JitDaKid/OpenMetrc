@@ -1,0 +1,40 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="sublocations">
+		Sublocations
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-gu.metrc.com/</code></h3>
+	<h3 id="delete_sublocations_v2_{id}">DELETE /sublocations/v2/{id}</h3>
+	<p>Archives an existing Sublocation record for a Facility.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>Manage Locations</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to delete the list of sublocations.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>DELETE /sublocations/v2/5?licenseNumber=123-ABC</pre>
+
+	<h4>Example Response</h4>
+	<pre><span class=	ext-muted"><em>No response</em></span></pre>
+</section>

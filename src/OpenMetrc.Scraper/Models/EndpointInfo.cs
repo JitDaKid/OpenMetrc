@@ -1,7 +1,9 @@
 ﻿namespace OpenMetrc.Scraper.Models;
-
-internal class EndpointInfo
+public class EndpointInfo
 {
+    public string Section { get; set; } = null!;
+    public string? Summary { get; set; }
+    public string? Remarks { get; set; }
     public string ReferenceId { get; set; } = null!;
     public string OperationId { get; set; } = null!;
     public string HttpMethod { get; set; } = null!;

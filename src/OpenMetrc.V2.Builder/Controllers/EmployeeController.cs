@@ -1,10 +1,15 @@
-﻿namespace OpenMetrc.V2.Builder.Controllers;
+﻿
+namespace OpenMetrc.V2.Builder.Controllers;
 
 /// <inheritdoc />
 [ApiController]
 [Authorize]
 public class EmployeeController : EmployeesControllerBase
 {
+    /// <inheritdoc cref="EmployeesControllerBase.GetEmployeePermissions" />
+    [MapsToApi(MetrcEndpoint.get_employees_v2_permissions)]
+    public override Task GetEmployeePermissions([FromQuery] string licenseNumber, [FromQuery] string employeeLicenseNumber) => throw new NotImplementedException();
+
     /// <inheritdoc cref="EmployeesControllerBase.GetEmployees" />
     [MapsToApi(MetrcEndpoint.get_employees_v2)]
     [ProducesResponseType(typeof(MetrcWrapper<Employee>), StatusCodes.Status200OK)]

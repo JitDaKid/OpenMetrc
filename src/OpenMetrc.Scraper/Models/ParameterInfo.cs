@@ -3,7 +3,7 @@ using NSwag;
 
 namespace OpenMetrc.Scraper.Models;
 
-internal class ParameterInfo
+public class ParameterInfo
 {
     public string Name { get; set; } = null!;
     public string? Description { get; set; }

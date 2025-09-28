@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-ri.metrc.com/</code></h3>
 	<h3 id="get_items_v2_active">GET /items/v2/active</h3>
-	<p></p>
+	<p>Returns a list of active items for the specified Facility.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to return the list of active items.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to return the list of active items.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
 		</tbody>
 	</table>
 
@@ -41,6 +41,8 @@
     {
       "Id": 1,
       "Name": "Buds",
+      "GlobalProductName": null,
+      "GlobalProductNumber": null,
       "ProductCategoryName": "Buds",
       "ProductCategoryType": "Buds",
       "IsExpirationDateRequired": false,
@@ -64,17 +66,28 @@
       "UnitCbdContentUnitOfMeasureName": null,
       "UnitCbdContentDose": null,
       "UnitCbdContentDoseUnitOfMeasureName": null,
+      "UnitCbdAPercent": null,
+      "UnitCbdAContent": null,
+      "UnitCbdAContentUnitOfMeasureName": null,
+      "UnitCbdAContentDose": null,
+      "UnitCbdAContentDoseUnitOfMeasureName": null,
+      "UnitThcAPercent": null,
+      "UnitThcAContent": null,
+      "UnitThcAContentUnitOfMeasureName": null,
+      "UnitThcAContentDose": null,
+      "UnitThcAContentDoseUnitOfMeasureId": null,
+      "UnitThcAContentDoseUnitOfMeasureName": null,
       "UnitThcPercent": null,
       "UnitThcContent": null,
       "UnitThcContentUnitOfMeasureName": null,
       "UnitThcContentDose": null,
+      "UnitThcContentDoseUnitOfMeasureId": null,
       "UnitThcContentDoseUnitOfMeasureName": null,
       "UnitVolume": null,
       "UnitVolumeUnitOfMeasureName": null,
       "UnitWeight": null,
       "UnitWeightUnitOfMeasureName": null,
       "ServingSize": null,
-      "SupplyDurationDays": null,
       "NumberOfDoses": null,
       "UnitQuantity": null,
       "UnitQuantityUnitOfMeasureName": null,
@@ -90,11 +103,15 @@
       "ProductPDFDocuments": [],
       "IsUsed": false,
       "LabTestBatchNames": [],
-      "ProcessingJobCategoryName": null
+      "ProcessingJobCategoryName": null,
+      "ProcessingJobTypeName": null,
+      "ProductBrandName": null
     },
     {
       "Id": 3,
       "Name": "Brownies",
+      "GlobalProductName": null,
+      "GlobalProductNumber": null,
       "ProductCategoryName": "Infused Edibles",
       "ProductCategoryType": "InfusedEdible",
       "IsExpirationDateRequired": false,
@@ -118,17 +135,28 @@
       "UnitCbdContentUnitOfMeasureName": null,
       "UnitCbdContentDose": null,
       "UnitCbdContentDoseUnitOfMeasureName": null,
+      "UnitCbdAPercent": null,
+      "UnitCbdAContent": null,
+      "UnitCbdAContentUnitOfMeasureName": null,
+      "UnitCbdAContentDose": null,
+      "UnitCbdAContentDoseUnitOfMeasureName": null,
+      "UnitThcAPercent": null,
+      "UnitThcAContent": null,
+      "UnitThcAContentUnitOfMeasureName": null,
+      "UnitThcAContentDose": null,
+      "UnitThcAContentDoseUnitOfMeasureId": null,
+      "UnitThcAContentDoseUnitOfMeasureName": null,
       "UnitThcPercent": null,
       "UnitThcContent": 2.0,
       "UnitThcContentUnitOfMeasureName": "Milligrams",
       "UnitThcContentDose": null,
+      "UnitThcContentDoseUnitOfMeasureId": null,
       "UnitThcContentDoseUnitOfMeasureName": null,
       "UnitVolume": null,
       "UnitVolumeUnitOfMeasureName": null,
       "UnitWeight": 15.0,
       "UnitWeightUnitOfMeasureName": "Ounces",
       "ServingSize": null,
-      "SupplyDurationDays": null,
       "NumberOfDoses": null,
       "UnitQuantity": null,
       "UnitQuantityUnitOfMeasureName": null,
@@ -162,11 +190,15 @@
       "LabTestBatchNames": [
         "LB Name"
       ],
-      "ProcessingJobCategoryName": null
+      "ProcessingJobCategoryName": null,
+      "ProcessingJobTypeName": null,
+      "ProductBrandName": null
     },
     {
       "Id": 34,
       "Name": "Juice",
+      "GlobalProductName": null,
+      "GlobalProductNumber": null,
       "ProductCategoryName": "Infused Edibles",
       "ProductCategoryType": "InfusedEdible",
       "IsExpirationDateRequired": false,
@@ -190,17 +222,28 @@
       "UnitCbdContentUnitOfMeasureName": null,
       "UnitCbdContentDose": null,
       "UnitCbdContentDoseUnitOfMeasureName": null,
+      "UnitCbdAPercent": null,
+      "UnitCbdAContent": null,
+      "UnitCbdAContentUnitOfMeasureName": null,
+      "UnitCbdAContentDose": null,
+      "UnitCbdAContentDoseUnitOfMeasureName": null,
+      "UnitThcAPercent": null,
+      "UnitThcAContent": null,
+      "UnitThcAContentUnitOfMeasureName": null,
+      "UnitThcAContentDose": null,
+      "UnitThcAContentDoseUnitOfMeasureId": null,
+      "UnitThcAContentDoseUnitOfMeasureName": null,
       "UnitThcPercent": null,
       "UnitThcContent": 2.0,
       "UnitThcContentUnitOfMeasureName": "Milligrams",
       "UnitThcContentDose": null,
+      "UnitThcContentDoseUnitOfMeasureId": null,
       "UnitThcContentDoseUnitOfMeasureName": null,
       "UnitVolume": 15.0,
       "UnitVolumeUnitOfMeasureName": "Fluid Ounces",
       "UnitWeight": null,
       "UnitWeightUnitOfMeasureName": null,
       "ServingSize": null,
-      "SupplyDurationDays": null,
       "NumberOfDoses": null,
       "UnitQuantity": null,
       "UnitQuantityUnitOfMeasureName": null,
@@ -216,7 +259,9 @@
       "ProductPDFDocuments": [],
       "IsUsed": false,
       "LabTestBatchNames": [],
-      "ProcessingJobCategoryName": null
+      "ProcessingJobCategoryName": null,
+      "ProcessingJobTypeName": null,
+      "ProductBrandName": null
     }
   ],
   "Total": 3,

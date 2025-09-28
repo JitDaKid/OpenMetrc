@@ -8,10 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.61" />
-    <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="14.0.7" />
-    <PackageReference Include="NSwag.Core.Yaml" Version="14.0.7" />
-    <PackageReference Include="PluralizeService.Core" Version="1.2.21147.2" />
+    <PackageReference Include="Corvus.Json.CodeGeneration" Version="4.3.19" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.12.3" />
+    <PackageReference Include="Humanizer.Core" Version="2.14.1" />
+    <PackageReference Include="NSwag.CodeGeneration.CSharp" Version="14.6.0" />
+    <PackageReference Include="NSwag.Core.Yaml" Version="14.6.0" />
   </ItemGroup>
 
   <ItemGroup>

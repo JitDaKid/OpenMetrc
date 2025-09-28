@@ -1,0 +1,44 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="items">
+		Items
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-mi.metrc.com/</code></h3>
+	<h3 id="get_items_v2_file_{id}">GET /items/v2/file/{id}</h3>
+	<p>Retrieves a file by its Id for the specified Facility.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>Manage Items</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br><span class="text-muted"><em>optional</em></span></td><td>The License Number of the Facility for which to return the file.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>GET /items/v2/file/1?licenseNumber=123-ABC</pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "FileContents": "iVBORw0KGgoAAAANSUhEUg...[truncated Base64 string]",
+  "ContentType": "application/octet-stream",
+  "FileDownloadName": "gummies.png"
+}</code></pre>
+</section>

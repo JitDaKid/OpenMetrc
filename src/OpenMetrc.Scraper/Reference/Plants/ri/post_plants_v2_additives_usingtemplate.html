@@ -1,0 +1,71 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="plants">
+		Plants
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-ri.metrc.com/</code></h3>
+	<h3 id="post_plants_v2_additives_usingtemplate">POST /plants/v2/additives/usingtemplate</h3>
+	<p>Records additive usage for plants using predefined additive templates at a specified Facility.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>Manage Plants Additives</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to record Plant additives.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>POST /plants/v2/additives/usingtemplate?licenseNumber=123-ABC<code>[
+  {
+    "AdditivesTemplateName": "Additive Template 1",
+    "Rate": "5 Pounds",
+    "Volume": "1000 Sq. ft.",
+    "TotalAmountApplied": 5.0,
+    "TotalAmountUnitOfMeasure": "Gallons",
+    "PlantLabels": [
+      "ABCDEF012345670000010011",
+      "ABCDEF012345670000010012"
+    ],
+    "ActualDate": "2025-01-24"
+  },
+  {
+    "AdditivesTemplateName": "Additive Template 2",
+    "Rate": "4 Grams",
+    "Volume": "2000 Yards",
+    "TotalAmountApplied": 5.0,
+    "TotalAmountUnitOfMeasure": "Gallons",
+    "PlantLabels": [
+      "ABCDEF012345670000010013",
+      "ABCDEF012345670000010014"
+    ],
+    "ActualDate": "2025-01-24"
+  }
+]</code></pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "Ids": [
+    1,
+    2
+  ],
+  "Warnings": null
+}</code></pre>
+</section>

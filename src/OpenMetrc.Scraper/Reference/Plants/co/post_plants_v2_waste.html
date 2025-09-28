@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-co.metrc.com/</code></h3>
 	<h3 id="post_plants_v2_waste">POST /plants/v2/waste</h3>
-	<p></p>
+	<p>Records waste events for plants at a Facility, including method, reason, and location details.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to record waste.</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to record waste.</td></tr>
 		</tbody>
 	</table>
 
@@ -42,6 +42,7 @@
     "ReasonName": "Trim",
     "Note": "",
     "LocationName": "Veg Room A",
+    "SublocationName": "Sublocation A",
     "WasteDate": "2017-01-31",
     "PlantLabels": []
   },
@@ -53,6 +54,7 @@
     "ReasonName": "Trim",
     "Note": "",
     "LocationName": null,
+    "SublocationName": "Sublocation B",
     "WasteDate": "2017-01-31",
     "PlantLabels": [
       "ABCDEF012345670000000100",
