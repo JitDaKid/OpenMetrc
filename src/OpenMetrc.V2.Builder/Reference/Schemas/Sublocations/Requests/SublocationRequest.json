@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SublocationRequest",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "Id": {
+      "type": "integer"
+    }
+  }
+}

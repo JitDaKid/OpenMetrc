@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchActive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "PlantBatchTypeId": {
+      "type": "integer"
+    },
+    "PlantBatchTypeName": {
+      "type": "string"
+    },
+    "StrainId": {
+      "type": "integer"
+    },
+    "StrainName": {
+      "type": "string"
+    },
+    "UntrackedCount": {
+      "type": "integer"
+    },
+    "TrackedCount": {
+      "type": "integer"
+    },
+    "PackagedCount": {
+      "type": "integer"
+    },
+    "DestroyedCount": {
+      "type": "integer"
+    },
+    "SourcePlantBatchIds": {
+      "type": "array",
+      "items": {}
+    },
+    "MultiPlantBatch": {
+      "type": "boolean"
+    },
+    "PlantedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "IsOnHold": {
+      "type": "boolean"
+    }
+  }
+}

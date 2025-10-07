@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PackageRemediateRequest",
+  "type": "object",
+  "properties": {
+    "PackageLabel": {
+      "type": "string"
+    },
+    "RemediationMethodName": {
+      "type": "string"
+    },
+    "RemediationDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "RemediationSteps": {
+      "type": "string"
+    }
+  }
+}

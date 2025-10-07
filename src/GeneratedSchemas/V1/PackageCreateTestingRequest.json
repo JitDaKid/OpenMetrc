@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PackageCreateTestingRequest",
+  "type": "object",
+  "properties": {
+    "Tag": {
+      "type": "string"
+    },
+    "Item": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "Note": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "IsProductionBatch": {
+      "type": "boolean"
+    },
+    "IsDonation": {
+      "type": "boolean"
+    },
+    "IsTradeSample": {
+      "type": "boolean"
+    },
+    "ProductRequiresRemediation": {
+      "type": "boolean"
+    },
+    "UseSameItem": {
+      "type": "boolean"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Ingredients": {
+      "type": "array",
+      "items": {
+        "title": "Ingredients",
+        "$ref": "#/definitions/Ingredient"
+      }
+    },
+    "ProductionBatchNumber": {
+      "type": "string",
+      "x-nullable": true
+    }
+  },
+  "definitions": {
+    "Ingredient": {
+      "title": "Ingredients",
+      "type": "object",
+      "properties": {
+        "Package": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

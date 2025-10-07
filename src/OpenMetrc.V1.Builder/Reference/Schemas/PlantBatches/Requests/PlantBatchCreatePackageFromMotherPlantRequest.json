@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchCreatePackageFromMotherPlantRequest",
+  "type": "object",
+  "properties": {
+    "PlantBatch": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "Count": {
+      "type": "integer"
+    },
+    "Item": {
+      "type": "string"
+    },
+    "Tag": {
+      "type": "string"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "Note": {
+      "type": "string"
+    },
+    "IsTradeSample": {
+      "type": "boolean"
+    },
+    "IsDonation": {
+      "type": "boolean"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "ExpirationDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "SellByDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "UseByDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Id": {
+      "type": "integer",
+      "x-nullable": true
+    }
+  }
+}

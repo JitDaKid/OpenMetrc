@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Transactions",
+  "type": "object",
+  "properties": {
+    "PackageLabel": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "TotalAmount": {
+      "type": "number"
+    },
+    "UnitThcPercent": {},
+    "UnitThcContent": {},
+    "UnitThcContentUnitOfMeasure": {},
+    "UnitWeight": {},
+    "UnitWeightUnitOfMeasure": {},
+    "InvoiceNumber": {},
+    "Price": {},
+    "ExciseTax": {},
+    "CityTax": {},
+    "CountyTax": {},
+    "MunicipalTax": {},
+    "DiscountAmount": {},
+    "SubTotal": {},
+    "SalesTax": {},
+    "QrCodes": {}
+  }
+}

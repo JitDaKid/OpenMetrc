@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "DeletePlantBatchRequest",
+  "type": "object",
+  "properties": {
+    "PlantBatch": {
+      "type": "string"
+    },
+    "Count": {
+      "type": "integer"
+    },
+    "WasteMethodName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "WasteMaterialMixed": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "WasteReasonName": {
+      "type": "string"
+    },
+    "ReasonNote": {
+      "type": "string"
+    },
+    "WasteWeight": {
+      "type": "number"
+    },
+    "WasteUnitOfMeasure": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

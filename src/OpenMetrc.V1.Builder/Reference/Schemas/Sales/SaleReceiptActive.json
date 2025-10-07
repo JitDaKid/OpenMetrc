@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleReceiptActive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "ExternalReceiptNumber": {
+      "type": "string"
+    },
+    "SalesDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "SalesCustomerType": {
+      "type": "string"
+    },
+    "TotalPackages": {
+      "type": "integer"
+    },
+    "TotalPrice": {
+      "type": "number"
+    },
+    "Transactions": {
+      "type": "array",
+      "items": {}
+    },
+    "IsFinal": {
+      "type": "boolean"
+    },
+    "RecordedDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.ProcessingJob.Requests;
+using OpenMetrc.Builder.Domain.Sales;
 
 namespace OpenMetrc.Builder.Domain.Sales.Requests;
 
@@ -32,10 +34,10 @@ public partial record SaleDeliveryRetailerRequest
     public DateTimeOffset? EstimatedDepartureDateTime { get; init; }
 
     [JsonPropertyName("Destinations")]
-    public ICollection<object>? Destinations { get; init; }
+    public ICollection<Destinations>? Destinations { get; init; }
 
     [JsonPropertyName("Packages")]
-    public ICollection<object>? Packages { get; init; }
+    public ICollection<Packages>? Packages { get; init; }
 
     [JsonPropertyName("Id")]
     public long? Id { get; init; }

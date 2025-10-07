@@ -34,6 +34,8 @@ namespace OpenMetrc.Builder.Domain;
 
 [JsonSerializable(typeof(OpenMetrc.Builder.Domain.PlantBatches.Requests.ActiveIngredients))]
 [JsonSerializable(typeof(OpenMetrc.Builder.Domain.CaregiversStatus.CaregiverStatus))]
+[JsonSerializable(typeof(OpenMetrc.Builder.Domain.PlantBatches.Requests.DeletePlantBatchRequest))]
+[JsonSerializable(typeof(OpenMetrc.Builder.Domain.Plants.Requests.DeletePlantRequest))]
 [JsonSerializable(typeof(OpenMetrc.Builder.Domain.Sales.Destinations))]
 [JsonSerializable(typeof(OpenMetrc.Builder.Domain.Employees.Employee))]
 [JsonSerializable(typeof(OpenMetrc.Builder.Domain.Facilities.Facility))]

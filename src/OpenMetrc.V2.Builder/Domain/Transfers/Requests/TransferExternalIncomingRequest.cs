@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.Sales;
 
 namespace OpenMetrc.Builder.Domain.Transfers.Requests;
 
@@ -23,7 +24,7 @@ public partial record TransferExternalIncomingRequest
     public string? ShipperAddressState { get; init; }
 
     [JsonPropertyName("Destinations")]
-    public ICollection<object>? Destinations { get; init; }
+    public ICollection<Destinations>? Destinations { get; init; }
 
     [JsonPropertyName("TransferId")]
     public long? TransferId { get; init; }

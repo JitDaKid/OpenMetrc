@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.AdditivesTemplates;
 
 namespace OpenMetrc.Builder.Domain.PlantBatches.Requests;
 
@@ -23,7 +24,7 @@ public partial record PlantBatchAdditiveRequest
     public string? TotalAmountUnitOfMeasure { get; init; }
 
     [JsonPropertyName("ActiveIngredients")]
-    public ICollection<object>? ActiveIngredients { get; init; }
+    public ICollection<ActiveIngredients>? ActiveIngredients { get; init; }
 
     [JsonPropertyName("PlantBatchName")]
     public string? PlantBatchName { get; init; }

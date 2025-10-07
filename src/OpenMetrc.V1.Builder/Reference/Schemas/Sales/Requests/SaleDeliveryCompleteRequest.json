@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleDeliveryCompleteRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "ActualArrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "AcceptedPackages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AcceptedPackage"
+      }
+    },
+    "ReturnedPackages": {
+      "type": "array",
+      "items": {
+        "title": "ReturnedPackages",
+        "$ref": "#/definitions/ReturnedPackage"
+      }
+    }
+  },
+  "definitions": {
+    "AcceptedPackage": {
+      "type": "string"
+    },
+    "ReturnedPackage": {
+      "title": "ReturnedPackages",
+      "type": "object",
+      "properties": {
+        "Label": {
+          "type": "string"
+        },
+        "ReturnQuantityVerified": {
+          "type": "number"
+        },
+        "ReturnUnitOfMeasure": {
+          "type": "string"
+        },
+        "ReturnReason": {
+          "type": "string"
+        },
+        "ReturnReasonNote": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

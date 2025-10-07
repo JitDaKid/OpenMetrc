@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchNameRequest",
+  "type": "object",
+  "properties": {
+    "Group": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "NewGroup": {
+      "type": "string"
+    },
+    "Id": {
+      "type": "integer",
+      "x-nullable": true
+    }
+  }
+}

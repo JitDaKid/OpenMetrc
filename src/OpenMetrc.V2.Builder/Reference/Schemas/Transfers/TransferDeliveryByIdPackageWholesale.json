@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferDeliveryByIdPackageWholesale",
+  "type": "object",
+  "properties": {
+    "PackageId": {
+      "type": "integer"
+    },
+    "PackageLabel": {
+      "type": "string"
+    },
+    "ShipperWholesalePrice": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "ReceiverWholesalePrice": {
+      "type": "number",
+      "x-nullable": true
+    }
+  }
+}

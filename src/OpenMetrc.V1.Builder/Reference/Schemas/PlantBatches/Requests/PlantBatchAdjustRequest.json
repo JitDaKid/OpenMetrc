@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchAdjustRequest",
+  "type": "object",
+  "properties": {
+    "PlantBatchName": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "integer"
+    },
+    "AdjustmentReason": {
+      "type": "string"
+    },
+    "AdjustmentDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "ReasonNote": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

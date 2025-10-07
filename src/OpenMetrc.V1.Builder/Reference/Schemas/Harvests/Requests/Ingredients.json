@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Ingredients",
+  "type": "object",
+  "properties": {
+    "HarvestId": {},
+    "HarvestName": {
+      "type": "string"
+    },
+    "Weight": {
+      "type": "number"
+    },
+    "UnitOfWeight": {
+      "type": "string"
+    },
+    "Package": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    }
+  }
+}

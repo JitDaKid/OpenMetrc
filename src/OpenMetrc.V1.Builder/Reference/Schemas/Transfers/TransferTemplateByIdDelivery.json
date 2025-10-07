@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferTemplateByIdDelivery",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "DeliveryNumber": {
+      "type": "integer"
+    },
+    "RecipientFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "RecipientFacilityName": {
+      "type": "string"
+    },
+    "ShipmentTypeName": {
+      "type": "string"
+    },
+    "ShipmentTransactionType": {
+      "type": "string"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EstimatedArrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "PlannedRoute": {
+      "type": "string"
+    },
+    "DeliveryPackageCount": {
+      "type": "integer"
+    },
+    "DeliveryReceivedPackageCount": {
+      "type": "integer"
+    },
+    "ReceivedDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "RejectedPackagesReturned": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantAdditive",
+  "type": "object",
+  "properties": {
+    "ProductTradeName": {
+      "type": "string"
+    },
+    "ProductSupplier": {
+      "type": "string"
+    },
+    "ApplicationDevice": {
+      "type": "string"
+    },
+    "AmountUnitOfMeasure": {
+      "type": "string"
+    },
+    "TotalAmountApplied": {
+      "type": "number"
+    },
+    "PlantCount": {
+      "type": "integer"
+    }
+  }
+}

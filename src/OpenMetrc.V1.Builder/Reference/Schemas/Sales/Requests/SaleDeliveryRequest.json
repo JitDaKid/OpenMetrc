@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleDeliveryRequest",
+  "type": "object",
+  "properties": {
+    "TransporterFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "SalesDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "SalesCustomerType": {
+      "type": "string"
+    },
+    "DriverEmployeeId": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriversLicenseNumber": {
+      "type": "string"
+    },
+    "PhoneNumberForQuestions": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    },
+    "RecipientAddressStreet1": {
+      "type": "string"
+    },
+    "RecipientAddressStreet2": {
+      "type": "string"
+    },
+    "RecipientAddressCity": {
+      "type": "string"
+    },
+    "RecipientAddressState": {
+      "type": "string"
+    },
+    "RecipientAddressPostalCode": {
+      "type": "string"
+    },
+    "PlannedRoute": {
+      "type": "string"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EstimatedArrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Transactions": {
+      "type": "array",
+      "items": {
+        "title": "Transactions",
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "RecipientZoneId": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "QrCode": {
+      "type": "string"
+    },
+    "Transaction": {
+      "title": "Transactions",
+      "type": "object",
+      "properties": {
+        "PackageLabel": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        },
+        "TotalAmount": {
+          "type": "number"
+        },
+        "UnitThcPercent": {},
+        "UnitThcContent": {},
+        "UnitThcContentUnitOfMeasure": {},
+        "UnitWeight": {},
+        "UnitWeightUnitOfMeasure": {},
+        "InvoiceNumber": {},
+        "Price": {},
+        "ExciseTax": {},
+        "CityTax": {},
+        "CountyTax": {},
+        "MunicipalTax": {},
+        "DiscountAmount": {},
+        "SubTotal": {},
+        "SalesTax": {},
+        "QrCodes": {}
+      }
+    }
+  }
+}

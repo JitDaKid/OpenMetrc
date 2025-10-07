@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
-using OpenMetrc.Scraper.Models;
+using OpenMetrc.Scraper.Core.Models;
 
 namespace OpenMetrc.Scraper;
 
@@ -10,8 +10,6 @@ namespace OpenMetrc.Scraper;
 /// </summary>
 internal static partial class StateService
 {
-    private const string ReferenceDirectory = "../../../Reference";
-    private const string StateSummaryFilePath = "../../../../../state-summaries.json";
     private const string ApiDocUrlTemplate = "https://api-{0}.metrc.com/documentation";
     private const string ApiEndpointUrlTemplate = "{0}://api-{1}.metrc.com/Documentation/Method?key={2}.{3}";
     private static readonly string[] s_apiVersions = { "version-1-collapse", "version-2-collapse" };
@@ -23,28 +21,28 @@ internal static partial class StateService
     /// <summary>
     /// Deletes the local cache of reference documents to ensure a fresh scrape.
     /// </summary>
-    internal static void DeleteReferenceDocuments()
+    internal static void DeleteReferenceDocuments(string referenceDirectory)
     {
-        if (Directory.Exists(ReferenceDirectory))
-            Directory.Delete(ReferenceDirectory, true);
+        if (Directory.Exists(referenceDirectory))
+            Directory.Delete(referenceDirectory, true);
     }
 
     /// <summary>
     /// Processes a single state by scraping its API documentation.
     /// </summary>
-    internal static async Task<StateSummary> ProcessState(string state)
+    internal static async Task<StateSummary> ProcessState(string state, string referenceDirectory)
     {
-        var stateSummary = new StateSummary(state);
-        var url = string.Format(ApiDocUrlTemplate, state);
-        var content = await GetStringContentAsync(url);
+        StateSummary stateSummary = new(state);
+        string url = string.Format(ApiDocUrlTemplate, state);
+        string? content = await GetStringContentAsync(url);
 
         if (string.IsNullOrWhiteSpace(content)) return stateSummary;
 
-        var htmlDoc = new HtmlDocument();
+        HtmlDocument htmlDoc = new();
         htmlDoc.LoadHtml(content);
 
-        var tasks = s_apiVersions
-            .Select(versionId => ProcessApiVersionNodeAsync(htmlDoc, versionId, stateSummary))
+        List<Task> tasks = s_apiVersions
+            .Select(versionId => ProcessApiVersionNodeAsync(htmlDoc, versionId, stateSummary, referenceDirectory))
             .ToList();
 
         await Task.WhenAll(tasks);
@@ -55,27 +53,27 @@ internal static partial class StateService
     /// <summary>
     /// Writes the consolidated list of state summaries to a JSON file.
     /// </summary>
-    internal static async Task WriteStateSummariesAsync(IEnumerable<StateSummary> stateSummaries)
+    internal static async Task WriteStateSummariesAsync(IEnumerable<StateSummary> stateSummaries, string stateSummaryFilePath)
     {
-        var options = new JsonSerializerOptions { WriteIndented = true };
-        var jsonContent = JsonSerializer.Serialize(stateSummaries.OrderBy(s => s.State), options);
-        await File.WriteAllTextAsync(StateSummaryFilePath, jsonContent);
+        JsonSerializerOptions options = new() { WriteIndented = true };
+        string jsonContent = JsonSerializer.Serialize(stateSummaries.OrderBy(s => s.State), options);
+        await File.WriteAllTextAsync(stateSummaryFilePath, jsonContent);
 
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine($"A summary of all METRC states has been written to: {StateSummaryFilePath}");
+        Console.WriteLine($"A summary of all METRC states has been written to: {stateSummaryFilePath}");
         Console.ResetColor();
     }
 
-    private static async Task ProcessApiVersionNodeAsync(HtmlDocument htmlDoc, string versionId, StateSummary stateSummary)
+    private static async Task ProcessApiVersionNodeAsync(HtmlDocument htmlDoc, string versionId, StateSummary stateSummary, string referenceDirectory)
     {
-        var versionNode = htmlDoc.DocumentNode.SelectSingleNode($"//*[@id='{versionId}']");
+        HtmlNode versionNode = htmlDoc.DocumentNode.SelectSingleNode($"//*[@id='{versionId}']");
         if (versionNode == null)
         {
             Console.WriteLine($"[Debug] Version container '{versionId}' not found for state {stateSummary.State}.");
             return;
         }
 
-        var links = versionNode.Descendants("a").ToList();
+        List<HtmlNode> links = versionNode.Descendants("a").ToList();
         if (!links.Any())
         {
             Console.WriteLine($"[Debug] No endpoint links found within '{versionId}' for state {stateSummary.State}.");
@@ -83,26 +81,26 @@ internal static partial class StateService
         }
 
         // By setting MaxDegreeOfParallelism, we ensure only a manageable number of requests run at once.
-        var parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = 8 };
+        ParallelOptions parallelOptions = new() { MaxDegreeOfParallelism = 8 };
         await Parallel.ForEachAsync(links, parallelOptions, async (link, cancellationToken) =>
         {
-            await ProcessDocumentationLinkAsync(link, stateSummary);
+            await ProcessDocumentationLinkAsync(link, stateSummary, referenceDirectory);
         });
     }
 
-    private static async Task ProcessDocumentationLinkAsync(HtmlNode link, StateSummary stateSummary)
+    private static async Task ProcessDocumentationLinkAsync(HtmlNode link, StateSummary stateSummary, string referenceDirectory)
     {
-        var href = link.GetAttributeValue("href", string.Empty);
-        var parts = href.Split(new[] { '.' }, 3);
+        string href = link.GetAttributeValue("href", string.Empty);
+        string[] parts = href.Split(new[] { '.' }, 3);
         if (parts.Length != 3) return;
 
-        var sectionName = parts[0].Replace("#", "");
-        var endpointKey = parts[1];
-        var endpointName = EndpointCleaningRegex().Replace(endpointKey, string.Empty).TrimEnd('_');
+        string sectionName = parts[0].Replace("#", "");
+        string endpointKey = parts[1];
+        string endpointName = EndpointCleaningRegex().Replace(endpointKey, string.Empty).TrimEnd('_');
 
         lock (s_summaryLock)
         {
-            var section = stateSummary.Sections.FirstOrDefault(s => s.Name == sectionName);
+            Section? section = stateSummary.Sections.FirstOrDefault(s => s.Name == sectionName);
             if (section == null)
             {
                 section = new Section(sectionName);
@@ -113,26 +111,26 @@ internal static partial class StateService
             section.Endpoints.Add(endpointName);
         }
 
-        var protocol = link.GetAttributeValue("onclick", string.Empty).Contains("http://") ? "http" : "https";
-        var url = string.Format(ApiEndpointUrlTemplate, protocol, stateSummary.State, sectionName, $"{endpointKey}.{parts[2]}");
-        var endpointContent = await GetStringContentAsync(url);
+        string protocol = link.GetAttributeValue("onclick", string.Empty).Contains("http://") ? "http" : "https";
+        string url = string.Format(ApiEndpointUrlTemplate, protocol, stateSummary.State, sectionName, $"{endpointKey}.{parts[2]}");
+        string? endpointContent = await GetStringContentAsync(url);
 
-        await WriteEndpointDocumentAsync(stateSummary.State, sectionName, endpointKey, endpointContent);
+        await WriteEndpointDocumentAsync(stateSummary.State, sectionName, endpointKey, endpointContent, referenceDirectory);
     }
 
-    private static async Task WriteEndpointDocumentAsync(string state, string section, string endpointKey, string? content)
+    private static async Task WriteEndpointDocumentAsync(string state, string section, string endpointKey, string? content, string referenceDirectory)
     {
         if (string.IsNullOrWhiteSpace(content)) return;
-        var directoryPath = Path.Combine(ReferenceDirectory, section, state);
-        Directory.CreateDirectory(directoryPath);
+        string directoryPath = Path.Combine(referenceDirectory, section, state);
+        _ = Directory.CreateDirectory(directoryPath);
 
-        var filePath = Path.Combine(directoryPath, $"{endpointKey}.html");
+        string filePath = Path.Combine(directoryPath, $"{endpointKey}.html");
         await File.WriteAllTextAsync(filePath, content);
     }
 
     private static async Task<string?> GetStringContentAsync(string url)
     {
-        using var client = new HttpClient { Timeout = TimeSpan.FromSeconds(10) };
+        using HttpClient client = new() { Timeout = TimeSpan.FromSeconds(10) };
         try
         {
             return await client.GetStringAsync(url);

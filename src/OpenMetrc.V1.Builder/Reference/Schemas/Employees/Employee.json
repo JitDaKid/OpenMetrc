@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Employee",
+  "type": "object",
+  "properties": {
+    "FullName": {
+      "type": "string"
+    },
+    "License": {
+      "$ref": "#/definitions/License"
+    },
+    "IsIndustryAdmin": {
+      "type": "boolean"
+    },
+    "IsOwner": {
+      "type": "boolean"
+    },
+    "IsManager": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "License": {
+      "title": "License",
+      "type": "object",
+      "properties": {
+        "Number": {
+          "type": "string"
+        },
+        "EmployeeLicenseNumber": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "EndDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "LicenseType": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

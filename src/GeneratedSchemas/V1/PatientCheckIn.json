@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PatientCheckIn",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "CheckInLocationId": {
+      "type": "integer"
+    },
+    "CheckInLocationName": {
+      "type": "string"
+    },
+    "RegistrationStartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "RegistrationExpiryDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "CheckInDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

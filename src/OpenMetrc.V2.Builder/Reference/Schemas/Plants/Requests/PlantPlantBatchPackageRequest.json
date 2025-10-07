@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantPlantBatchPackageRequest",
+  "type": "object",
+  "properties": {
+    "PlantLabel": {
+      "type": "string"
+    },
+    "PackageTag": {
+      "type": "string"
+    },
+    "PlantBatchType": {
+      "type": "string"
+    },
+    "Item": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "IsTradeSample": {
+      "type": "boolean"
+    },
+    "IsDonation": {
+      "type": "boolean"
+    },
+    "Count": {
+      "type": "integer"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Sublocation": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

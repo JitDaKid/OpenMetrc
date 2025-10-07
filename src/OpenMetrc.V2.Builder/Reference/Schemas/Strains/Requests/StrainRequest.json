@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "StrainRequest",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "TestingStatus": {
+      "type": "string"
+    },
+    "ThcLevel": {
+      "type": "number"
+    },
+    "CbdLevel": {
+      "type": "number"
+    },
+    "IndicaPercentage": {
+      "type": "number"
+    },
+    "SativaPercentage": {
+      "type": "number"
+    },
+    "Id": {
+      "type": "integer"
+    }
+  }
+}

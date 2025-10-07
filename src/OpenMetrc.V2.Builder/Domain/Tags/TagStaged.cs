@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.Packages;
 
 namespace OpenMetrc.Builder.Domain.Tags;
 
@@ -32,7 +33,7 @@ public partial record TagStaged
     public bool? IsStaged { get; init; }
 
     [JsonPropertyName("ProductLabel")]
-    public object? ProductLabel { get; init; }
+    public ProductLabel? ProductLabel { get; init; }
 
     [JsonPropertyName("QrCount")]
     public long? QrCount { get; init; }

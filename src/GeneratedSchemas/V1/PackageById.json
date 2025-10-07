@@ -1,0 +1,255 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PackageById",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Label": {
+      "type": "string"
+    },
+    "PackageType": {
+      "type": "string"
+    },
+    "SourceHarvestCount": {
+      "type": "integer"
+    },
+    "SourcePackageCount": {
+      "type": "integer"
+    },
+    "SourceProcessingJobCount": {
+      "type": "integer"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "OriginalPackageQuantity": {
+      "type": "number"
+    },
+    "UnitOfMeasureName": {
+      "type": "string"
+    },
+    "UnitOfMeasureAbbreviation": {
+      "type": "string"
+    },
+    "PackagedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "InitialLabTestingState": {
+      "type": "string"
+    },
+    "LabTestingState": {
+      "type": "string"
+    },
+    "LabTestingStateDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "IsProductionBatch": {
+      "type": "boolean"
+    },
+    "IsTradeSample": {
+      "type": "boolean"
+    },
+    "IsTradeSamplePersistent": {
+      "type": "boolean"
+    },
+    "SourcePackageIsTradeSample": {
+      "type": "boolean"
+    },
+    "IsDonation": {
+      "type": "boolean"
+    },
+    "IsDonationPersistent": {
+      "type": "boolean"
+    },
+    "SourcePackageIsDonation": {
+      "type": "boolean"
+    },
+    "IsTestingSample": {
+      "type": "boolean"
+    },
+    "IsProcessValidationTestingSample": {
+      "type": "boolean"
+    },
+    "ProductRequiresRemediation": {
+      "type": "boolean"
+    },
+    "ContainsRemediatedProduct": {
+      "type": "boolean"
+    },
+    "ProductRequiresDecontamination": {
+      "type": "boolean"
+    },
+    "ContainsDecontaminatedProduct": {
+      "type": "boolean"
+    },
+    "IsOnHold": {
+      "type": "boolean"
+    },
+    "IsFinished": {
+      "type": "boolean"
+    },
+    "IsOnRetailerDelivery": {
+      "type": "boolean"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Item": {
+      "$ref": "#/definitions/Item"
+    },
+    "ProductLabel": {
+      "$ref": "#/definitions/ProductLabel"
+    }
+  },
+  "definitions": {
+    "Item": {
+      "title": "Item",
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "GlobalProductName": {},
+        "GlobalProductNumber": {},
+        "ProductCategoryName": {
+          "type": "string"
+        },
+        "ProductCategoryType": {
+          "type": "integer"
+        },
+        "IsExpirationDateRequired": {
+          "type": "boolean"
+        },
+        "HasExpirationDate": {
+          "type": "boolean"
+        },
+        "IsSellByDateRequired": {
+          "type": "boolean"
+        },
+        "HasSellByDate": {
+          "type": "boolean"
+        },
+        "IsUseByDateRequired": {
+          "type": "boolean"
+        },
+        "HasUseByDate": {
+          "type": "boolean"
+        },
+        "QuantityType": {
+          "type": "integer"
+        },
+        "DefaultLabTestingState": {
+          "type": "integer"
+        },
+        "UnitOfMeasureName": {},
+        "ApprovalStatus": {
+          "type": "integer"
+        },
+        "ApprovalStatusDateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "StrainId": {},
+        "StrainName": {},
+        "ItemBrandId": {
+          "type": "integer"
+        },
+        "ItemBrandName": {},
+        "AdministrationMethod": {},
+        "UnitCbdPercent": {},
+        "UnitCbdContent": {},
+        "UnitCbdContentUnitOfMeasureName": {},
+        "UnitCbdContentDose": {},
+        "UnitCbdContentDoseUnitOfMeasureName": {},
+        "UnitCbdAPercent": {},
+        "UnitCbdAContent": {},
+        "UnitCbdAContentUnitOfMeasureName": {},
+        "UnitCbdAContentDose": {},
+        "UnitCbdAContentDoseUnitOfMeasureName": {},
+        "UnitThcAPercent": {},
+        "UnitThcAContent": {},
+        "UnitThcAContentUnitOfMeasureName": {},
+        "UnitThcAContentDose": {},
+        "UnitThcAContentDoseUnitOfMeasureId": {},
+        "UnitThcAContentDoseUnitOfMeasureName": {},
+        "UnitThcPercent": {},
+        "UnitThcContent": {},
+        "UnitThcContentUnitOfMeasureName": {},
+        "UnitThcContentDose": {},
+        "UnitThcContentDoseUnitOfMeasureId": {},
+        "UnitThcContentDoseUnitOfMeasureName": {},
+        "UnitVolume": {},
+        "UnitVolumeUnitOfMeasureName": {},
+        "UnitWeight": {},
+        "UnitWeightUnitOfMeasureName": {},
+        "ServingSize": {},
+        "NumberOfDoses": {},
+        "UnitQuantity": {},
+        "UnitQuantityUnitOfMeasureName": {},
+        "PublicIngredients": {},
+        "Description": {},
+        "Allergens": {},
+        "ProductImages": {
+          "type": "array",
+          "items": {}
+        },
+        "ProductPhotoDescription": {},
+        "LabelImages": {
+          "type": "array",
+          "items": {}
+        },
+        "LabelPhotoDescription": {},
+        "PackagingImages": {
+          "type": "array",
+          "items": {}
+        },
+        "PackagingPhotoDescription": {},
+        "ProductPDFDocuments": {
+          "type": "array",
+          "items": {}
+        },
+        "IsUsed": {
+          "type": "boolean"
+        },
+        "LabTestBatchNames": {
+          "type": "array",
+          "items": {}
+        },
+        "ProcessingJobCategoryName": {},
+        "ProcessingJobTypeName": {},
+        "ProductBrandName": {}
+      }
+    },
+    "ProductLabel": {
+      "title": "ProductLabel",
+      "type": "object",
+      "properties": {
+        "PackageId": {
+          "type": "integer"
+        },
+        "TagId": {},
+        "QrCount": {
+          "type": "integer"
+        },
+        "IsDiscontinued": {
+          "type": "boolean"
+        },
+        "IsChildFromParentWithLabel": {
+          "type": "boolean"
+        },
+        "LastLabelGenerationDate": {},
+        "IsActive": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

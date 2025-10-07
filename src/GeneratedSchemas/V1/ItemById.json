@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ItemById",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "ProductCategoryName": {
+      "type": "string"
+    },
+    "ProductCategoryType": {
+      "type": "string"
+    },
+    "IsExpirationDateRequired": {
+      "type": "boolean"
+    },
+    "HasExpirationDate": {
+      "type": "boolean"
+    },
+    "IsSellByDateRequired": {
+      "type": "boolean"
+    },
+    "HasSellByDate": {
+      "type": "boolean"
+    },
+    "IsUseByDateRequired": {
+      "type": "boolean"
+    },
+    "HasUseByDate": {
+      "type": "boolean"
+    },
+    "QuantityType": {
+      "type": "string"
+    },
+    "DefaultLabTestingState": {
+      "type": "string"
+    },
+    "UnitOfMeasureName": {
+      "type": "string"
+    },
+    "ApprovalStatus": {
+      "type": "string"
+    },
+    "ApprovalStatusDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "StrainId": {
+      "type": "integer"
+    },
+    "StrainName": {
+      "type": "string"
+    },
+    "ItemBrandId": {
+      "type": "integer"
+    },
+    "ProductImages": {
+      "type": "array",
+      "items": {}
+    },
+    "LabelImages": {
+      "type": "array",
+      "items": {}
+    },
+    "PackagingImages": {
+      "type": "array",
+      "items": {}
+    },
+    "ProductPDFDocuments": {
+      "type": "array",
+      "items": {}
+    },
+    "IsUsed": {
+      "type": "boolean"
+    },
+    "LabTestBatchNames": {
+      "type": "array",
+      "items": {}
+    }
+  }
+}

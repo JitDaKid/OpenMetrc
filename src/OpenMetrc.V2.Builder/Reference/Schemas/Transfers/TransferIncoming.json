@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferIncoming",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "ManifestNumber": {
+      "type": "string"
+    },
+    "ShipmentLicenseType": {
+      "type": "integer"
+    },
+    "ShipperFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "ShipperFacilityName": {
+      "type": "string"
+    },
+    "TransporterFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "TransporterFacilityName": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriverOccupationalLicenseNumber": {
+      "type": "string"
+    },
+    "DriverVehicleLicenseNumber": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    },
+    "DeliveryCount": {
+      "type": "integer"
+    },
+    "ReceivedDeliveryCount": {
+      "type": "integer"
+    },
+    "PackageCount": {
+      "type": "integer"
+    },
+    "ReceivedPackageCount": {
+      "type": "integer"
+    },
+    "ContainsPlantPackage": {
+      "type": "boolean"
+    },
+    "ContainsProductPackage": {
+      "type": "boolean"
+    },
+    "ContainsTradeSample": {
+      "type": "boolean"
+    },
+    "ContainsDonation": {
+      "type": "boolean"
+    },
+    "ContainsTestingSample": {
+      "type": "boolean"
+    },
+    "ContainsProductRequiresRemediation": {
+      "type": "boolean"
+    },
+    "ContainsRemediatedProductPackage": {
+      "type": "boolean"
+    },
+    "IsVoided": {
+      "type": "boolean"
+    },
+    "CreatedDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "DeliveryId": {
+      "type": "integer"
+    },
+    "RecipientFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "RecipientFacilityName": {
+      "type": "string"
+    },
+    "ShipmentTypeName": {
+      "type": "string"
+    },
+    "ShipmentTransactionType": {
+      "type": "string"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EstimatedArrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "DeliveryPackageCount": {
+      "type": "integer"
+    },
+    "DeliveryReceivedPackageCount": {
+      "type": "integer"
+    },
+    "ReceivedDateTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

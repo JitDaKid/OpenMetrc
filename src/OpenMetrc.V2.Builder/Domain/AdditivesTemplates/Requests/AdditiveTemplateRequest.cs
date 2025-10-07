@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.AdditivesTemplates;
 
 namespace OpenMetrc.Builder.Domain.AdditivesTemplates.Requests;
 
@@ -32,7 +33,7 @@ public partial record AdditiveTemplateRequest
     public string? RestrictiveEntryIntervalTimeDescription { get; init; }
 
     [JsonPropertyName("ActiveIngredients")]
-    public ICollection<object>? ActiveIngredients { get; init; }
+    public ICollection<ActiveIngredients>? ActiveIngredients { get; init; }
 
     [JsonPropertyName("Id")]
     public long? Id { get; init; }

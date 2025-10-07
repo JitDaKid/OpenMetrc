@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.Items;
+using OpenMetrc.Builder.Domain.Packages;
 
 namespace OpenMetrc.Builder.Domain.Plants;
 
@@ -98,9 +100,9 @@ public partial record PlantWasteByIdPackage
     public DateTimeOffset? LastModified { get; init; }
 
     [JsonPropertyName("Item")]
-    public object? Item { get; init; }
+    public Item? Item { get; init; }
 
     [JsonPropertyName("ProductLabel")]
-    public object? ProductLabel { get; init; }
+    public ProductLabel? ProductLabel { get; init; }
 
 }

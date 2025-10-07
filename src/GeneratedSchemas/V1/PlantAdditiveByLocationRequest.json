@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantAdditiveByLocationRequest",
+  "type": "object",
+  "properties": {
+    "AdditiveType": {
+      "type": "string"
+    },
+    "ProductTradeName": {
+      "type": "string"
+    },
+    "ProductSupplier": {
+      "type": "string"
+    },
+    "ApplicationDevice": {
+      "type": "string"
+    },
+    "TotalAmountApplied": {
+      "type": "number"
+    },
+    "TotalAmountUnitOfMeasure": {
+      "type": "string"
+    },
+    "ActiveIngredients": {
+      "type": "array",
+      "items": {
+        "title": "ActiveIngredients",
+        "$ref": "#/definitions/ActiveIngredient"
+      }
+    },
+    "LocationName": {
+      "type": "string"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "definitions": {
+    "ActiveIngredient": {
+      "title": "ActiveIngredients",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Percentage": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

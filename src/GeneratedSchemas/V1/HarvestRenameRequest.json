@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "HarvestRenameRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer",
+      "x-nullable": true
+    },
+    "NewName": {
+      "type": "string"
+    },
+    "OldName": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

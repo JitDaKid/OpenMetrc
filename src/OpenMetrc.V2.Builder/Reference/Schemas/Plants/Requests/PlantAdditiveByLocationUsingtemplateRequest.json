@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantAdditiveByLocationUsingtemplateRequest",
+  "type": "object",
+  "properties": {
+    "AdditivesTemplateName": {
+      "type": "string"
+    },
+    "Rate": {
+      "type": "string"
+    },
+    "Volume": {
+      "type": "string"
+    },
+    "TotalAmountApplied": {
+      "type": "number"
+    },
+    "TotalAmountUnitOfMeasure": {
+      "type": "string"
+    },
+    "LocationName": {
+      "type": "string"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

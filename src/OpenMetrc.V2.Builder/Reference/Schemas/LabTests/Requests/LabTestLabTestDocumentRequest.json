@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "LabTestLabTestDocumentRequest",
+  "type": "object",
+  "properties": {
+    "LabTestResultId": {
+      "type": "integer"
+    },
+    "DocumentFileName": {
+      "type": "string"
+    },
+    "DocumentFileBase64": {
+      "type": "string"
+    }
+  }
+}

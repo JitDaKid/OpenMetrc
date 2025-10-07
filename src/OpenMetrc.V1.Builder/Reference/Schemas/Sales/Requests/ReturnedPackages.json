@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ReturnedPackages",
+  "type": "object",
+  "properties": {
+    "Label": {
+      "type": "string"
+    },
+    "ReturnQuantityVerified": {
+      "type": "number"
+    },
+    "ReturnUnitOfMeasure": {
+      "type": "string"
+    },
+    "ReturnReason": {
+      "type": "string"
+    },
+    "ReturnReasonNote": {
+      "type": "string"
+    }
+  }
+}

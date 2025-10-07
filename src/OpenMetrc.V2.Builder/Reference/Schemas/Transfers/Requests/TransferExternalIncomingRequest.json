@@ -1,0 +1,189 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferExternalIncomingRequest",
+  "type": "object",
+  "properties": {
+    "ShipperLicenseNumber": {
+      "type": "string"
+    },
+    "ShipperName": {
+      "type": "string"
+    },
+    "ShipperMainPhoneNumber": {
+      "type": "string"
+    },
+    "ShipperAddress1": {
+      "type": "string"
+    },
+    "ShipperAddressCity": {
+      "type": "string"
+    },
+    "ShipperAddressState": {
+      "type": "string"
+    },
+    "Destinations": {
+      "type": "array",
+      "items": {
+        "title": "Destinations",
+        "$ref": "#/definitions/Destination"
+      }
+    },
+    "TransferId": {
+      "type": "integer"
+    }
+  },
+  "definitions": {
+    "TransporterDetail": {
+      "title": "TransporterDetails",
+      "type": "object",
+      "properties": {
+        "DriverOccupationalLicenseNumber": {
+          "type": "string"
+        },
+        "DriverName": {
+          "type": "string"
+        },
+        "DriverLicenseNumber": {
+          "type": "string"
+        },
+        "DriverLayoverLeg": {
+          "type": "string"
+        },
+        "VehicleMake": {
+          "type": "string"
+        },
+        "VehicleModel": {
+          "type": "string"
+        },
+        "VehicleLicensePlateNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "Transporter": {
+      "title": "Transporters",
+      "type": "object",
+      "properties": {
+        "TransporterFacilityLicenseNumber": {
+          "type": "string"
+        },
+        "DriverOccupationalLicenseNumber": {
+          "type": "string"
+        },
+        "DriverName": {
+          "type": "string"
+        },
+        "DriverLicenseNumber": {
+          "type": "string"
+        },
+        "DriverLayoverLeg": {
+          "type": "string"
+        },
+        "PhoneNumberForQuestions": {
+          "type": "string"
+        },
+        "VehicleMake": {
+          "type": "string"
+        },
+        "VehicleModel": {
+          "type": "string"
+        },
+        "VehicleLicensePlateNumber": {
+          "type": "string"
+        },
+        "IsLayover": {
+          "type": "boolean"
+        },
+        "EstimatedDepartureDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EstimatedArrivalDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "TransporterDetails": {
+          "type": "array",
+          "items": {
+            "title": "TransporterDetails",
+            "$ref": "#/definitions/TransporterDetail"
+          }
+        }
+      }
+    },
+    "Package": {
+      "title": "Packages",
+      "type": "object",
+      "properties": {
+        "ItemName": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasureName": {
+          "type": "string"
+        },
+        "PackagedDate": {
+          "type": "string",
+          "format": "date"
+        },
+        "ExpirationDate": {},
+        "SellByDate": {},
+        "UseByDate": {},
+        "GrossWeight": {
+          "type": "number"
+        },
+        "GrossUnitOfWeightName": {
+          "type": "string"
+        },
+        "WholesalePrice": {},
+        "ExternalId": {
+          "type": "string"
+        }
+      }
+    },
+    "Destination": {
+      "title": "Destinations",
+      "type": "object",
+      "properties": {
+        "RecipientLicenseNumber": {
+          "type": "string"
+        },
+        "InvoiceNumber": {
+          "type": "string"
+        },
+        "TransferTypeName": {
+          "type": "string"
+        },
+        "PlannedRoute": {
+          "type": "string"
+        },
+        "EstimatedDepartureDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EstimatedArrivalDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "GrossWeight": {},
+        "GrossUnitOfWeightId": {},
+        "Transporters": {
+          "type": "array",
+          "items": {
+            "title": "Transporters",
+            "$ref": "#/definitions/Transporter"
+          }
+        },
+        "Packages": {
+          "type": "array",
+          "items": {
+            "title": "Packages",
+            "$ref": "#/definitions/Package"
+          }
+        }
+      }
+    }
+  }
+}

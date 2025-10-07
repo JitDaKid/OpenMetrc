@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferTemplateOutgoingDeliveryByIdPackage",
+  "type": "object",
+  "properties": {
+    "PackageId": {
+      "type": "integer"
+    },
+    "PackageLabel": {
+      "type": "string"
+    },
+    "PackageType": {
+      "type": "string"
+    },
+    "ItemId": {
+      "type": "integer"
+    },
+    "ItemName": {
+      "type": "string"
+    },
+    "ItemCategoryName": {
+      "type": "string"
+    },
+    "LabTestingState": {
+      "type": "string"
+    },
+    "IsTradeSample": {
+      "type": "boolean"
+    },
+    "IsTradeSamplePersistent": {
+      "type": "boolean"
+    },
+    "SourcePackageIsTradeSample": {
+      "type": "boolean"
+    },
+    "IsDonation": {
+      "type": "boolean"
+    },
+    "SourcePackageIsDonation": {
+      "type": "boolean"
+    },
+    "IsTestingSample": {
+      "type": "boolean"
+    },
+    "ProductRequiresRemediation": {
+      "type": "boolean"
+    },
+    "ContainsRemediatedProduct": {
+      "type": "boolean"
+    },
+    "ShipmentPackageState": {
+      "type": "string"
+    },
+    "ShippedQuantity": {
+      "type": "number"
+    },
+    "ShippedUnitOfMeasureName": {
+      "type": "string"
+    },
+    "ReceivedQuantity": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "ReceivedUnitOfMeasureName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ProductLabel": {
+      "$ref": "#/definitions/ProductLabel"
+    }
+  },
+  "definitions": {
+    "ProductLabel": {
+      "title": "ProductLabel",
+      "type": "object",
+      "properties": {
+        "PackageId": {},
+        "TagId": {},
+        "QrCount": {
+          "type": "integer"
+        },
+        "IsDiscontinued": {
+          "type": "boolean"
+        },
+        "IsChildFromParentWithLabel": {
+          "type": "boolean"
+        },
+        "LastLabelGenerationDate": {},
+        "IsActive": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

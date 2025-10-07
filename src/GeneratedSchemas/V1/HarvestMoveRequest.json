@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "HarvestMoveRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer",
+      "x-nullable": true
+    },
+    "DryingLocation": {
+      "type": "string"
+    },
+    "DryingSublocation": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "HarvestName": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

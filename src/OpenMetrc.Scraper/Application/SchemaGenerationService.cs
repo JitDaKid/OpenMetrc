@@ -1,214 +1,153 @@
-﻿using Humanizer;
+﻿using System.Text.Json.Nodes;
 using NJsonSchema;
-using OpenMetrc.Scraper.Models;
-using System.Text.Json;
-using System.Text.Json.Nodes;
 
 namespace OpenMetrc.Scraper.Application;
 
 public class SchemaGenerationService
 {
-    public record ModelSchemaInfo(JsonSchema Schema, string Section, bool IsRequest, bool IsTopLevel)
-    {
-        public string SubFolder => IsRequest ? Path.Combine(Section, "Requests") : Section;
-        public string TargetNamespace => $"OpenMetrc.Builder.Domain.{Section}{(IsRequest ? ".Requests" : "")}";
-    }
+    public readonly Dictionary<string, JsonSchema> ModelSchemas = new();
 
-    private readonly Dictionary<string, ModelSchemaInfo> _modelSchemas = new();
-    public IReadOnlyDictionary<string, ModelSchemaInfo> ModelSchemas => _modelSchemas;
-
-    public void DiscoverSchemasFromEndpoint(EndpointInfo endpointInfo)
-    {
-        var processedInstances = new HashSet<JsonSchema>();
-        DiscoverRawSchemas(endpointInfo.ExampleResponse, endpointInfo.OperationId.Singularize(false), endpointInfo.Section, false, processedInstances);
-        if (endpointInfo.HttpMethod is "POST" or "PUT")
-            DiscoverRawSchemas(endpointInfo.ExampleRequest, endpointInfo.OperationId.Singularize(false), endpointInfo.Section, true, processedInstances);
-    }
-
-    public void LinkDiscoveredSchemas()
-    {
-        foreach (var modelInfo in _modelSchemas.Values)
-            LinkChildSchemas(modelInfo.Schema);
-    }
-
-    private void LinkChildSchemas(JsonSchema schema)
-    {
-        if (schema.Type != JsonObjectType.Object) return;
-
-        foreach (var (propertyName, propertyValue) in schema.Properties)
-        {
-            var propertySchema = propertyValue;
-            var itemSchema = propertySchema.Item;
-
-            var nestedModelName = propertyName.Singularize(inputIsKnownToBePlural: false);
-
-            if (propertySchema.Type == JsonObjectType.Object)
-            {
-                if (_modelSchemas.ContainsKey(nestedModelName))
-                    propertyValue.Reference = _modelSchemas[nestedModelName].Schema;
-            }
-            else if (propertySchema.Type == JsonObjectType.Array && itemSchema?.Type == JsonObjectType.Object)
-            {
-                if (_modelSchemas.ContainsKey(nestedModelName))
-                    itemSchema.Reference = _modelSchemas[nestedModelName].Schema;
-            }
-        }
-    }
-
-    private void DiscoverAndRegister(JsonSchema schema, string modelName, string section, bool isRequest, bool isTopLevel, HashSet<JsonSchema> processedInstances)
-    {
-        if (!processedInstances.Add(schema) || schema.Type != JsonObjectType.Object) return;
-
-        
-        if (modelName == "Attribute") modelName = "AttributeModel";
-
-        if (_modelSchemas.TryGetValue(modelName, out var existingInfo))
-        {
-            MergeSchemas(existingInfo.Schema, schema);
-            if (isTopLevel && !existingInfo.IsTopLevel)
-                _modelSchemas[modelName] = existingInfo with { Section = section, IsTopLevel = true };
-        }
-        else
-        {
-            schema.Title = modelName;
-            _modelSchemas.Add(modelName, new ModelSchemaInfo(schema, section, isRequest, isTopLevel));
-        }
-        try
-        {
-            foreach (var (propertyName, propertyValue) in schema.Properties.ToList())
-            {
-                var propertySchema = propertyValue.ActualSchema;
-                var itemSchema = propertySchema.Item?.ActualSchema;
-
-                if (propertySchema.Reference != null || 
-                    propertySchema.Type.HasFlag(JsonObjectType.Object))
-                {
-                    var nestedModelName = propertyName;
-
-                    Console.WriteLine($"[DEBUG] In '{modelName}', found nested object: '{propertyName}' -> '{nestedModelName}'");
-
-                    var targetSchema = propertySchema.Reference ?? propertySchema;
-
-                    DiscoverAndRegister(targetSchema, nestedModelName, section, isRequest, false, processedInstances);
-
-                    propertyValue.Reference = propertySchema;
-                    propertyValue.Properties.Clear();
-                }
-                else if (propertySchema.Type.HasFlag(JsonObjectType.Array) &&
-                         itemSchema != null &&
-                         (itemSchema.Type.HasFlag(JsonObjectType.Object) || itemSchema.Reference != null))
-                {
-                    var nestedModelName = propertyName.Singularize(false);
-
-                    Console.WriteLine($"[DEBUG] In '{modelName}', found nested array: '{propertyName}' -> '{nestedModelName}'");
-
-                    var targetSchema = itemSchema.Reference ?? itemSchema;
-
-                    DiscoverAndRegister(targetSchema, propertyName, section, isRequest, false, processedInstances);
-
-                    propertySchema.Item = new JsonSchema
-                    {
-                        Reference = targetSchema,
-                        Title = propertyName
-                    };
-                }
-            }
-
-        }
-        catch (InvalidOperationException) { }
-    }
-
-    private void DiscoverRawSchemas(string? jsonContent, string operationId, string section, bool isRequest, HashSet<JsonSchema> processedInstances)
+    public void DiscoverSchemas(string? jsonContent, string modelName)
     {
         if (string.IsNullOrWhiteSpace(jsonContent)) return;
+
         try
         {
-            var rootSchema = GenerateSchemaFromMergedSamples(jsonContent);
+            var rootNode = JsonNode.Parse(jsonContent);
+            if (rootNode == null) return;
 
-            var topLevelModelName = NamingService.GetModelName(operationId, isRequest);
-
-            var itemSchema = rootSchema;
-            if (rootSchema.Type == JsonObjectType.Array && rootSchema.Item != null)
+            var schema = GenerateSchema(rootNode, modelName, new HashSet<string>());
+            if (!ModelSchemas.ContainsKey(modelName))
             {
-                itemSchema = rootSchema.Item.ActualSchema;
+                ModelSchemas[modelName] = schema;
             }
-            else if (rootSchema.Properties.TryGetValue("Data", out var dataProperty) &&
-                     dataProperty.ActualSchema?.Item?.ActualSchema != null)
+            else
             {
-                itemSchema = dataProperty.ActualSchema.Item.ActualSchema;
+                MergeSchemas(ModelSchemas[modelName], schema);
             }
-
-            DiscoverAndRegister(itemSchema, topLevelModelName, section, isRequest, true, processedInstances);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[ERROR] Failed to process schema for {operationId}: {ex.Message}");
+            Console.WriteLine($"[ERROR] Failed to generate schema for {modelName}: {ex.Message}");
         }
     }
 
-    private JsonSchema GenerateSchemaFromMergedSamples(string jsonContent)
+    public JsonSchema BuildRootSchema()
     {
-        var rootNode = JsonNode.Parse(jsonContent);
-        if (rootNode == null) return new JsonSchema();
-
-        var examples = new List<JsonObject>();
-
-        if (rootNode is JsonArray rootArray)
+        var root = new JsonSchema
         {
-            examples.AddRange(rootArray.OfType<JsonObject>());
-        }
-        else if (rootNode is JsonObject rootObject && rootObject["Data"] is JsonArray dataArray)
-        {
-            examples.AddRange(dataArray.OfType<JsonObject>());
-        }
-        else if (rootNode is JsonObject singleObj)
-        {
-            examples.Add(singleObj);
-        }
+            Title = "OpenMetrcSchemaCollection",
+            Type = JsonObjectType.Object
+        };
 
-        if (!examples.Any())
-            return JsonSchema.FromSampleJson(jsonContent);
+        foreach (var kvp in ModelSchemas)
+            root.Definitions[kvp.Key] = kvp.Value;
 
-        var compositeObject = new JsonObject();
-        var nullableProperties = new HashSet<string>();
+        return root;
+    }
 
-        foreach (var example in examples)
+    private JsonSchema GenerateSchema(JsonNode node, string modelName, HashSet<string> processedModels)
+    {
+        if (processedModels.Contains(modelName))
+            return new JsonSchema { Reference = ModelSchemas[modelName] };
+
+        processedModels.Add(modelName);
+
+        var schema = new JsonSchema
         {
-            foreach (var kvp in example)
+            Title = modelName,
+            Type = JsonObjectType.Object
+        };
+
+        if (node is JsonObject obj)
+        {
+            foreach (var kvp in obj)
             {
-                var propertyName = kvp.Key;
-                var propertyNode = kvp.Value;
+                string propName = kvp.Key;
+                var valueNode = kvp.Value;
 
-                if (propertyNode is null)
+                if (valueNode == null)
                 {
-                    nullableProperties.Add(propertyName);
+                    schema.Properties[propName] = new JsonSchemaProperty { Type = JsonObjectType.String, IsNullableRaw = true };
                     continue;
                 }
 
-                if (propertyNode is JsonValue jv)
+                switch (valueNode)
                 {
-                    if (jv.TryGetValue<JsonElement>(out var elem) && elem.ValueKind == JsonValueKind.Null)
-                    {
-                        nullableProperties.Add(propertyName);
-                        continue;
-                    }
+                    case JsonValue jv:
+                        schema.Properties[propName] = new JsonSchemaProperty { Type = GetPrimitiveType(jv) };
+                        break;
+
+                    case JsonObject nestedObj:
+                        string nestedName = $"{modelName}_properties_{propName}";
+                        var nestedSchema = GenerateSchema(nestedObj, nestedName, processedModels);
+                        schema.Properties[propName] = new JsonSchemaProperty { Reference = nestedSchema };
+                        break;
+
+                    case JsonArray arr:
+                        if (arr.Count > 0 && arr[0] is JsonObject firstObj)
+                        {
+                            string itemName = $"{modelName}_properties_{propName}_items";
+                            var itemSchema = GenerateSchema(firstObj, itemName, processedModels);
+                            // Proper $ref for array items
+                            var arraySchema = new JsonSchema
+                            {
+                                Title = itemName,
+                                Type = JsonObjectType.Array,
+                                Item = new JsonSchema { Reference = itemSchema }
+                            };
+                            schema.Properties[propName] = new JsonSchemaProperty { Reference = arraySchema };
+                        }
+                        else
+                        {
+                            schema.Properties[propName] = new JsonSchemaProperty { Type = JsonObjectType.Array };
+                        }
+                        break;
                 }
-                compositeObject[propertyName] = propertyNode.DeepClone();
             }
         }
 
-        var schema = JsonSchema.FromSampleJson(compositeObject.ToJsonString());
-
-        foreach (var (propertyName, jsonProperty) in schema.Properties)
-            if (nullableProperties.Contains(propertyName))
-                jsonProperty.IsNullableRaw = true;
-
+        ModelSchemas[modelName] = schema;
         return schema;
     }
-    private void MergeSchemas(JsonSchema target, JsonSchema source)
+
+    private void MergeSchemas(JsonSchema target, JsonSchema incoming)
     {
-        foreach (var (key, sourceProperty) in source.Properties)
-            if (!target.Properties.ContainsKey(key))
-                target.Properties.Add(key, sourceProperty);
+        foreach (var kvp in incoming.Properties)
+        {
+            if (target.Properties.ContainsKey(kvp.Key))
+            {
+                var existingProp = target.Properties[kvp.Key];
+                var newProp = kvp.Value;
+
+                if (existingProp.Reference != null && newProp.Reference != null)
+                {
+                    // Recursively merge referenced schemas
+                    MergeSchemas(existingProp.Reference, newProp.Reference);
+                }
+                else if (existingProp.Type == JsonObjectType.Object && newProp.Type == JsonObjectType.Object)
+                {
+                    MergeSchemas(existingProp, newProp);
+                }
+                else
+                {
+                    // Prefer the "broader" type (e.g., object overrides string if needed)
+                    existingProp.Type = existingProp.Type | newProp.Type;
+                }
+            }
+            else
+            {
+                // Add new property
+                target.Properties[kvp.Key] = kvp.Value;
+            }
+        }
+    }
+
+    private static JsonObjectType GetPrimitiveType(JsonValue value)
+    {
+        if (value.TryGetValue(out string? _)) return JsonObjectType.String;
+        if (value.TryGetValue(out bool _)) return JsonObjectType.Boolean;
+        if (value.TryGetValue(out long _) || value.TryGetValue(out double _)) return JsonObjectType.Number;
+        return JsonObjectType.String;
     }
 }

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Attributes",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

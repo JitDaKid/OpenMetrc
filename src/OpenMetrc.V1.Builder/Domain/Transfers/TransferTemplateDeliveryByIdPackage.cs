@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.Packages;
 
 namespace OpenMetrc.Builder.Domain.Transfers;
 
@@ -71,6 +72,6 @@ public partial record TransferTemplateDeliveryByIdPackage
     public string? ReceivedUnitOfMeasureName { get; init; }
 
     [JsonPropertyName("ProductLabel")]
-    public object? ProductLabel { get; init; }
+    public ProductLabel? ProductLabel { get; init; }
 
 }

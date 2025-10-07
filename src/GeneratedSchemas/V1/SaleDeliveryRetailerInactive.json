@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleDeliveryRetailerInactive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "RetailerDeliveryNumber": {
+      "type": "string"
+    },
+    "FacilityLicenseNumber": {
+      "type": "string"
+    },
+    "FacilityName": {
+      "type": "string"
+    },
+    "DateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "DriverEmployeeId": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriversLicenseNumber": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    },
+    "VehicleInfo": {
+      "type": "string"
+    },
+    "Direction": {
+      "type": "string"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "TotalPackages": {
+      "type": "integer"
+    },
+    "TotalPrice": {
+      "type": "number"
+    },
+    "TotalPriceSold": {
+      "type": "number"
+    },
+    "Destinations": {
+      "type": "array",
+      "items": {}
+    },
+    "RetailerDeliveryState": {
+      "type": "string"
+    },
+    "AllowFullEdit": {
+      "type": "boolean"
+    },
+    "Leg": {
+      "type": "integer"
+    },
+    "VoidedDate": {
+      "type": "string",
+      "format": "date",
+      "x-nullable": true
+    },
+    "RecordedDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "Packages": {
+      "type": "array",
+      "items": {}
+    },
+    "CompletedDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "x-nullable": true
+    }
+  }
+}

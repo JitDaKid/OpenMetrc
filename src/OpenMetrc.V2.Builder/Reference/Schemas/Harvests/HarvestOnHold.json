@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "HarvestOnHold",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "HarvestType": {
+      "type": "string"
+    },
+    "SourceStrainCount": {
+      "type": "integer"
+    },
+    "Strains": {
+      "type": "array",
+      "items": {}
+    },
+    "DryingLocationId": {
+      "type": "integer"
+    },
+    "DryingLocationName": {
+      "type": "string"
+    },
+    "DryingSublocationId": {
+      "type": "integer"
+    },
+    "CurrentWeight": {
+      "type": "number"
+    },
+    "TotalWasteWeight": {
+      "type": "number"
+    },
+    "PlantCount": {
+      "type": "integer"
+    },
+    "TotalWetWeight": {
+      "type": "number"
+    },
+    "TotalRestoredWeight": {
+      "type": "number"
+    },
+    "PackageCount": {
+      "type": "integer"
+    },
+    "TotalPackagedWeight": {
+      "type": "number"
+    },
+    "UnitOfWeightName": {
+      "type": "string"
+    },
+    "IsOnHold": {
+      "type": "boolean"
+    },
+    "HarvestStartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

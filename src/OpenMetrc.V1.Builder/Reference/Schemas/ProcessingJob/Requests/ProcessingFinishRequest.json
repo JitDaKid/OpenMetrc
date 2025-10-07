@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProcessingFinishRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "FinishDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "FinishNote": {
+      "type": "string"
+    },
+    "TotalWeightWaste": {
+      "type": "number"
+    },
+    "WasteWeightUnitOfMeasureName": {
+      "type": "string"
+    }
+  }
+}

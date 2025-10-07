@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantInactive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Label": {
+      "type": "string"
+    },
+    "State": {
+      "type": "string"
+    },
+    "GrowthPhase": {
+      "type": "string"
+    },
+    "GroupTagTypeMax": {
+      "type": "integer"
+    },
+    "TagTypeMax": {
+      "type": "integer"
+    },
+    "PlantBatchId": {
+      "type": "integer"
+    },
+    "PlantBatchName": {
+      "type": "string"
+    },
+    "PlantBatchTypeId": {
+      "type": "integer"
+    },
+    "PlantBatchTypeName": {
+      "type": "string"
+    },
+    "StrainId": {
+      "type": "integer"
+    },
+    "StrainName": {
+      "type": "string"
+    },
+    "LocationId": {
+      "type": "integer"
+    },
+    "LocationName": {
+      "type": "string"
+    },
+    "HarvestId": {
+      "type": "integer"
+    },
+    "HarvestedUnitOfWeightName": {
+      "type": "string"
+    },
+    "HarvestedUnitOfWeightAbbreviation": {
+      "type": "string"
+    },
+    "HarvestedWetWeight": {
+      "type": "number"
+    },
+    "HarvestCount": {
+      "type": "integer"
+    },
+    "IsOnHold": {
+      "type": "boolean"
+    },
+    "PlantedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "VegetativeDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "FloweringDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "HarvestedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

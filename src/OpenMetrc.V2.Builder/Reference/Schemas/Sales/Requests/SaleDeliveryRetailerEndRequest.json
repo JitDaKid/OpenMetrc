@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleDeliveryRetailerEndRequest",
+  "type": "object",
+  "properties": {
+    "RetailerDeliveryId": {
+      "type": "integer"
+    },
+    "ActualArrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Packages": {
+      "type": "array",
+      "items": {
+        "title": "Packages",
+        "$ref": "#/definitions/Package"
+      }
+    }
+  },
+  "definitions": {
+    "Package": {
+      "title": "Packages",
+      "type": "object",
+      "properties": {
+        "Label": {
+          "type": "string"
+        },
+        "EndQuantity": {
+          "type": "number"
+        },
+        "EndUnitOfMeasure": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

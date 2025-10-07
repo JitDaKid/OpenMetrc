@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "UnitOfMeasureInactive",
+  "type": "object",
+  "properties": {
+    "QuantityType": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Abbreviation": {
+      "type": "string"
+    }
+  }
+}

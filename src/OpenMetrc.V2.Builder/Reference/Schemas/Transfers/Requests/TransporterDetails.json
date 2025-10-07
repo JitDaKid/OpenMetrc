@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransporterDetails",
+  "type": "object",
+  "properties": {
+    "DriverOccupationalLicenseNumber": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriverLicenseNumber": {
+      "type": "string"
+    },
+    "DriverLayoverLeg": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    }
+  }
+}

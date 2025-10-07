@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantManicureRequest",
+  "type": "object",
+  "properties": {
+    "Plant": {
+      "type": "string"
+    },
+    "Weight": {
+      "type": "number"
+    },
+    "UnitOfWeight": {
+      "type": "string"
+    },
+    "DryingLocation": {
+      "type": "string"
+    },
+    "DryingSublocation": {
+      "type": "string"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "PlantCount": {
+      "type": "integer"
+    },
+    "HarvestName": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

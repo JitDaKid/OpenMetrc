@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleTransactionRequest",
+  "type": "object",
+  "properties": {
+    "PackageLabel": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "TotalAmount": {
+      "type": "number"
+    }
+  }
+}

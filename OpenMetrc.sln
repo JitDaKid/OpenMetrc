@@ -49,6 +49,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenMetrc.ClientGenerator",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMetrc.Builder.Domain", "src\OpenMetrc.Builder.Domain\OpenMetrc.Builder.Domain.csproj", "{732B4703-CD65-C2B7-8959-0F130E5F3D2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMetrc.Builder", "OpenMetrc.Builder\OpenMetrc.Builder.csproj", "{F8989F82-B08D-4F86-B9A2-DED36C9E5ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenMetrc.EndpointChecker", "OpenMetrc.EndpointChecker\OpenMetrc.EndpointChecker.csproj", "{F1D54E40-6FCC-4432-A6BF-16FE059D8D5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,14 @@ Global
 		{732B4703-CD65-C2B7-8959-0F130E5F3D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{732B4703-CD65-C2B7-8959-0F130E5F3D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{732B4703-CD65-C2B7-8959-0F130E5F3D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8989F82-B08D-4F86-B9A2-DED36C9E5ED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8989F82-B08D-4F86-B9A2-DED36C9E5ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8989F82-B08D-4F86-B9A2-DED36C9E5ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8989F82-B08D-4F86-B9A2-DED36C9E5ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D54E40-6FCC-4432-A6BF-16FE059D8D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D54E40-6FCC-4432-A6BF-16FE059D8D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D54E40-6FCC-4432-A6BF-16FE059D8D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D54E40-6FCC-4432-A6BF-16FE059D8D5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +130,8 @@ Global
 		{CA325770-14D4-4572-BDF7-41E1E897CF6B} = {6E1DDD9E-49E8-414F-BE46-375148002B40}
 		{075FC676-9C66-4737-A88A-D1EA016D15B7} = {CA325770-14D4-4572-BDF7-41E1E897CF6B}
 		{732B4703-CD65-C2B7-8959-0F130E5F3D2C} = {FD2055A8-739C-4ED2-A076-D32C80C83238}
+		{F8989F82-B08D-4F86-B9A2-DED36C9E5ED1} = {860E4147-1F88-46C2-ACCF-CBB0BE6A6C57}
+		{F1D54E40-6FCC-4432-A6BF-16FE059D8D5A} = {860E4147-1F88-46C2-ACCF-CBB0BE6A6C57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3548B3D4-7A70-411F-958C-009102D16D19}

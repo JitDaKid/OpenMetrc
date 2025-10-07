@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProcessingJobTypeCategory",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "ForItems": {
+      "type": "boolean"
+    },
+    "ForProcessingJobs": {
+      "type": "boolean"
+    },
+    "RequiresProcessingJobAttributes": {
+      "type": "boolean"
+    }
+  }
+}

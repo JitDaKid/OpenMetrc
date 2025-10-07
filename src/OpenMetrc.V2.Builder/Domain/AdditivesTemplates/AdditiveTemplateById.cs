@@ -26,7 +26,7 @@ public partial record AdditiveTemplateById
     public string? ProductTradeName { get; init; }
 
     [JsonPropertyName("ActiveIngredients")]
-    public ICollection<object>? ActiveIngredients { get; init; }
+    public ICollection<ActiveIngredients>? ActiveIngredients { get; init; }
 
     [JsonPropertyName("LastModified")]
     public DateOnly? LastModified { get; init; }

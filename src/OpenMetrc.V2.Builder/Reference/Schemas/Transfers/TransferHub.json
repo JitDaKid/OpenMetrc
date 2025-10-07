@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferHub",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "ManifestNumber": {
+      "type": "string"
+    },
+    "ShipperFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "ShipperFacilityName": {
+      "type": "string"
+    },
+    "DeliveryCount": {
+      "type": "integer"
+    },
+    "ReceivedDeliveryCount": {
+      "type": "integer"
+    },
+    "PackageCount": {
+      "type": "integer"
+    },
+    "ReceivedPackageCount": {
+      "type": "integer"
+    },
+    "IsVoided": {
+      "type": "boolean"
+    },
+    "CreatedDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "DeliveryId": {
+      "type": "integer"
+    },
+    "ShipmentTransactionType": {
+      "type": "integer"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "EstimatedArrivalDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "DeliveryPackageCount": {
+      "type": "integer"
+    },
+    "DeliveryReceivedPackageCount": {
+      "type": "integer"
+    },
+    "RejectedPackagesReturned": {
+      "type": "boolean"
+    },
+    "TransporterFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "TransporterFacilityName": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriverOccupationalLicenseNumber": {
+      "type": "string"
+    },
+    "DriverVehicleLicenseNumber": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    },
+    "IsLayover": {
+      "type": "boolean"
+    }
+  }
+}

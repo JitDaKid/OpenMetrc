@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantOnHold",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Label": {
+      "type": "string"
+    },
+    "State": {
+      "type": "string"
+    },
+    "GrowthPhase": {
+      "type": "string"
+    },
+    "GroupTagTypeMax": {
+      "type": "integer"
+    },
+    "TagTypeMax": {
+      "type": "integer"
+    },
+    "PlantBatchId": {
+      "type": "integer"
+    },
+    "PlantBatchName": {
+      "type": "string"
+    },
+    "PlantBatchTypeId": {
+      "type": "integer"
+    },
+    "PlantBatchTypeName": {
+      "type": "string"
+    },
+    "StrainId": {
+      "type": "integer"
+    },
+    "StrainName": {
+      "type": "string"
+    },
+    "LocationId": {
+      "type": "integer"
+    },
+    "LocationName": {
+      "type": "string"
+    },
+    "HarvestCount": {
+      "type": "integer"
+    },
+    "IsOnHold": {
+      "type": "boolean"
+    },
+    "PlantedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "VegetativeDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "FloweringDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

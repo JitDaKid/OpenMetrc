@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RetailidPackageInfo",
+  "type": "object",
+  "properties": {
+    "Packages": {
+      "type": "array",
+      "items": {
+        "title": "Packages",
+        "$ref": "#/definitions/Package"
+      }
+    }
+  },
+  "definitions": {
+    "Issuance": {
+      "title": "Issuances",
+      "type": "object",
+      "properties": {
+        "LabelSet": {
+          "type": "integer"
+        },
+        "LabelQuantity": {
+          "type": "integer"
+        },
+        "CreatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Anonymous2": {
+      "type": "object",
+      "properties": {
+        "LabelSet": {
+          "type": "integer"
+        },
+        "LabelQuantity": {
+          "type": "integer"
+        },
+        "CreatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Package": {
+      "title": "Packages",
+      "type": "object",
+      "properties": {
+        "Tag": {
+          "type": "string"
+        },
+        "QrCount": {
+          "type": "integer"
+        },
+        "EstimatedBalance": {
+          "type": "integer"
+        },
+        "SiblingCount": {
+          "type": "integer"
+        },
+        "IssuanceId": {
+          "type": "string"
+        },
+        "Issuances": {
+          "type": "array",
+          "items": {
+            "title": "Issuances",
+            "$ref": "#/definitions/Issuance"
+          }
+        },
+        "HasQrs": {
+          "type": "boolean"
+        },
+        "RequiresVerification": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

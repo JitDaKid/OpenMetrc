@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchCreateplantingRequest",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "Count": {
+      "type": "integer"
+    },
+    "Strain": {
+      "type": "string"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "SourcePlantBatches": {
+      "type": "array",
+      "x-nullable": true,
+      "items": {
+        "title": "SourcePlantBatches",
+        "$ref": "#/definitions/SourcePlantBatche"
+      }
+    }
+  },
+  "definitions": {
+    "SourcePlantBatche": {
+      "title": "SourcePlantBatches",
+      "type": "object",
+      "properties": {
+        "PlantBatchName": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

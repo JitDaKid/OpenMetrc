@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "HarvestRestoreHarvestedPlantRequest",
+  "type": "object",
+  "properties": {
+    "HarvestId": {
+      "type": "integer"
+    },
+    "PlantTags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PlantTag"
+      }
+    }
+  },
+  "definitions": {
+    "PlantTag": {
+      "type": "string"
+    }
+  }
+}

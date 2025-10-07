@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchTagRequest",
+  "type": "object",
+  "properties": {
+    "Group": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "NewTag": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ReplaceDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Id": {
+      "type": "integer",
+      "x-nullable": true
+    },
+    "TagId": {
+      "type": "integer",
+      "x-nullable": true
+    }
+  }
+}

@@ -14,7 +14,7 @@ public partial record SaleReceiptRequest
     public string? SalesCustomerType { get; init; }
 
     [JsonPropertyName("Transactions")]
-    public ICollection<object>? Transactions { get; init; }
+    public ICollection<Transactions>? Transactions { get; init; }
 
     [JsonPropertyName("Id")]
     public long? Id { get; init; }

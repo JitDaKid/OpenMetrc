@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleDeliveryReturnReason",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "RequiresNote": {
+      "type": "boolean"
+    },
+    "RequiresWasteWeight": {
+      "type": "boolean"
+    },
+    "RequiresImmatureWasteWeight": {
+      "type": "boolean"
+    },
+    "RequiresMatureWasteWeight": {
+      "type": "boolean"
+    }
+  }
+}

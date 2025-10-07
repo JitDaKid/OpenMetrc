@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Results",
+  "type": "object",
+  "properties": {
+    "LabTestTypeName": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "Passed": {
+      "type": "boolean"
+    },
+    "Notes": {
+      "type": "string"
+    }
+  }
+}

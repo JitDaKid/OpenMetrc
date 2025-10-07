@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantHarvestRequest",
+  "type": "object",
+  "properties": {
+    "Plant": {
+      "type": "string"
+    },
+    "Weight": {
+      "type": "number"
+    },
+    "UnitOfWeight": {
+      "type": "string"
+    },
+    "DryingLocation": {
+      "type": "string"
+    },
+    "DryingSublocation": {
+      "type": "string"
+    },
+    "HarvestName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

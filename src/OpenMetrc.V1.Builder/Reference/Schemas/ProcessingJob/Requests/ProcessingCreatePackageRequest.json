@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProcessingCreatePackageRequest",
+  "type": "object",
+  "properties": {
+    "JobName": {
+      "type": "string"
+    },
+    "Tag": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "FinishProcessingJob": {
+      "type": "boolean"
+    }
+  }
+}

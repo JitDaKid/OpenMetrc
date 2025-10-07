@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleReceiptRequest",
+  "type": "object",
+  "properties": {
+    "SalesDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ExternalReceiptNumber": {
+      "type": "string"
+    },
+    "SalesCustomerType": {
+      "type": "string"
+    },
+    "Transactions": {
+      "type": "array",
+      "items": {
+        "title": "Transactions",
+        "$ref": "#/definitions/Transaction"
+      }
+    },
+    "Id": {
+      "type": "integer"
+    }
+  },
+  "definitions": {
+    "QrCode": {
+      "type": "string"
+    },
+    "Transaction": {
+      "title": "Transactions",
+      "type": "object",
+      "properties": {
+        "PackageLabel": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        },
+        "TotalAmount": {
+          "type": "number"
+        },
+        "UnitThcPercent": {},
+        "UnitThcContent": {},
+        "UnitThcContentUnitOfMeasure": {},
+        "UnitWeight": {},
+        "UnitWeightUnitOfMeasure": {},
+        "InvoiceNumber": {},
+        "Price": {},
+        "ExciseTax": {},
+        "CityTax": {},
+        "CountyTax": {},
+        "MunicipalTax": {},
+        "DiscountAmount": {},
+        "SubTotal": {},
+        "SalesTax": {},
+        "QrCodes": {}
+      }
+    }
+  }
+}

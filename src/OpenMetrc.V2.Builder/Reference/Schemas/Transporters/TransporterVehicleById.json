@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransporterVehicleById",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "FacilityId": {
+      "type": "integer"
+    },
+    "Make": {
+      "type": "string"
+    },
+    "Model": {
+      "type": "string"
+    },
+    "LicensePlateNumber": {
+      "type": "string"
+    }
+  }
+}

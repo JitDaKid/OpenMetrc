@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ItemRequest",
+  "type": "object",
+  "properties": {
+    "ItemCategory": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "Strain": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ProcessingJobTypeName": {
+      "type": "string"
+    },
+    "UnitThcContent": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "UnitThcContentUnitOfMeasure": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "UnitWeight": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "UnitWeightUnitOfMeasure": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "Allergens": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ProductImageFileSystemIds": {
+      "type": "array",
+      "x-nullable": true,
+      "items": {
+        "$ref": "#/definitions/ProductImageFileSystemId"
+      }
+    },
+    "ProductPhotoDescription": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "LabelImageFileSystemIds": {
+      "type": "array",
+      "x-nullable": true,
+      "items": {
+        "$ref": "#/definitions/LabelImageFileSystemId"
+      }
+    },
+    "LabelPhotoDescription": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "PackagingImageFileSystemIds": {
+      "type": "array",
+      "x-nullable": true,
+      "items": {
+        "$ref": "#/definitions/PackagingImageFileSystemId"
+      }
+    },
+    "PackagingPhotoDescription": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ProductPDFFileSystemIds": {
+      "type": "array",
+      "x-nullable": true,
+      "items": {
+        "$ref": "#/definitions/ProductPDFFileSystemId"
+      }
+    },
+    "UnitThcContentDose": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "UnitThcContentDoseUnitOfMeasure": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "UnitVolume": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "UnitVolumeUnitOfMeasure": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "NumberOfDoses": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "ProcessingJobCategoryName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "Id": {
+      "type": "integer"
+    }
+  },
+  "definitions": {
+    "ProductImageFileSystemId": {
+      "type": "integer"
+    },
+    "LabelImageFileSystemId": {
+      "type": "integer"
+    },
+    "PackagingImageFileSystemId": {
+      "type": "integer"
+    },
+    "ProductPDFFileSystemId": {
+      "type": "integer"
+    }
+  }
+}

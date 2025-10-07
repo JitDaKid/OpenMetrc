@@ -44,7 +44,7 @@ public partial record HarvestPackageTestingRequest
     public DateOnly? ActualDate { get; init; }
 
     [JsonPropertyName("Ingredients")]
-    public ICollection<object>? Ingredients { get; init; }
+    public ICollection<Ingredients>? Ingredients { get; init; }
 
     [JsonPropertyName("ProcessingJobTypeId")]
     public long? ProcessingJobTypeId { get; init; }

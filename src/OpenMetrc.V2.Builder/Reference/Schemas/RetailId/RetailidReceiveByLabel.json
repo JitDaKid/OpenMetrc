@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RetailidReceiveByLabel",
+  "type": "object",
+  "properties": {
+    "Eaches": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Eache"
+      }
+    },
+    "SiblingTags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/SiblingTag"
+      }
+    },
+    "RequiresVerification": {
+      "type": "boolean"
+    }
+  },
+  "definitions": {
+    "Eache": {
+      "type": "string"
+    },
+    "SiblingTag": {
+      "type": "string"
+    }
+  }
+}

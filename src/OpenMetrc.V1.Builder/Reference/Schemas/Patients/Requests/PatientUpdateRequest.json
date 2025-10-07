@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PatientUpdateRequest",
+  "type": "object",
+  "properties": {
+    "LicenseNumber": {
+      "type": "string"
+    },
+    "LicenseEffectiveStartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LicenseEffectiveEndDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "RecommendedPlants": {
+      "type": "integer"
+    },
+    "RecommendedSmokableQuantity": {
+      "type": "number"
+    },
+    "HasSalesLimitExemption": {
+      "type": "boolean"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "NewLicenseNumber": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

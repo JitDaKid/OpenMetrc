@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using NJsonSchema;
 using NJsonSchema.CodeGeneration.CSharp;
 using NSwag;
@@ -7,40 +6,43 @@ using NSwag.CodeGeneration.CSharp;
 using NSwag.CodeGeneration.CSharp.Models;
 using NSwag.CodeGeneration.OperationNameGenerators;
 using OpenMetrc.Scraper.Application;
-using OpenMetrc.Scraper.Application.Contracts;
+using OpenMetrc.Scraper.Core.Extensions;
+using OpenMetrc.Scraper.Core.Services;
 
 namespace OpenMetrc.Scraper.Infrastructure;
 
-public partial class CodeGenerator : ICodeGenerator
+public partial class CodeGenerator
 {
     public async Task WriteControllerAsync(OpenApiDocument document, string version, string basePath, SchemaGenerationService schemaService)
     {
         const string controllerName = "MetrcBase";
-        var controllerNamespace = $"OpenMetrc.{version}.Builder.Controllers";
+        string controllerNamespace = $"OpenMetrc.{version}.Builder.Controllers";
 
-        var allSections = schemaService.ModelSchemas.Values
-        .Select(info => info.Section)
-        .Distinct();
+        //IEnumerable<string> allSections = schemaService.ModelSchemas.Values
+        //.Select(info => info.Section)
+        //.Distinct();
 
-        // Get ONLY the sections that actually contain request models.
-        var requestSections = schemaService.ModelSchemas.Values
-            .Where(info => info.IsRequest)
-            .Select(info => info.Section)
-            .Distinct();
+        //// Get ONLY the sections that actually contain request models.
+        //IEnumerable<string> requestSections = schemaService.ModelSchemas.Values
+        //    .Where(info => info.IsRequest)
+        //    .Select(info => info.Section)
+        //    .Distinct();
 
-        var additionalNamespaces = new List<string> { "System.Text.Json", "OpenMetrc.Builder.Domain" };
-        additionalNamespaces.AddRange(allSections.Select(s => $"OpenMetrc.Builder.Domain.{s}"));
-        additionalNamespaces.AddRange(requestSections.Select(s => $"OpenMetrc.Builder.Domain.{s}.Requests"));
-
+        //List<string> additionalNamespaces =
+        //[
+        //    "System.Text.Json", "OpenMetrc.Builder.Domain",
+        //    .. allSections.Select(s => $"OpenMetrc.Builder.Domain.{s}"),
+        //    .. requestSections.Select(s => $"OpenMetrc.Builder.Domain.{s}.Requests"),
+        //];
 
         try
         {
-            var settings = new CSharpControllerGeneratorSettings
+            CSharpControllerGeneratorSettings settings = new()
             {
                 OperationNameGenerator = new MultipleClientsFromFirstTagAndOperationIdGenerator(),
                 GenerateClientInterfaces = true,
                 GenerateOptionalParameters = true,
-                AdditionalNamespaceUsages = additionalNamespaces.ToArray(),
+                //AdditionalNamespaceUsages = [.. additionalNamespaces],
                 ControllerTarget = CSharpControllerTarget.AspNetCore,
                 ControllerStyle = CSharpControllerStyle.Abstract,
                 CodeGeneratorSettings = { SchemaType = SchemaType.OpenApi3 },
@@ -57,13 +59,13 @@ public partial class CodeGenerator : ICodeGenerator
                 }
             };
 
-            var generator = new CSharpControllerGenerator(document, settings);
-            var code = generator.GenerateFile();
+            CSharpControllerGenerator generator = new(document, settings);
+            string code = generator.GenerateFile();
 
-            code = ApplyCodeFixes(code);
+            code = ApplyCodeFixes(code, document);
 
-            var path = Path.Combine(basePath, $"OpenMetrc.{version}.Builder/Controllers", $"{controllerName}Controller.cs");
-            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+            string path = Path.Combine(basePath, $"OpenMetrc.{version}.Builder/Controllers", $"{controllerName}Controller.cs");
+            _ = Directory.CreateDirectory(Path.GetDirectoryName(path)!);
             await File.WriteAllTextAsync(path, code);
         }
         catch (Exception ex)
@@ -74,32 +76,73 @@ public partial class CodeGenerator : ICodeGenerator
         }
     }
 
-    private string ApplyCodeFixes(string code)
+    private static string ApplyCodeFixes(string code, OpenApiDocument document)
     {
-        var postPutPattern = PostPutRegex();
+        // Pattern 1: A flexible regex for POST and PUT methods
+        Regex postPutPattern = new Regex(@"Task\s+(Post\w+|Put\w+)\(");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("DEBUG: Applying POST/PUT regex to generated code...");
+        var postPutMatches = postPutPattern.Matches(code);
+        Console.WriteLine($"DEBUG: Found {postPutMatches.Count} POST/PUT method matches.");
+        foreach (Match m in postPutMatches)
+        {
+            Console.WriteLine($"DEBUG: Matched method signature: '{m.Value.Trim()}' at index {m.Index}");
+        }
+        Console.ResetColor();
+
         code = postPutPattern.Replace(code, match =>
         {
-            var methodName = match.Groups[1].Value;
-            var snakeMethodName = NamingService.ToSnakeCase(methodName);
-            var requestModelName = NamingService.GetModelName(snakeMethodName, isRequest: true);
-            var prefix = match.Groups[0].Value;
+            // e.g., "PostItemsAsync"
+            string methodNameWithAsync = match.Groups[1].Value;
+            // e.g., "PostItems"
+            string operationId = methodNameWithAsync.Replace("Async", "");
 
-            return $"{prefix}[System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<{requestModelName}> body, ";
+            var operation = document.Paths.Values
+                .SelectMany(pathItem => pathItem.Values)
+                .FirstOrDefault(op => string.Equals(op.OperationId, operationId, StringComparison.OrdinalIgnoreCase));
+
+            // Only add a body if the spec defines one
+            if (operation?.RequestBody != null)
+            {
+                string snakeMethodName = StringUtils.PascalToSnake(operationId);
+                string requestModelName = NamingService.GetModelName(snakeMethodName);
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"DEBUG: Adding body parameter for method '{operationId}' with request model '{requestModelName}'.");
+                Console.ResetColor();
+
+                // Inject the body parameter after the opening parenthesis
+                return $"{match.Value}[Microsoft.AspNetCore.Mvc.FromBodyAttribute] [System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.ICollection<{requestModelName}> body,";
+            }
+
+            // No request body defined, so leave the method signature untouched
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"DEBUG: No request body for method '{operationId}', leaving signature unchanged.");
+            Console.ResetColor();
+            return match.Value;
         });
 
-        var deletePattern = DeleteRegex();
+        // Pattern 2: A flexible regex for DELETE methods
+        Regex deletePattern = new Regex(@"Task\s+(Delete\w+)\(");
         code = deletePattern.Replace(code, match =>
         {
-            var methodName = match.Groups[1].Value;
-            Console.WriteLine($@"methodName ' {methodName} '");
-            var snakeMethodName = NamingService.ToSnakeCase(methodName);
-            var requestModelName = NamingService.GetModelName(snakeMethodName, isRequest: true);
-            Console.WriteLine($@"requestModelName ' {requestModelName} '");
+            string methodNameWithAsync = match.Groups[1].Value;
+            string operationId = methodNameWithAsync.Replace("Async", "");
 
+            var operation = document.Paths.Values
+                .SelectMany(pathItem => pathItem.Values)
+                .FirstOrDefault(op => string.Equals(op.OperationId, operationId, StringComparison.OrdinalIgnoreCase));
 
-            var prefix = match.Groups[1].Value;;
+            if (operation?.RequestBody != null)
+            {
+                string snakeMethodName = StringUtils.PascalToSnake(operationId);
+                string requestModelName = NamingService.GetModelName(snakeMethodName);
 
-            return $"Task {prefix}([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<{requestModelName}> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber";
+                // Inject the body parameter. NSwag should have already added other [FromQuery] parameters.
+                return $"{match.Value}[Microsoft.AspNetCore.Mvc.FromBodyAttribute] [System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.ICollection<{requestModelName}> body,";
+            }
+
+            return match.Value;
         });
 
         return code.Replace("HttpDELETE", "HttpDelete")

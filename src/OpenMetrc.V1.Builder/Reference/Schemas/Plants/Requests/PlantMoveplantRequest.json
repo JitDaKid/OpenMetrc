@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantMoveplantRequest",
+  "type": "object",
+  "properties": {
+    "Label": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Sublocation": {
+      "type": "string"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Id": {
+      "type": "integer",
+      "x-nullable": true
+    }
+  }
+}

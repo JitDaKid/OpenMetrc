@@ -110,7 +110,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("additivestemplates/v2/")]
-        public abstract System.Threading.Tasks.Task PostAdditivesTemplates([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<AdditiveTemplateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostAdditivesTemplates([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing additive templates for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Additives
@@ -118,7 +118,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("additivestemplates/v2/")]
-        public abstract System.Threading.Tasks.Task PutAdditivesTemplates([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<AdditiveTemplateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutAdditivesTemplates([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -242,7 +242,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of harvests waste.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v2/waste")]
-        public abstract System.Threading.Tasks.Task PostHarvestsWaste([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestWasteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsWaste([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of Waste types for harvests.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: &lt;i&gt;none&lt;/i&gt;
@@ -267,7 +267,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of harvests packages.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v2/packages")]
-        public abstract System.Threading.Tasks.Task PostHarvestsPackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestPackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsPackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates packages for testing from harvested products for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Manage Harvests • View Packages • Create/Submit/Discontinue Packages
@@ -275,7 +275,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of harvests packages.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v2/packages/testing")]
-        public abstract System.Threading.Tasks.Task PostHarvestsPackagesTesting([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestPackageTestingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsPackagesTesting([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Marks one or more harvests as finished for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Finish/Discontinue Harvests
@@ -283,7 +283,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of finished harvests.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("harvests/v2/finish")]
-        public abstract System.Threading.Tasks.Task PutHarvestsFinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestFinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutHarvestsFinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the Location of Harvest for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Manage Harvests
@@ -291,7 +291,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of harvests locations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("harvests/v2/location")]
-        public abstract System.Threading.Tasks.Task PutHarvestsLocation([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestLocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutHarvestsLocation([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Renames one or more harvests for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Manage Harvests
@@ -299,7 +299,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of renamed harvests.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("harvests/v2/rename")]
-        public abstract System.Threading.Tasks.Task PutHarvestsRename([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestRenameRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutHarvestsRename([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Restores previously harvested plants to their original state for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Finish/Discontinue Harvests
@@ -307,7 +307,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of harvests restored.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("harvests/v2/restore/harvestedplants")]
-        public abstract System.Threading.Tasks.Task PutHarvestsRestoreHarvestedPlants([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestRestoreHarvestedPlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutHarvestsRestoreHarvestedPlants([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Reopens one or more previously finished harvests for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Finish/Discontinue Harvests
@@ -315,7 +315,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to return the list of unfinished harvests.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("harvests/v2/unfinish")]
-        public abstract System.Threading.Tasks.Task PutHarvestsUnfinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestUnfinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutHarvestsUnfinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -411,7 +411,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to create new items.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("items/v2/")]
-        public abstract System.Threading.Tasks.Task PostItems([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostItems([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates one or more existing products for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Items
@@ -419,7 +419,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for the Item updates.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("items/v2/")]
-        public abstract System.Threading.Tasks.Task PutItems([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutItems([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates one or more new item brands for the specified Facility identified by the License Number.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Items
@@ -427,7 +427,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for the Item Brands to create.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("items/v2/brand")]
-        public abstract System.Threading.Tasks.Task PostItemsBrand([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemBrandRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostItemsBrand([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates one or more existing item brands for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Items
@@ -435,14 +435,14 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for the Item Brand updates.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("items/v2/brand")]
-        public abstract System.Threading.Tasks.Task PutItemsBrand([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemBrandRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutItemsBrand([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Uploads one or more image or PDF files for products, labels, packaging, or documents at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Items
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("items/v2/file")]
-        public abstract System.Threading.Tasks.Task PostItemsFile([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemFileRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostItemsFile([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// This endpoint allows only BMP, GIF, JPG, and PNG files and uploaded files can be no more than 5 MB in size.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Items
@@ -450,7 +450,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to add an image.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("items/v2/photo")]
-        public abstract System.Threading.Tasks.Task PostItemsPhoto([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemPhotoRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostItemsPhoto([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -506,7 +506,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility recording the Lab Test.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("labtests/v2/record")]
-        public abstract System.Threading.Tasks.Task PostLabTestsRecord([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LabTestRecordRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostLabTestsRecord([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates one or more documents for previously submitted lab tests.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -514,7 +514,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility updating the Lab Test document.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("labtests/v2/labtestdocument")]
-        public abstract System.Threading.Tasks.Task PutLabTestsLabTestDocument([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LabTestLabTestDocumentRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutLabTestsLabTestDocument([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Releases Lab Test results for one or more packages.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -522,7 +522,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility releasing the Lab Test results.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("labtests/v2/results/release")]
-        public abstract System.Threading.Tasks.Task PutLabTestsResultsRelease([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LabTestResultReleaseRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutLabTestsResultsRelease([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -584,7 +584,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of locations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("locations/v2/")]
-        public abstract System.Threading.Tasks.Task PostLocations([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostLocations([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing locations for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Locations
@@ -592,7 +592,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of locations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("locations/v2/")]
-        public abstract System.Threading.Tasks.Task PutLocations([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutLocations([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -727,7 +727,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of new packages.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v2/")]
-        public abstract System.Threading.Tasks.Task PostPackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records a list of adjustments for packages at a specific Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -735,7 +735,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of adjustments.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v2/adjust")]
-        public abstract System.Threading.Tasks.Task PostPackagesAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Set the final quantity for a Package.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -743,7 +743,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of adjustments.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/adjust")]
-        public abstract System.Threading.Tasks.Task PutPackagesAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates new plantings from packages for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants • View Packages • Manage Packages Inventory
@@ -751,7 +751,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of new plantings.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v2/plantings")]
-        public abstract System.Threading.Tasks.Task PostPackagesPlantings([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackagePlantingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesPlantings([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates new packages for testing for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
@@ -759,7 +759,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of new packages for testing.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v2/testing")]
-        public abstract System.Threading.Tasks.Task PostPackagesTesting([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageTestingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesTesting([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the Product decontaminate information for a list of packages at a specific Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -767,7 +767,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of product decontaminations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/decontaminate")]
-        public abstract System.Threading.Tasks.Task PutPackagesDecontaminate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageDecontaminateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesDecontaminate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Flags one or more packages for donation at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -775,7 +775,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update list of flagged donations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/donation/flag")]
-        public abstract System.Threading.Tasks.Task PutPackagesDonationFlag([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageDonationFlagRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesDonationFlag([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Removes the donation flag from one or more packages at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -783,7 +783,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update list of unflaged donations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/donation/unflag")]
-        public abstract System.Threading.Tasks.Task PutPackagesDonationUnflag([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageDonationUnflagRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesDonationUnflag([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the external identifiers for one or more packages at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Package Inventory • External Id Enabled
@@ -791,7 +791,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update list of change external Ids.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/externalid")]
-        public abstract System.Threading.Tasks.Task PutPackagesExternalid([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageExternalidRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesExternalid([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates a list of packages as finished for a specific Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -799,7 +799,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of finish packages.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/finish")]
-        public abstract System.Threading.Tasks.Task PutPackagesFinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageFinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesFinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the associated Item for one or more packages at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
@@ -807,7 +807,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update list of changed items.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/item")]
-        public abstract System.Threading.Tasks.Task PutPackagesItem([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageItemRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesItem([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the list of required lab test batches for one or more packages at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
@@ -815,7 +815,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of required lab test batches.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/labtests/required")]
-        public abstract System.Threading.Tasks.Task PutPackagesLabTestsRequired([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageLabTestRequiredRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesLabTestsRequired([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the Location and Sublocation for one or more packages at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
@@ -823,7 +823,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of change locations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/location")]
-        public abstract System.Threading.Tasks.Task PutPackagesLocation([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageLocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesLocation([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates notes associated with one or more packages for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory • Manage Package Notes
@@ -831,7 +831,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update list of change notes.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/note")]
-        public abstract System.Threading.Tasks.Task PutPackagesNote([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageNoteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesNote([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates a list of Product remediations for packages at a specific Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -839,7 +839,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of product remediations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/remediate")]
-        public abstract System.Threading.Tasks.Task PutPackagesRemediate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageRemediateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesRemediate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Flags or unflags one or more packages at the specified Facility as trade samples.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -847,7 +847,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update trade sample flags.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/tradesample/flag")]
-        public abstract System.Threading.Tasks.Task PutPackagesTradeSampleFlag([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageTradeSampleFlagRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesTradeSampleFlag([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Removes the trade sample flag from one or more packages at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -855,7 +855,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update trade sample unflag.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/tradesample/unflag")]
-        public abstract System.Threading.Tasks.Task PutPackagesTradeSampleUnflag([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageTradeSampleUnflagRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesTradeSampleUnflag([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates a list of packages as unfinished for a specific Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
@@ -863,7 +863,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update list of unfinish packages.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/unfinish")]
-        public abstract System.Threading.Tasks.Task PutPackagesUnfinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageUnfinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesUnfinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the use-by date for one or more packages at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
@@ -871,7 +871,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update list of changed items.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v2/usebydate")]
-        public abstract System.Threading.Tasks.Task PutPackagesUseByDate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageUseByDateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesUseByDate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -903,7 +903,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of Patient check-ins.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("patient-checkins/v2/")]
-        public abstract System.Threading.Tasks.Task PostPatientCheckIns([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientCheckInRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPatientCheckIns([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates patient check-ins for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: ManagePatientsCheckIns
@@ -911,7 +911,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of Patient check-ins.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("patient-checkins/v2/")]
-        public abstract System.Threading.Tasks.Task PutPatientCheckIns([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientCheckInRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPatientCheckIns([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of Patient Check-In locations.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: &lt;i&gt;none&lt;/i&gt;
@@ -958,7 +958,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of patients.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("patients/v2/")]
-        public abstract System.Threading.Tasks.Task PostPatients([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPatients([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates Patient information for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Patients
@@ -966,7 +966,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of patients.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("patients/v2/")]
-        public abstract System.Threading.Tasks.Task PutPatients([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPatients([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -994,7 +994,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to destroy the Plant Batch.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpDelete, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/")]
-        public abstract System.Threading.Tasks.Task DeletePlantBatches([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task DeletePlantBatches([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of active plant batches for the specified Facility, optionally filtered by last modified date.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants
@@ -1045,7 +1045,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record waste of the Plant Batch.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/waste")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesWaste([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchWasteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesWaste([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of valid waste reasons associated with immature plant batches for the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: &lt;i&gt;none&lt;/i&gt;
@@ -1069,7 +1069,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/additives")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesAdditives([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchAdditiveRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesAdditives([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records Additive usage for plant batches at a Facility using predefined additive templates.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Plants Additives
@@ -1077,7 +1077,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/additives/usingtemplate")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesAdditivesUsingtemplate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchAdditiveUsingtemplateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesAdditivesUsingtemplate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Applies Facility specific adjustments to plant batches based on submitted reasons and input data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory
@@ -1085,7 +1085,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record adjustments.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/adjust")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the growth phase of plants at a specified Facility based on tracking information.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1093,7 +1093,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to change the growth phase.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/growthphase")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesGrowthPhase([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchGrowthPhaseRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesGrowthPhase([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates packages from plant batches at a Facility, with optional support for packaging from mother plants.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Packages • Create/Submit/Discontinue Packages
@@ -1102,7 +1102,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="isFromMotherPlant">Whether the Package contains a Plant Batch from a mother plant - Boolean. Reference v2/packages/frommotherplant</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/packages")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesPackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchPackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber, [Microsoft.AspNetCore.Mvc.FromQuery] bool? isFromMotherPlant = null);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesPackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber, [Microsoft.AspNetCore.Mvc.FromQuery] bool? isFromMotherPlant = null);
 
         /// <remarks>
         /// Creates packages from mother plants at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Packages • Create/Submit/Discontinue Packages
@@ -1110,7 +1110,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to create packages from a mother plant.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/packages/frommotherplant")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesPackagesFromMotherPlant([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchPackageFromMotherPlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesPackagesFromMotherPlant([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates new plantings for a Facility by generating plant batches based on provided planting details.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory
@@ -1118,7 +1118,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to create the plantings.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/plantings")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesPlantings([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchPlantingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesPlantings([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Splits an existing Plant Batch into multiple groups at the specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory
@@ -1126,7 +1126,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to split the plant batches.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/split")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesSplit([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchSplitRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesSplit([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Moves one or more plant batches to new locations with in a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants
@@ -1134,7 +1134,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to change the Location of the Plant Batch.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/location")]
-        public abstract System.Threading.Tasks.Task PutPlantBatchesLocation([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchLocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantBatchesLocation([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Renames plant batches at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1142,7 +1142,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to rename the Plant Batch.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/name")]
-        public abstract System.Threading.Tasks.Task PutPlantBatchesName([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchNameRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantBatchesName([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Changes the strain of plant batches at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1150,7 +1150,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to change the Strain of the Plant Batch.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/strain")]
-        public abstract System.Threading.Tasks.Task PutPlantBatchesStrain([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchStrainRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantBatchesStrain([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Replaces tags for plant batches at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1158,7 +1158,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to replace Plant Batch tags.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plantbatches/v2/tag")]
-        public abstract System.Threading.Tasks.Task PutPlantBatchesTag([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchTagRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantBatchesTag([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -1172,7 +1172,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility that intends to destroy the plants.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpDelete, Microsoft.AspNetCore.Mvc.Route("plants/v2/")]
-        public abstract System.Threading.Tasks.Task DeletePlants([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task DeletePlants([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves additive records applied to plants at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View/Manage Plants Additives
@@ -1192,7 +1192,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record Plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/additives")]
-        public abstract System.Threading.Tasks.Task PostPlantsAdditives([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantAdditiveRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsAdditives([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of all plant additive types defined within a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: &lt;i&gt;none&lt;/i&gt;
@@ -1309,7 +1309,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record waste.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/waste")]
-        public abstract System.Threading.Tasks.Task PostPlantsWaste([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantWasteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsWaste([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of all available plant waste methods for use within a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: &lt;i&gt;none&lt;/i&gt;
@@ -1372,7 +1372,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record Plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/additives/bylocation")]
-        public abstract System.Threading.Tasks.Task PostPlantsAdditivesByLocation([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantAdditiveByLocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsAdditivesByLocation([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records additive usage for plants by location using a predefined additive template at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Plants Additives
@@ -1380,7 +1380,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record Plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/additives/bylocation/usingtemplate")]
-        public abstract System.Threading.Tasks.Task PostPlantsAdditivesByLocationUsingtemplate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantAdditiveByLocationUsingtemplateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsAdditivesByLocationUsingtemplate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records additive usage for plants using predefined additive templates at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Plants Additives
@@ -1388,7 +1388,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record Plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/additives/usingtemplate")]
-        public abstract System.Threading.Tasks.Task PostPlantsAdditivesUsingtemplate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantAdditiveUsingtemplateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsAdditivesUsingtemplate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates harvest product records from plant batches at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manicure/Harvest Veg/Flower Plants
@@ -1396,7 +1396,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of plants manicured.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/manicure")]
-        public abstract System.Threading.Tasks.Task PostPlantsManicure([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantManicureRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsManicure([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates packages from plant batches at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Veg/Flower Plants • Manage Veg/Flower Plants Inventory • View Packages • Create/Submit/Discontinue Packages
@@ -1404,7 +1404,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of Plant Batch packages.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/plantbatch/packages")]
-        public abstract System.Threading.Tasks.Task PostPlantsPlantBatchPackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantPlantBatchPackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsPlantBatchPackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates new plant batches at a specified Facility from existing plant data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1412,7 +1412,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of plant batches.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v2/plantings")]
-        public abstract System.Threading.Tasks.Task PostPlantsPlantings([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantPlantingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsPlantings([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Changes the growth phases of plants within a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1420,7 +1420,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of plants growth phase.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/growthphase")]
-        public abstract System.Threading.Tasks.Task PutPlantsGrowthPhase([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantGrowthPhaseRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsGrowthPhase([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Processes whole plant Harvest data for a specific Facility. NOTE: If HarvestName is excluded from the request body, or if it is passed in as null, the harvest name is auto-generated.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manicure/Harvest Veg/Flower Plants
@@ -1428,7 +1428,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of Plant harvests.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/harvest")]
-        public abstract System.Threading.Tasks.Task PutPlantsHarvest([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantHarvestRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsHarvest([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Moves plant batches to new locations within a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1436,7 +1436,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of plants moved.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/location")]
-        public abstract System.Threading.Tasks.Task PutPlantsLocation([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantLocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsLocation([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Merges multiple plant groups into a single group within a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manicure/Harvest Veg/Flower Plants
@@ -1444,7 +1444,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of plants merged.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/merge")]
-        public abstract System.Threading.Tasks.Task PutPlantsMerge([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantMergeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsMerge([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Splits an existing plant group into multiple groups within a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Plant
@@ -1452,7 +1452,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update Plant splits.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/split")]
-        public abstract System.Threading.Tasks.Task PutPlantsSplit([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantSplitRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsSplit([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates the strain information for plants within a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1460,7 +1460,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of Plant strains.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/strain")]
-        public abstract System.Threading.Tasks.Task PutPlantsStrain([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantStrainRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsStrain([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Replaces existing plant tags with new tags for plants within a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1468,7 +1468,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to upate the list of Plant tags.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/tag")]
-        public abstract System.Threading.Tasks.Task PutPlantsTag([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantTagRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsTag([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Adjusts the recorded count of plants at a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
@@ -1476,7 +1476,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the Plant count.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plants/v2/adjust")]
-        public abstract System.Threading.Tasks.Task PutPlantsAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantsAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -1578,7 +1578,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility to adjust the Processing Job.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v2/adjust")]
-        public abstract System.Threading.Tasks.Task PostProcessingAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates packages from processing jobs at a Facility, including optional location and note assignments.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
@@ -1586,7 +1586,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to create the packages.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v2/createpackages")]
-        public abstract System.Threading.Tasks.Task PostProcessingCreatePackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingCreatePackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingCreatePackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Creates new processing job types for a Facility, including name, category, description, steps, and attributes.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
@@ -1594,7 +1594,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility of the Job Type.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v2/jobtypes")]
-        public abstract System.Threading.Tasks.Task PostProcessingJobTypes([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingJobTypeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingJobTypes([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing processing job types at a Facility, including their name, category, description, steps, and attributes.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
@@ -1602,7 +1602,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the processing job types.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("processing/v2/jobtypes")]
-        public abstract System.Threading.Tasks.Task PutProcessingJobTypes([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingJobTypeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutProcessingJobTypes([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Initiates new processing jobs at a Facility, including job details and associated packages.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
@@ -1610,7 +1610,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility to start the Processing Job.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v2/start")]
-        public abstract System.Threading.Tasks.Task PostProcessingStart([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingStartRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingStart([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Completes processing jobs at a Facility by recording final notes and waste measurements.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
@@ -1618,7 +1618,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility to finish the Processing Job.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("processing/v2/finish")]
-        public abstract System.Threading.Tasks.Task PutProcessingFinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingFinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutProcessingFinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Reopens previously completed processing jobs at a Facility to allow further updates or corrections.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
@@ -1626,7 +1626,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility to unfinish the Processing Job.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("processing/v2/unfinish")]
-        public abstract System.Threading.Tasks.Task PutProcessingUnfinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingUnfinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutProcessingUnfinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -1656,7 +1656,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to associate the packages and QR codes provided.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("retailid/v2/associate")]
-        public abstract System.Threading.Tasks.Task PostRetailidAssociate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<RetailidAssociateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostRetailidAssociate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Allows you to generate a specific quantity of QR codes. Id value returned (issuance ID) could be used for printing.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Retail ID(Write) • WebApi Retail ID Read Write State (All or WriteOnly) • Industry/View Packages • One of the following: Industry/Facility Type/Can Download Product Label, Licensee/Download Product Label or Admin/Employees/Packages Page/Product Labels(Manage)
@@ -1664,7 +1664,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to associate the packages and QR codes provided.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("retailid/v2/generate")]
-        public abstract System.Threading.Tasks.Task PostRetailidGenerate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<RetailidGenerateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostRetailidGenerate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Merge and adjust one source to one target Package. First Package detected will be processed as target Package. This requires an action reason with name containing the 'Merge' word and setup with 'Package adjustment' area.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Retail ID(Write) • WebApi Retail ID Read Write State (All or WriteOnly) • Key Value Settings/Retail ID Merge Packages Enabled
@@ -1672,7 +1672,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("retailid/v2/merge")]
-        public abstract System.Threading.Tasks.Task PostRetailidMerge([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<RetailidMergeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostRetailidMerge([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves Package information for given list of Package labels.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Retail ID(Write) • WebApi Retail ID Read Write State (All or WriteOnly) • Industry/View Packages • Admin/Employees/Packages Page/Product Labels(Manage)
@@ -1680,7 +1680,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("retailid/v2/packages/info")]
-        public abstract System.Threading.Tasks.Task PostRetailidPackagesInfo([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<RetailidPackageInfoRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostRetailidPackagesInfo([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -1869,7 +1869,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record deliveries.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveries([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveries([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates sales delivery records for a given License Number. Please note: The SalesDateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales Delivery
@@ -1877,7 +1877,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update deliveries.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveries([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveries([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records retailer delivery data for a given License Number, including delivery destinations. Please note: The DateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Sales Deliveries(Write) • Industry/Facility Type/Retailer Delivery • Industry/Facility Type/Consumer Sales Delivery or Industry/Facility Type/Patient Sales Delivery • WebApi Sales Deliveries Read Write State (All or WriteOnly) • WebApi Retail ID Read Write State (All or WriteOnly) - Required for RID only. • External Sources(ThirdPartyVendorV2)/Retail ID(Write) - Required for RID only. • Manage Retailer Delivery
@@ -1885,7 +1885,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record retailer deliveries.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/retailer")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailer([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailer([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates retailer delivery records for a given License Number. Please note: The DateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Sales Deliveries(Write) • Industry/Facility Type/Retailer Delivery • Industry/Facility Type/Consumer Sales Delivery or Industry/Facility Type/Patient Sales Delivery • WebApi Sales Deliveries Read Write State (All or WriteOnly) • WebApi Retail ID Read Write State (All or WriteOnly) - Required for RID only. • External Sources(ThirdPartyVendorV2)/Retail ID(Write) - Required for RID only. • Manage Retailer Delivery
@@ -1893,7 +1893,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update retailer deliveries.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/retailer")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesRetailer([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesRetailer([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Processes the departure of retailer deliveries for a Facility using the provided License Number and delivery data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Sales Deliveries(Write) • Industry/Facility Type/Retailer Delivery • Industry/Facility Type/Consumer Sales Delivery or Industry/Facility Type/Patient Sales Delivery • WebApi Sales Deliveries Read Write State (All or WriteOnly) • Manage Retailer Delivery
@@ -1901,7 +1901,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record depart delivery.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/retailer/depart")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerDepart([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerDepartRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerDepart([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Ends retailer delivery records for a given License Number. Please note: The ActualArrivalDateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Sales Deliveries(Write) • Industry/Facility Type/Retailer Delivery • Industry/Facility Type/Consumer Sales Delivery or Industry/Facility Type/Patient Sales Delivery • WebApi Sales Deliveries Read Write State (All or WriteOnly) • Manage Retailer Delivery
@@ -1909,7 +1909,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record end retailer deliveries.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/retailer/end")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerEnd([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerEndRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerEnd([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records restock deliveries for retailer facilities using the provided License Number. Please note: The DateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Sales Deliveries(Write) • Industry/Facility Type/Retailer Delivery • Industry/Facility Type/Consumer Sales Delivery or Industry/Facility Type/Patient Sales Delivery • WebApi Sales Deliveries Read Write State (All or WriteOnly) • Manage Retailer Delivery
@@ -1917,7 +1917,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record restock retailer deliveries.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/retailer/restock")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerRestock([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerRestockRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerRestock([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records sales deliveries originating from a retailer delivery for a given License Number. Please note: The SalesDateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Sales Deliveries(Write) • Industry/Facility Type/Retailer Delivery • Industry/Facility Type/Consumer Sales Delivery or Industry/Facility Type/Patient Sales Delivery • WebApi Sales Deliveries Read Write State (All or WriteOnly) • WebApi Retail ID Read Write State (All or WriteOnly) - Required for RID only. • External Sources(ThirdPartyVendorV2)/Retail ID(Write) - Required for RID only.
@@ -1925,7 +1925,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record sale from retailer delivery.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/retailer/sale")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerSale([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerSaleRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerSale([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Records a list of sales deliveries for a given License Number. Please note: The SalesDateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: External Sources(ThirdPartyVendorV2)/Sales (Write) • Industry/Facility Type/Consumer Sales or Industry/Facility Type/Patient Sales or Industry/Facility Type/External Patient Sales or Industry/Facility Type/Caregiver Sales • Industry/Facility Type/Advanced Sales • WebApi Sales Read Write State (All or WriteOnly) • WebApi Retail ID Read Write State (All or WriteOnly) - Required for RID only. • External Sources(ThirdPartyVendorV2)/Retail ID(Write) - Required for RID only.
@@ -1933,7 +1933,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record receipts.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v2/receipts")]
-        public abstract System.Threading.Tasks.Task PostSalesReceipts([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleReceiptRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesReceipts([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates sales receipt records for a given License Number. Please note: The SalesDateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales
@@ -1941,7 +1941,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update receipts.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/receipts")]
-        public abstract System.Threading.Tasks.Task PutSalesReceipts([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleReceiptRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesReceipts([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Completes a list of sales deliveries for a Facility using the provided License Number and delivery data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales Delivery
@@ -1949,7 +1949,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update deliveries completed.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/complete")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesComplete([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryCompleteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesComplete([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates hub transporter details for a given License Number. Please note: The SalesDateTime field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales Delivery, Manage Sales Delivery Hub
@@ -1957,7 +1957,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update hub transporters.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/hub")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHub([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHub([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Accepts a list of hub sales deliveries for a Facility based on the provided License Number and delivery data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales Delivery Hub
@@ -1965,7 +1965,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update hub deliveries accepted.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/hub/accept")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubAccept([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubAcceptRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubAccept([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Processes the departure of hub sales deliveries for a Facility using the provided License Number and delivery data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales Delivery Hub
@@ -1973,7 +1973,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update hub delivery departures.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/hub/depart")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubDepart([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubDepartRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubDepart([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Verifies identification for a list of hub sales deliveries using the provided License Number and delivery data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales Delivery Hub
@@ -1981,7 +1981,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update hub delivery Id's.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/deliveries/hub/verifyID")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubVerifyId([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubVerifyIdRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubVerifyId([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Finalizes a list of sales receipts for a Facility using the provided License Number and receipt data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales
@@ -1989,7 +1989,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update finalized receipts.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/receipts/finalize")]
-        public abstract System.Threading.Tasks.Task PutSalesReceiptsFinalize([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleReceiptFinalizeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesReceiptsFinalize([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Unfinalizes a list of sales receipts for a Facility using the provided License Number and receipt data.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Sales
@@ -1997,7 +1997,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update unfinalized receipts.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v2/receipts/unfinalize")]
-        public abstract System.Threading.Tasks.Task PutSalesReceiptsUnfinalize([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleReceiptUnfinalizeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesReceiptsUnfinalize([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -2011,7 +2011,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="userKey">An existing user key to reuse for integrator setup. Provide this if you already have a user key that you want to continue using. If you don't already have a user key, or you would like a new one, do not provide a value.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sandbox/v2/integrator/setup")]
-        public abstract System.Threading.Tasks.Task PostSandboxIntegratorSetup([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SandboxIntegratorSetupRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string? userKey = null);
+        public abstract System.Threading.Tasks.Task PostSandboxIntegratorSetup([Microsoft.AspNetCore.Mvc.FromQuery] string? userKey = null);
 
     }
 
@@ -2063,7 +2063,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of strains.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("strains/v2/")]
-        public abstract System.Threading.Tasks.Task PostStrains([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<StrainRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostStrains([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing strain records for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Strains
@@ -2071,7 +2071,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of strains.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("strains/v2/")]
-        public abstract System.Threading.Tasks.Task PutStrains([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<StrainRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutStrains([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -2123,7 +2123,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to record the list of sublocations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sublocations/v2/")]
-        public abstract System.Threading.Tasks.Task PostSublocations([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SublocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSublocations([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing sublocation records for a specified Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Locations
@@ -2131,7 +2131,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of sublocations.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sublocations/v2/")]
-        public abstract System.Threading.Tasks.Task PutSublocations([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SublocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSublocations([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -2303,7 +2303,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to create a Shipment Template.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("transfers/v2/templates/outgoing")]
-        public abstract System.Threading.Tasks.Task PostTransfersTemplatesOutgoing([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferTemplateOutgoingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostTransfersTemplatesOutgoing([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing transfer templates for a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Transfer Templates
@@ -2311,7 +2311,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update shipment plan templates.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("transfers/v2/templates/outgoing")]
-        public abstract System.Threading.Tasks.Task PutTransfersTemplatesOutgoing([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferTemplateOutgoingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutTransfersTemplatesOutgoing([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of delivery package templates for a given Transfer Template Delivery Id. Please note: The {id} parameter above represents a Transfer Template Delivery Id, not a Manifest Number.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Transfer Templates • View Transfer Templates
@@ -2372,7 +2372,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number for which to create a Shipment Plan.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("transfers/v2/external/incoming")]
-        public abstract System.Threading.Tasks.Task PostTransfersExternalIncoming([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferExternalIncomingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostTransfersExternalIncoming([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates external incoming shipment plans for a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Transfers
@@ -2380,7 +2380,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update external incoming shipment plans.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("transfers/v2/external/incoming")]
-        public abstract System.Threading.Tasks.Task PutTransfersExternalIncoming([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferExternalIncomingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutTransfersExternalIncoming([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -2436,7 +2436,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to create a Driver.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("transporters/v2/drivers")]
-        public abstract System.Threading.Tasks.Task PostTransportersDrivers([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransporterDriverRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostTransportersDrivers([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing driver records for a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Transporters
@@ -2444,7 +2444,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of drivers.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("transporters/v2/drivers")]
-        public abstract System.Threading.Tasks.Task PutTransportersDrivers([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransporterDriverRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutTransportersDrivers([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Retrieves a list of vehicles for a Facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Transporters
@@ -2462,7 +2462,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to create a Vehicle.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("transporters/v2/vehicles")]
-        public abstract System.Threading.Tasks.Task PostTransportersVehicles([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransporterVehicleRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostTransportersVehicles([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Updates existing vehicle records for a facility.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Transporters
@@ -2470,7 +2470,7 @@ namespace OpenMetrc.V2.Builder.Controllers
         /// <param name="licenseNumber">The License Number of the Facility for which to update the list of vehicles.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("transporters/v2/vehicles")]
-        public abstract System.Threading.Tasks.Task PutTransportersVehicles([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransporterVehicleRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutTransportersVehicles([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 

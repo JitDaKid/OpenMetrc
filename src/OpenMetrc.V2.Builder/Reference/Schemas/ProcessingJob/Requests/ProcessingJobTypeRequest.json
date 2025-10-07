@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProcessingJobTypeRequest",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Category": {
+      "type": "string"
+    },
+    "ProcessingSteps": {
+      "type": "string"
+    },
+    "Attributes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Attribute"
+      }
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "CategoryName": {
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "Attribute": {
+      "type": "string"
+    }
+  }
+}

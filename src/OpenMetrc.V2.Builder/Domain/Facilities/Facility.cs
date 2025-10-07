@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.Employees;
 
 namespace OpenMetrc.Builder.Domain.Facilities;
 
@@ -38,6 +39,6 @@ public partial record Facility
     public FacilityType? FacilityType { get; init; }
 
     [JsonPropertyName("License")]
-    public object? License { get; init; }
+    public License? License { get; init; }
 
 }

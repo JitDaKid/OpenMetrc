@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantWasteByIdPlant",
+  "type": "object",
+  "properties": {
+    "PlantWasteId": {
+      "type": "integer"
+    },
+    "PlantId": {
+      "type": "integer"
+    },
+    "Label": {
+      "type": "string"
+    },
+    "StateName": {
+      "type": "string"
+    },
+    "GrowthPhase": {
+      "type": "integer"
+    },
+    "LocationId": {
+      "type": "integer"
+    },
+    "LocationName": {
+      "type": "string"
+    },
+    "SublocationId": {
+      "type": "integer"
+    },
+    "WasteAmount": {
+      "type": "number"
+    },
+    "WasteUnitOfMeasureAbbreviation": {
+      "type": "string"
+    }
+  }
+}

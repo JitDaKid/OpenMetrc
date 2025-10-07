@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "LabTestRecordRequest",
+  "type": "object",
+  "properties": {
+    "Label": {
+      "type": "string"
+    },
+    "ResultDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "DocumentFileName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "DocumentFileBase64": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "Results": {
+      "type": "array",
+      "items": {
+        "title": "Results",
+        "$ref": "#/definitions/Result"
+      }
+    }
+  },
+  "definitions": {
+    "Result": {
+      "title": "Results",
+      "type": "object",
+      "properties": {
+        "LabTestTypeName": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "Passed": {
+          "type": "boolean"
+        },
+        "Notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

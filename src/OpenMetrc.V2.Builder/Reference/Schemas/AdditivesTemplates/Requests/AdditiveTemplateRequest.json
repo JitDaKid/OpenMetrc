@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "AdditiveTemplateRequest",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "AdditiveType": {
+      "type": "string"
+    },
+    "ApplicationDevice": {
+      "type": "string"
+    },
+    "EpaRegistrationNumber": {
+      "type": "string"
+    },
+    "Note": {
+      "type": "string"
+    },
+    "ProductSupplier": {
+      "type": "string"
+    },
+    "ProductTradeName": {
+      "type": "string"
+    },
+    "RestrictiveEntryIntervalQuantityDescription": {
+      "type": "string"
+    },
+    "RestrictiveEntryIntervalTimeDescription": {
+      "type": "string"
+    },
+    "ActiveIngredients": {
+      "type": "array",
+      "items": {
+        "title": "ActiveIngredients",
+        "$ref": "#/definitions/ActiveIngredient"
+      }
+    },
+    "Id": {
+      "type": "integer"
+    }
+  },
+  "definitions": {
+    "ActiveIngredient": {
+      "title": "ActiveIngredients",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string"
+        },
+        "Percentage": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

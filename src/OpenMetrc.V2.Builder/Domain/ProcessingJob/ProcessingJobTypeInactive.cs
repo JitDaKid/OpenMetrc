@@ -29,6 +29,6 @@ public partial record ProcessingJobTypeInactive
     public string? ProcessingSteps { get; init; }
 
     [JsonPropertyName("Attributes")]
-    public ICollection<object>? Attributes { get; init; }
+    public ICollection<Attributes>? Attributes { get; init; }
 
 }

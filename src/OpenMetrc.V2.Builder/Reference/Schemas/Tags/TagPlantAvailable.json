@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TagPlantAvailable",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "TagInventoryTypeName": {
+      "type": "string"
+    },
+    "MaxGroupSize": {
+      "type": "integer"
+    },
+    "FacilityId": {
+      "type": "integer"
+    },
+    "Label": {
+      "type": "string"
+    }
+  }
+}

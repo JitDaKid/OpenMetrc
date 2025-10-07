@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleTransactionByDateRange",
+  "type": "object",
+  "properties": {
+    "PackageId": {
+      "type": "integer"
+    },
+    "PackageLabel": {
+      "type": "string"
+    },
+    "ProductName": {
+      "type": "string"
+    },
+    "QuantitySold": {
+      "type": "number"
+    },
+    "UnitOfMeasureName": {
+      "type": "string"
+    },
+    "UnitOfMeasureAbbreviation": {
+      "type": "string"
+    },
+    "TotalPrice": {
+      "type": "number"
+    },
+    "RecordedDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "StrainActive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "TestingStatus": {
+      "type": "string"
+    },
+    "IndicaPercentage": {
+      "type": "number"
+    },
+    "SativaPercentage": {
+      "type": "number"
+    },
+    "IsUsed": {
+      "type": "boolean"
+    },
+    "Genetics": {
+      "type": "string"
+    }
+  }
+}

@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.ProcessingJob.Requests;
+using OpenMetrc.Builder.Domain.Transfers.Requests;
 
 namespace OpenMetrc.Builder.Domain.Sales;
 
@@ -170,7 +172,7 @@ public partial record Destinations
     public ICollection<Transporters>? Transporters { get; init; }
 
     [JsonPropertyName("Packages")]
-    public ICollection<object>? Packages { get; init; }
+    public ICollection<Packages>? Packages { get; init; }
 
     [JsonPropertyName("TransferDestinationId")]
     public object? TransferDestinationId { get; init; }

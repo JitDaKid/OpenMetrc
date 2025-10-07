@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "RetailidAssociateRequest",
+  "type": "object",
+  "properties": {
+    "PackageLabel": {
+      "type": "string"
+    },
+    "QrUrls": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/QrUrl"
+      }
+    }
+  },
+  "definitions": {
+    "QrUrl": {
+      "type": "string"
+    }
+  }
+}

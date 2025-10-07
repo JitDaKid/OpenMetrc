@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferDeliveryByIdTransporterDetail",
+  "type": "object",
+  "properties": {
+    "DriverName": {
+      "type": "string"
+    },
+    "DriverOccupationalLicenseNumber": {
+      "type": "string"
+    },
+    "DriverVehicleLicenseNumber": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    }
+  }
+}

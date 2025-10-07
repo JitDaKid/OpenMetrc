@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ItemInactive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "ProductCategoryName": {
+      "type": "string"
+    },
+    "ProductCategoryType": {
+      "type": "string"
+    },
+    "IsExpirationDateRequired": {
+      "type": "boolean"
+    },
+    "HasExpirationDate": {
+      "type": "boolean"
+    },
+    "IsSellByDateRequired": {
+      "type": "boolean"
+    },
+    "HasSellByDate": {
+      "type": "boolean"
+    },
+    "IsUseByDateRequired": {
+      "type": "boolean"
+    },
+    "HasUseByDate": {
+      "type": "boolean"
+    },
+    "QuantityType": {
+      "type": "string"
+    },
+    "DefaultLabTestingState": {
+      "type": "string"
+    },
+    "UnitOfMeasureName": {
+      "type": "string"
+    },
+    "ApprovalStatus": {
+      "type": "string"
+    },
+    "ApprovalStatusDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "StrainId": {
+      "type": "integer",
+      "x-nullable": true
+    },
+    "StrainName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "ItemBrandId": {
+      "type": "integer"
+    },
+    "ProductImages": {
+      "type": "array",
+      "items": {}
+    },
+    "LabelImages": {
+      "type": "array",
+      "items": {}
+    },
+    "PackagingImages": {
+      "type": "array",
+      "items": {}
+    },
+    "ProductPDFDocuments": {
+      "type": "array",
+      "items": {}
+    },
+    "IsUsed": {
+      "type": "boolean"
+    },
+    "LabTestBatchNames": {
+      "type": "array",
+      "items": {}
+    },
+    "UnitThcContent": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "UnitThcContentUnitOfMeasureName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "UnitWeight": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "UnitWeightUnitOfMeasureName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "UnitVolume": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "UnitVolumeUnitOfMeasureName": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

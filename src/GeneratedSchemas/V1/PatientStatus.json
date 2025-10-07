@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PatientStatus",
+  "type": "object",
+  "properties": {
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "Active": {
+      "type": "boolean"
+    },
+    "FlowerOuncesAllowed": {
+      "type": "number"
+    },
+    "ThcOuncesAllowed": {
+      "type": "number"
+    },
+    "ConcentrateOuncesAllowed": {
+      "type": "number"
+    },
+    "InfusedOuncesAllowed": {
+      "type": "number"
+    },
+    "FlowerOuncesPurchased": {
+      "type": "number"
+    },
+    "ThcOuncesPurchased": {
+      "type": "number"
+    },
+    "ConcentrateOuncesPurchased": {
+      "type": "number"
+    },
+    "InfusedOuncesPurchased": {
+      "type": "number"
+    },
+    "FlowerOuncesAvailable": {
+      "type": "number"
+    },
+    "ThcOuncesAvailable": {
+      "type": "number"
+    },
+    "ConcentrateOuncesAvailable": {
+      "type": "number"
+    },
+    "InfusedOuncesAvailable": {
+      "type": "number"
+    },
+    "PurchaseAmountDays": {
+      "type": "number"
+    }
+  }
+}

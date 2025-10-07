@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProcessingInactive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Number": {
+      "type": "string"
+    },
+    "JobTypeId": {
+      "type": "integer"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "TotalCount": {
+      "type": "number"
+    },
+    "CountUnitOfMeasureId": {
+      "type": "integer"
+    },
+    "CountUnitOfMeasureName": {
+      "type": "string"
+    },
+    "TotalVolume": {
+      "type": "number"
+    },
+    "VolumeUnitOfMeasureId": {
+      "type": "integer"
+    },
+    "VolumeUnitOfMeasureName": {
+      "type": "string"
+    },
+    "TotalWeight": {
+      "type": "number"
+    },
+    "WeightUnitOfMeasureId": {
+      "type": "integer"
+    },
+    "WeightUnitOfMeasureName": {
+      "type": "string"
+    },
+    "Packages": {
+      "type": "array",
+      "items": {}
+    },
+    "IsFinished": {
+      "type": "boolean"
+    }
+  }
+}

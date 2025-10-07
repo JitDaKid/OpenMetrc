@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleTransaction",
+  "type": "object",
+  "properties": {
+    "SalesDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "TotalTransactions": {
+      "type": "integer"
+    },
+    "TotalPackages": {
+      "type": "integer"
+    },
+    "TotalPrice": {
+      "type": "number"
+    }
+  }
+}

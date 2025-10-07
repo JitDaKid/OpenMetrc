@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProductCategory",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "ProductCategoryType": {
+      "type": "integer"
+    },
+    "QuantityType": {
+      "type": "integer"
+    },
+    "RequiresStrain": {
+      "type": "boolean"
+    },
+    "RequiresItemBrand": {
+      "type": "boolean"
+    },
+    "RequiresAdministrationMethod": {
+      "type": "boolean"
+    },
+    "RequiresUnitCbdPercent": {
+      "type": "boolean"
+    },
+    "RequiresUnitCbdContent": {
+      "type": "boolean"
+    },
+    "RequiresUnitCbdContentDose": {
+      "type": "boolean"
+    },
+    "RequiresUnitCbdAPercent": {
+      "type": "boolean"
+    },
+    "RequiresUnitCbdAContent": {
+      "type": "boolean"
+    },
+    "RequiresUnitCbdAContentDose": {
+      "type": "boolean"
+    },
+    "RequiresUnitThcPercent": {
+      "type": "boolean"
+    },
+    "RequiresUnitThcContent": {
+      "type": "boolean"
+    },
+    "RequiresUnitThcContentDose": {
+      "type": "boolean"
+    },
+    "RequiresUnitThcAPercent": {
+      "type": "boolean"
+    },
+    "RequiresUnitThcAContent": {
+      "type": "boolean"
+    },
+    "RequiresUnitThcAContentDose": {
+      "type": "boolean"
+    },
+    "RequiresUnitVolume": {
+      "type": "boolean"
+    },
+    "RequiresUnitWeight": {
+      "type": "boolean"
+    },
+    "RequiresServingSize": {
+      "type": "boolean"
+    },
+    "RequiresSupplyDurationDays": {
+      "type": "boolean"
+    },
+    "RequiresNumberOfDoses": {
+      "type": "boolean"
+    },
+    "RequiresPublicIngredients": {
+      "type": "boolean"
+    },
+    "RequiresDescription": {
+      "type": "boolean"
+    },
+    "RequiresAllergens": {
+      "type": "boolean"
+    },
+    "RequiresProductPhotos": {
+      "type": "integer"
+    },
+    "RequiresProductPhotoDescription": {
+      "type": "boolean"
+    },
+    "RequiresLabelPhotos": {
+      "type": "integer"
+    },
+    "RequiresLabelPhotoDescription": {
+      "type": "boolean"
+    },
+    "RequiresPackagingPhotos": {
+      "type": "integer"
+    },
+    "RequiresPackagingPhotoDescription": {
+      "type": "boolean"
+    },
+    "CanContainSeeds": {
+      "type": "boolean"
+    },
+    "CanBeRemediated": {
+      "type": "boolean"
+    },
+    "CanBeDecontaminated": {
+      "type": "boolean"
+    },
+    "CanBeDestroyed": {
+      "type": "boolean"
+    },
+    "RequiresProductPDFDocuments": {
+      "type": "integer"
+    },
+    "LabTestBatchNames": {
+      "type": "array",
+      "items": {}
+    }
+  }
+}

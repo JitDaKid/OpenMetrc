@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchGrowthPhaseRequest",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "Count": {
+      "type": "integer"
+    },
+    "StartingTag": {
+      "type": "string"
+    },
+    "GrowthPhase": {
+      "type": "string"
+    },
+    "NewLocation": {
+      "type": "string"
+    },
+    "NewSublocation": {
+      "type": "string"
+    },
+    "GrowthDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    }
+  }
+}

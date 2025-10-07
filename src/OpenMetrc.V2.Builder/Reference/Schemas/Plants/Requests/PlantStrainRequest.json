@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantStrainRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "StrainId": {
+      "type": "integer"
+    }
+  }
+}

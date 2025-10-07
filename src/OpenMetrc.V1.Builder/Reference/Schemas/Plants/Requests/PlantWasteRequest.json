@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantWasteRequest",
+  "type": "object",
+  "properties": {
+    "WasteMethodName": {
+      "type": "string"
+    },
+    "MixedMaterial": {
+      "type": "string"
+    },
+    "WasteWeight": {
+      "type": "number"
+    },
+    "UnitOfMeasureName": {
+      "type": "string"
+    },
+    "ReasonName": {
+      "type": "string"
+    },
+    "Note": {
+      "type": "string"
+    },
+    "LocationName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "SublocationName": {
+      "type": "string"
+    },
+    "WasteDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "PlantLabels": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PlantLabel"
+      }
+    }
+  },
+  "definitions": {
+    "PlantLabel": {
+      "type": "string"
+    }
+  }
+}

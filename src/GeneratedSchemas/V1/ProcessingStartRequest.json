@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProcessingStartRequest",
+  "type": "object",
+  "properties": {
+    "JobName": {
+      "type": "string"
+    },
+    "JobType": {
+      "type": "string"
+    },
+    "CountUnitOfMeasure": {
+      "type": "string"
+    },
+    "VolumeUnitOfMeasure": {
+      "type": "string"
+    },
+    "WeightUnitOfMeasure": {
+      "type": "string"
+    },
+    "Packages": {
+      "type": "array",
+      "items": {
+        "title": "Packages",
+        "$ref": "#/definitions/Package"
+      }
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "definitions": {
+    "Package": {
+      "title": "Packages",
+      "type": "object",
+      "properties": {
+        "Label": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

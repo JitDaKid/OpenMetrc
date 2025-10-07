@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ProductLabel",
+  "type": "object",
+  "properties": {
+    "PackageId": {
+      "type": "integer"
+    },
+    "TagId": {},
+    "QrCount": {
+      "type": "integer"
+    },
+    "IsDiscontinued": {
+      "type": "boolean"
+    },
+    "IsChildFromParentWithLabel": {
+      "type": "boolean"
+    },
+    "LastLabelGenerationDate": {},
+    "IsActive": {
+      "type": "boolean"
+    }
+  }
+}

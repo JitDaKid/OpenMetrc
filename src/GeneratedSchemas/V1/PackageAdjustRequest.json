@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PackageAdjustRequest",
+  "type": "object",
+  "properties": {
+    "Label": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "AdjustmentReason": {
+      "type": "string"
+    },
+    "AdjustmentDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "ReasonNote": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

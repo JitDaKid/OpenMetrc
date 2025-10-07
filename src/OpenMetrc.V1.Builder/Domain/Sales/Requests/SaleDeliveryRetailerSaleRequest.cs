@@ -41,6 +41,6 @@ public partial record SaleDeliveryRetailerSaleRequest
     public DateTimeOffset? EstimatedArrivalDateTime { get; init; }
 
     [JsonPropertyName("Transactions")]
-    public ICollection<object>? Transactions { get; init; }
+    public ICollection<Transactions>? Transactions { get; init; }
 
 }

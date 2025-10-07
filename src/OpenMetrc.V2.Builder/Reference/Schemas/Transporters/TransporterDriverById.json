@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransporterDriverById",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "FacilityId": {
+      "type": "integer"
+    },
+    "EmployeeId": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "DriversLicenseNumber": {
+      "type": "string"
+    }
+  }
+}

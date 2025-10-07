@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantBatchWasteRequest",
+  "type": "object",
+  "properties": {
+    "WasteMethodName": {
+      "type": "string"
+    },
+    "MixedMaterial": {
+      "type": "string"
+    },
+    "WasteWeight": {
+      "type": "number"
+    },
+    "UnitOfMeasureName": {
+      "type": "string"
+    },
+    "ReasonName": {
+      "type": "string"
+    },
+    "Note": {
+      "type": "string"
+    },
+    "WasteDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "PlantBatchName": {
+      "type": "string"
+    }
+  }
+}

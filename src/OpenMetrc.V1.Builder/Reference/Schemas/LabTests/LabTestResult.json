@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "LabTestResult",
+  "type": "object",
+  "properties": {
+    "PackageId": {
+      "type": "integer"
+    },
+    "LabTestResultId": {
+      "type": "integer"
+    },
+    "LabFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "LabFacilityName": {
+      "type": "string"
+    },
+    "SourcePackageLabel": {
+      "type": "string"
+    },
+    "ProductName": {
+      "type": "string"
+    },
+    "ProductCategoryName": {
+      "type": "string"
+    },
+    "TestPerformedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "OverallPassed": {
+      "type": "boolean"
+    },
+    "ResultReleased": {
+      "type": "boolean"
+    },
+    "ResultReleaseDateTime": {
+      "type": "string",
+      "format": "date-time",
+      "x-nullable": true
+    },
+    "TestTypeName": {
+      "type": "string"
+    },
+    "TestPassed": {
+      "type": "boolean"
+    },
+    "TestResultLevel": {
+      "type": "number"
+    },
+    "TestComment": {
+      "type": "string"
+    },
+    "TestInformationalOnly": {
+      "type": "boolean"
+    }
+  }
+}

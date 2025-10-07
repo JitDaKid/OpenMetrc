@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PlantAdjustRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer",
+      "x-nullable": true
+    },
+    "AdjustCount": {
+      "type": "integer"
+    },
+    "AdjustReason": {
+      "type": "string"
+    },
+    "ReasonNote": {
+      "type": "string"
+    },
+    "AdjustmentDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Label": {
+      "type": "string",
+      "x-nullable": true
+    }
+  }
+}

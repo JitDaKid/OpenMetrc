@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleDeliveryRetailerRequest",
+  "type": "object",
+  "properties": {
+    "DateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "DriverEmployeeId": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriversLicenseNumber": {
+      "type": "string"
+    },
+    "PhoneNumberForQuestions": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "Destinations": {
+      "type": "array",
+      "items": {
+        "title": "Destinations",
+        "$ref": "#/definitions/Destination"
+      }
+    },
+    "Packages": {
+      "type": "array",
+      "items": {
+        "title": "Packages",
+        "$ref": "#/definitions/Package"
+      }
+    },
+    "Id": {
+      "type": "integer"
+    }
+  },
+  "definitions": {
+    "QrCode": {
+      "type": "string"
+    },
+    "Transaction": {
+      "title": "Transactions",
+      "type": "object",
+      "properties": {
+        "PackageLabel": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        },
+        "TotalAmount": {
+          "type": "number"
+        },
+        "UnitThcPercent": {},
+        "UnitThcContent": {},
+        "UnitThcContentUnitOfMeasure": {},
+        "UnitWeight": {},
+        "UnitWeightUnitOfMeasure": {},
+        "InvoiceNumber": {},
+        "Price": {},
+        "ExciseTax": {},
+        "CityTax": {},
+        "CountyTax": {},
+        "MunicipalTax": {},
+        "DiscountAmount": {},
+        "SubTotal": {},
+        "SalesTax": {},
+        "QrCodes": {}
+      }
+    },
+    "Anonymous3": {
+      "type": "string"
+    },
+    "Anonymous4": {
+      "type": "object",
+      "properties": {
+        "PackageLabel": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        },
+        "TotalAmount": {
+          "type": "number"
+        },
+        "UnitThcPercent": {},
+        "UnitThcContent": {},
+        "UnitThcContentUnitOfMeasure": {},
+        "UnitWeight": {},
+        "UnitWeightUnitOfMeasure": {},
+        "InvoiceNumber": {},
+        "Price": {},
+        "ExciseTax": {},
+        "CityTax": {},
+        "CountyTax": {},
+        "MunicipalTax": {},
+        "DiscountAmount": {},
+        "SubTotal": {},
+        "SalesTax": {},
+        "QrCodes": {}
+      }
+    },
+    "Destination": {
+      "title": "Destinations",
+      "type": "object",
+      "properties": {
+        "SalesCustomerType": {
+          "type": "string"
+        },
+        "PatientLicenseNumber": {},
+        "ConsumerId": {
+          "type": "string"
+        },
+        "RecipientName": {},
+        "RecipientAddressStreet1": {
+          "type": "string"
+        },
+        "RecipientAddressStreet2": {
+          "type": "string"
+        },
+        "RecipientAddressCity": {
+          "type": "string"
+        },
+        "RecipientAddressCounty": {},
+        "RecipientAddressState": {
+          "type": "string"
+        },
+        "RecipientAddressPostalCode": {
+          "type": "string"
+        },
+        "RecipientZoneId": {
+          "type": "string"
+        },
+        "EstimatedArrivalDateTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Transactions": {
+          "type": "array",
+          "items": {
+            "title": "Transactions",
+            "$ref": "#/definitions/Transaction"
+          }
+        }
+      }
+    },
+    "Package": {
+      "title": "Packages",
+      "type": "object",
+      "properties": {
+        "DateTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "PackageLabel": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        },
+        "TotalPrice": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

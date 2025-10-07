@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferType",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "TransactionType": {
+      "type": "string"
+    },
+    "ForLicensedShipments": {
+      "type": "boolean"
+    },
+    "ForExternalIncomingShipments": {
+      "type": "boolean"
+    },
+    "ForExternalOutgoingShipments": {
+      "type": "boolean"
+    },
+    "RequiresDestinationGrossWeight": {
+      "type": "boolean"
+    },
+    "RequiresPackagesGrossWeight": {
+      "type": "boolean"
+    },
+    "RequiresInvoiceNumber": {
+      "type": "boolean"
+    },
+    "RequiresPDFDocument": {
+      "type": "boolean"
+    },
+    "ExternalIncomingCanRecordExternalIdentifier": {
+      "type": "boolean"
+    },
+    "ExternalIncomingExternalIdentifierRequired": {
+      "type": "boolean"
+    },
+    "ExternalOutgoingCanRecordExternalIdentifier": {
+      "type": "boolean"
+    },
+    "ExternalOutgoingExternalIdentifierRequired": {
+      "type": "boolean"
+    }
+  }
+}

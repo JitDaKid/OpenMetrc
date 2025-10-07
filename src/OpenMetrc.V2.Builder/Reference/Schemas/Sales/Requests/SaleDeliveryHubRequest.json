@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SaleDeliveryHubRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "TransporterFacilityId": {
+      "type": "string"
+    },
+    "DriverEmployeeId": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriversLicenseNumber": {
+      "type": "string"
+    },
+    "PhoneNumberForQuestions": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    },
+    "PlannedRoute": {
+      "type": "string"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EstimatedArrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

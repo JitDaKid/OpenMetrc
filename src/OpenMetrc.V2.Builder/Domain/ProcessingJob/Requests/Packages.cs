@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.RetailId;
 
 namespace OpenMetrc.Builder.Domain.ProcessingJob.Requests;
 

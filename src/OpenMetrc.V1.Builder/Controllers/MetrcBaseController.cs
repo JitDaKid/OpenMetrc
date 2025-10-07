@@ -157,49 +157,49 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v1/create/packages")]
-        public abstract System.Threading.Tasks.Task PostHarvestsCreatePackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestCreatePackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsCreatePackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Manage Harvests • View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v1/create/packages/testing")]
-        public abstract System.Threading.Tasks.Task PostHarvestsCreatePackagesTesting([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestCreatePackageTestingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsCreatePackagesTesting([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Finish/Discontinue Harvests
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v1/finish")]
-        public abstract System.Threading.Tasks.Task PostHarvestsFinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestFinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsFinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Manage Harvests
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v1/removewaste")]
-        public abstract System.Threading.Tasks.Task PostHarvestsRemoveWaste([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestRemoveWasteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsRemoveWaste([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Finish/Discontinue Harvests
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("harvests/v1/unfinish")]
-        public abstract System.Threading.Tasks.Task PostHarvestsUnfinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestUnfinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostHarvestsUnfinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Manage Harvests
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("harvests/v1/move")]
-        public abstract System.Threading.Tasks.Task PutHarvestsMove([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestMoveRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutHarvestsMove([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Harvests • Manage Harvests
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("harvests/v1/rename")]
-        public abstract System.Threading.Tasks.Task PutHarvestsRename([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<HarvestRenameRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutHarvestsRename([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -268,7 +268,7 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// <param name="licenseNumber">The license number of the facility for which to create new items.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("items/v1/create")]
-        public abstract System.Threading.Tasks.Task PostItemsCreate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemCreateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostItemsCreate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// This endpoint allows only BMP, GIF, JPG, and PNG files and uploaded files can be no more than 5 MB in size.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Manage Items
@@ -276,14 +276,14 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// <param name="licenseNumber">The license number of the facility for which to add an image.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("items/v1/photo")]
-        public abstract System.Threading.Tasks.Task PostItemsPhoto([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemPhotoRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostItemsPhoto([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Items
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("items/v1/update")]
-        public abstract System.Threading.Tasks.Task PostItemsUpdate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ItemUpdateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostItemsUpdate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -325,21 +325,21 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("labtests/v1/record")]
-        public abstract System.Threading.Tasks.Task PostLabTestsRecord([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LabTestRecordRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostLabTestsRecord([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("labtests/v1/labtestdocument")]
-        public abstract System.Threading.Tasks.Task PutLabTestsLabTestDocument([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LabTestLabTestDocumentRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutLabTestsLabTestDocument([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("labtests/v1/results/release")]
-        public abstract System.Threading.Tasks.Task PutLabTestsResultsRelease([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LabTestResultReleaseRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutLabTestsResultsRelease([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -383,14 +383,14 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("locations/v1/create")]
-        public abstract System.Threading.Tasks.Task PostLocationsCreate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LocationCreateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostLocationsCreate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Locations
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("locations/v1/update")]
-        public abstract System.Threading.Tasks.Task PostLocationsUpdate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<LocationUpdateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostLocationsUpdate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -463,70 +463,70 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/adjust")]
-        public abstract System.Threading.Tasks.Task PostPackagesAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/change/item")]
-        public abstract System.Threading.Tasks.Task PostPackagesChangeItem([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageChangeItemRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesChangeItem([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/change/locations")]
-        public abstract System.Threading.Tasks.Task PostPackagesChangeLocations([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageChangeLocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesChangeLocations([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/create")]
-        public abstract System.Threading.Tasks.Task PostPackagesCreate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageCreateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesCreate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants • View Packages • Manage Packages Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/create/plantings")]
-        public abstract System.Threading.Tasks.Task PostPackagesCreatePlantings([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageCreatePlantingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesCreatePlantings([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/create/testing")]
-        public abstract System.Threading.Tasks.Task PostPackagesCreateTesting([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageCreateTestingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesCreateTesting([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/finish")]
-        public abstract System.Threading.Tasks.Task PostPackagesFinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageFinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesFinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/remediate")]
-        public abstract System.Threading.Tasks.Task PostPackagesRemediate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageRemediateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesRemediate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("packages/v1/unfinish")]
-        public abstract System.Threading.Tasks.Task PostPackagesUnfinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageUnfinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPackagesUnfinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Packages • Manage Packages Inventory • Manage Package Notes
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("packages/v1/change/note")]
-        public abstract System.Threading.Tasks.Task PutPackagesChangeNote([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PackageChangeNoteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPackagesChangeNote([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -553,14 +553,14 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("patient-checkins/v1/")]
-        public abstract System.Threading.Tasks.Task PostPatientCheckIns([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientCheckInRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPatientCheckIns([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: ManagePatientsCheckIns
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("patient-checkins/v1/")]
-        public abstract System.Threading.Tasks.Task PutPatientCheckIns([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientCheckInRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPatientCheckIns([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: &lt;i&gt;none&lt;/i&gt;
@@ -603,14 +603,14 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("patients/v1/add")]
-        public abstract System.Threading.Tasks.Task PostPatientsAdd([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientAddRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPatientsAdd([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Patients
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("patients/v1/update")]
-        public abstract System.Threading.Tasks.Task PostPatientsUpdate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PatientUpdateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPatientsUpdate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -637,7 +637,7 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpDelete, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/")]
-        public abstract System.Threading.Tasks.Task DeletePlantBatches([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task DeletePlantBatches([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants
@@ -687,63 +687,63 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// <param name="licenseNumber">The license number of the facility for which to record plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/additives")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesAdditives([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchAdditiveRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesAdditives([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/adjust")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/changegrowthphase")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesChangeGrowthPhase([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchChangeGrowthPhaseRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesChangeGrowthPhase([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/createpackages")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesCreatePackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchCreatePackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber, [Microsoft.AspNetCore.Mvc.FromQuery] bool? isFromMotherPlant = null);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesCreatePackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber, [Microsoft.AspNetCore.Mvc.FromQuery] bool? isFromMotherPlant = null);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/createplantings")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesCreatePlantings([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchCreatePlantingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesCreatePlantings([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/create/packages/frommotherplant")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesCreatePackagesFromMotherPlant([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchCreatePackageFromMotherPlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesCreatePackagesFromMotherPlant([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/split")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesSplit([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchSplitRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesSplit([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Plants Waste
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/waste")]
-        public abstract System.Threading.Tasks.Task PostPlantBatchesWaste([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchWasteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantBatchesWaste([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("plantbatches/v1/moveplantbatches")]
-        public abstract System.Threading.Tasks.Task PutPlantBatchesMovePlantBatches([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantBatchMovePlantBatchRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutPlantBatchesMovePlantBatches([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -756,7 +756,7 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpDelete, Microsoft.AspNetCore.Mvc.Route("plants/v1/")]
-        public abstract System.Threading.Tasks.Task DeletePlants([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task DeletePlants([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View/Manage Plants Additives
@@ -774,7 +774,7 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// <param name="licenseNumber">The license number of the facility for which to record plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/additives")]
-        public abstract System.Threading.Tasks.Task PostPlantsAdditives([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantAdditiveRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsAdditives([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: &lt;i&gt;none&lt;/i&gt;
@@ -867,56 +867,56 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// <param name="licenseNumber">The license number of the facility for which to record plant additives.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/additives/bylocation")]
-        public abstract System.Threading.Tasks.Task PostPlantsAdditivesByLocation([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantAdditiveByLocationRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsAdditivesByLocation([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/changegrowthphases")]
-        public abstract System.Threading.Tasks.Task PostPlantsChangeGrowthPhases([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantChangeGrowthPhaseRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsChangeGrowthPhases([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Veg/Flower Plants • Manage Veg/Flower Plants Inventory • View Packages • Create/Submit/Discontinue Packages
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/create/plantbatch/packages")]
-        public abstract System.Threading.Tasks.Task PostPlantsCreatePlantBatchPackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantCreatePlantBatchPackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsCreatePlantBatchPackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Immature Plants • Manage Immature Plants Inventory • View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/create/plantings")]
-        public abstract System.Threading.Tasks.Task PostPlantsCreatePlantings([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantCreatePlantingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsCreatePlantings([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// NOTE: If HarvestName is excluded from the request body, or if it is passed in as null, the harvest name is auto-generated.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manicure/Harvest Veg/Flower Plants
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/harvestplants")]
-        public abstract System.Threading.Tasks.Task PostPlantsHarvestPlants([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantHarvestPlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsHarvestPlants([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manicure/Harvest Veg/Flower Plants
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/manicureplants")]
-        public abstract System.Threading.Tasks.Task PostPlantsManicurePlants([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantManicurePlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsManicurePlants([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: View Veg/Flower Plants • Manage Veg/Flower Plants Inventory
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/moveplants")]
-        public abstract System.Threading.Tasks.Task PostPlantsMovePlants([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantMovePlantRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsMovePlants([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Plants Waste
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("plants/v1/waste")]
-        public abstract System.Threading.Tasks.Task PostPlantsWaste([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<PlantWasteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostPlantsWaste([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -999,49 +999,49 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v1/adjust")]
-        public abstract System.Threading.Tasks.Task PostProcessingAdjust([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingAdjustRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingAdjust([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: ManageProcessingJobs
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v1/createpackages")]
-        public abstract System.Threading.Tasks.Task PostProcessingCreatePackages([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingCreatePackageRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingCreatePackages([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v1/jobtypes")]
-        public abstract System.Threading.Tasks.Task PostProcessingJobTypes([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingJobTypeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingJobTypes([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("processing/v1/jobtypes")]
-        public abstract System.Threading.Tasks.Task PutProcessingJobTypes([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingJobTypeRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutProcessingJobTypes([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: ManageProcessingJobs
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("processing/v1/start")]
-        public abstract System.Threading.Tasks.Task PostProcessingStart([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingStartRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostProcessingStart([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("processing/v1/finish")]
-        public abstract System.Threading.Tasks.Task PutProcessingFinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingFinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutProcessingFinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Processing Job
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("processing/v1/unfinish")]
-        public abstract System.Threading.Tasks.Task PutProcessingUnfinish([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<ProcessingUnfinishRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutProcessingUnfinish([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -1212,70 +1212,70 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveries([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveries([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The SalesDateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Sales Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveries([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveries([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The DateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Retailer Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/retailer")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailer([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailer([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The DateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Retailer Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/retailer")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesRetailer([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesRetailer([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Retailer Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/retailer/depart")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerDepart([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerDepartRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerDepart([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The ActualArrivalDateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Retailer Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/retailer/end")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerEnd([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerEndRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerEnd([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The DateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Retailer Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/retailer/restock")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerRestock([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerRestockRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerRestock([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The SalesDateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Retailer Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/retailer/sale")]
-        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerSale([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryRetailerSaleRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesDeliveriesRetailerSale([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The SalesDateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Sales
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/receipts")]
-        public abstract System.Threading.Tasks.Task PostSalesReceipts([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleReceiptRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesReceipts([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The SalesDateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Sales
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/receipts")]
-        public abstract System.Threading.Tasks.Task PutSalesReceipts([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleReceiptRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesReceipts([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Sales
@@ -1283,7 +1283,7 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// <param name="licenseNumber">The license number of the facility for which to append the sales transactions on the specified date.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("sales/v1/transactions/{date}")]
-        public abstract System.Threading.Tasks.Task PostSalesTransactions([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleTransactionRequest> body, DateOnly date, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostSalesTransactions(DateOnly date, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Sales
@@ -1291,42 +1291,42 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// <param name="licenseNumber">The license number of the facility for which to update the sales transactions on the specified date.</param>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/transactions/{date}")]
-        public abstract System.Threading.Tasks.Task PutSalesTransactions([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleTransactionRequest> body, DateOnly date, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesTransactions(DateOnly date, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Sales Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/complete")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesComplete([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryCompleteRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesComplete([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The SalesDateTime field must be the actual date and time of the transaction without time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be Pacific Standard (or Daylight Savings) Time and not in UTC.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Sales Delivery
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/hub")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHub([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHub([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Sales
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/hub/accept")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubAccept([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubAcceptRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubAccept([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Sales
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/hub/depart")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubDepart([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubDepartRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubDepart([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Sales
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("sales/v1/deliveries/hub/verifyID")]
-        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubVerifyId([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<SaleDeliveryHubVerifyIdRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutSalesDeliveriesHubVerifyId([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -1362,14 +1362,14 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("strains/v1/create")]
-        public abstract System.Threading.Tasks.Task PostStrainsCreate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<StrainCreateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostStrainsCreate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Manage Strains
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("strains/v1/update")]
-        public abstract System.Threading.Tasks.Task PostStrainsUpdate([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<StrainUpdateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostStrainsUpdate([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 
@@ -1472,14 +1472,14 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("transfers/v1/templates")]
-        public abstract System.Threading.Tasks.Task PostTransfersTemplates([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferTemplateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostTransfersTemplates([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Transfer Templates
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("transfers/v1/templates")]
-        public abstract System.Threading.Tasks.Task PutTransfersTemplates([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferTemplateRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutTransfersTemplates([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// Please note: The {id} parameter above represents a Transfer Template Delivery ID, not a Manifest Number.&lt;br/&gt;&lt;b&gt;Permissions Required&lt;/b&gt;: Transfers
@@ -1528,14 +1528,14 @@ namespace OpenMetrc.V1.Builder.Controllers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("transfers/v1/external/incoming")]
-        public abstract System.Threading.Tasks.Task PostTransfersExternalIncoming([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferExternalIncomingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PostTransfersExternalIncoming([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
         /// <remarks>
         /// &lt;b&gt;Permissions Required&lt;/b&gt;: Transfers
         /// </remarks>
         /// <returns>Ok</returns>
         [Microsoft.AspNetCore.Mvc.HttpPut, Microsoft.AspNetCore.Mvc.Route("transfers/v1/external/incoming")]
-        public abstract System.Threading.Tasks.Task PutTransfersExternalIncoming([System.ComponentModel.DataAnnotations.Required] System.Collections.Generic.List<TransferExternalIncomingRequest> body, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
+        public abstract System.Threading.Tasks.Task PutTransfersExternalIncoming([Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber);
 
     }
 

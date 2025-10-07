@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PackageCreatePlantingRequest",
+  "type": "object",
+  "properties": {
+    "PackageLabel": {
+      "type": "string"
+    },
+    "PackageAdjustmentAmount": {
+      "type": "number",
+      "x-nullable": true
+    },
+    "PackageAdjustmentUnitOfMeasureName": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "PlantBatchName": {
+      "type": "string"
+    },
+    "PlantBatchType": {
+      "type": "string"
+    },
+    "PlantCount": {
+      "type": "integer"
+    },
+    "LocationName": {
+      "type": "string"
+    },
+    "SublocationName": {
+      "type": "string"
+    },
+    "StrainName": {
+      "type": "string"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "PlantedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "UnpackagedDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "HarvestRemoveWasteRequest",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "WasteType": {
+      "type": "string"
+    },
+    "UnitOfWeight": {
+      "type": "string"
+    },
+    "WasteWeight": {
+      "type": "number"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

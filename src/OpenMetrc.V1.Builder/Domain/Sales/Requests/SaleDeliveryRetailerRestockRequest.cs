@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using OpenMetrc.Builder.Domain.ProcessingJob.Requests;
 
 namespace OpenMetrc.Builder.Domain.Sales.Requests;
 
@@ -14,6 +15,6 @@ public partial record SaleDeliveryRetailerRestockRequest
     public DateTimeOffset? EstimatedDepartureDateTime { get; init; }
 
     [JsonPropertyName("Packages")]
-    public ICollection<object>? Packages { get; init; }
+    public ICollection<Packages>? Packages { get; init; }
 
 }

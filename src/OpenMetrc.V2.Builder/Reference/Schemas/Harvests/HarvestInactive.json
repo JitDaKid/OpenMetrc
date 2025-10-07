@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "HarvestInactive",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "HarvestType": {
+      "type": "string"
+    },
+    "SourceStrainCount": {
+      "type": "integer"
+    },
+    "Strains": {
+      "type": "array",
+      "items": {}
+    },
+    "DryingLocationId": {
+      "type": "integer"
+    },
+    "DryingLocationName": {
+      "type": "string"
+    },
+    "DryingSublocationId": {
+      "type": "integer"
+    },
+    "CurrentWeight": {
+      "type": "number"
+    },
+    "TotalWasteWeight": {
+      "type": "number"
+    },
+    "PlantCount": {
+      "type": "integer"
+    },
+    "TotalWetWeight": {
+      "type": "number"
+    },
+    "TotalRestoredWeight": {
+      "type": "number"
+    },
+    "PackageCount": {
+      "type": "integer"
+    },
+    "TotalPackagedWeight": {
+      "type": "number"
+    },
+    "UnitOfWeightName": {
+      "type": "string"
+    },
+    "IsOnHold": {
+      "type": "boolean"
+    },
+    "HarvestStartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "FinishedDate": {
+      "type": "string",
+      "format": "date",
+      "x-nullable": true
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ArchivedDate": {
+      "type": "string",
+      "format": "date",
+      "x-nullable": true
+    }
+  }
+}

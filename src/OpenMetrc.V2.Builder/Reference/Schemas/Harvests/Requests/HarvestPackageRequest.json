@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "HarvestPackageRequest",
+  "type": "object",
+  "properties": {
+    "Tag": {
+      "type": "string"
+    },
+    "Item": {
+      "type": "string"
+    },
+    "UnitOfWeight": {
+      "type": "string"
+    },
+    "PatientLicenseNumber": {
+      "type": "string"
+    },
+    "Note": {
+      "type": "string",
+      "x-nullable": true
+    },
+    "IsProductionBatch": {
+      "type": "boolean"
+    },
+    "IsTradeSample": {
+      "type": "boolean"
+    },
+    "IsDonation": {
+      "type": "boolean"
+    },
+    "ProductRequiresRemediation": {
+      "type": "boolean"
+    },
+    "RemediateProduct": {
+      "type": "boolean"
+    },
+    "ProductRequiresDecontamination": {
+      "type": "boolean"
+    },
+    "DecontaminateProduct": {
+      "type": "boolean"
+    },
+    "ActualDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Ingredients": {
+      "type": "array",
+      "items": {
+        "title": "Ingredients",
+        "$ref": "#/definitions/Ingredient"
+      }
+    },
+    "ProcessingJobTypeId": {
+      "type": "integer",
+      "x-nullable": true
+    },
+    "LabTestStageId": {
+      "type": "integer",
+      "x-nullable": true
+    },
+    "RequiredLabTestBatches": {
+      "type": "array",
+      "items": {}
+    },
+    "ProductionBatchNumber": {
+      "type": "string",
+      "x-nullable": true
+    }
+  },
+  "definitions": {
+    "Ingredient": {
+      "title": "Ingredients",
+      "type": "object",
+      "properties": {
+        "HarvestId": {},
+        "HarvestName": {
+          "type": "string"
+        },
+        "Weight": {
+          "type": "number"
+        },
+        "UnitOfWeight": {
+          "type": "string"
+        },
+        "Package": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "number"
+        },
+        "UnitOfMeasure": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

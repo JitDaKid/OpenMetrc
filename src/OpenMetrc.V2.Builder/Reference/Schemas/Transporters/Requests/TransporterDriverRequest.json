@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransporterDriverRequest",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "DriversLicenseNumber": {
+      "type": "string"
+    },
+    "EmployeeId": {
+      "type": "string"
+    },
+    "Id": {
+      "type": "string"
+    }
+  }
+}

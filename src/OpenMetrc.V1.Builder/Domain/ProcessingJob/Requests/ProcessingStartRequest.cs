@@ -20,7 +20,7 @@ public partial record ProcessingStartRequest
     public string? WeightUnitOfMeasure { get; init; }
 
     [JsonPropertyName("Packages")]
-    public ICollection<object>? Packages { get; init; }
+    public ICollection<Packages>? Packages { get; init; }
 
     [JsonPropertyName("StartDate")]
     public DateOnly? StartDate { get; init; }

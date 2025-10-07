@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PatientById",
+  "type": "object",
+  "properties": {
+    "PatientId": {
+      "type": "integer"
+    },
+    "LicenseNumber": {
+      "type": "string"
+    },
+    "RegistrationDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LicenseEffectiveStartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LicenseEffectiveEndDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "RecommendedPlants": {
+      "type": "integer"
+    },
+    "RecommendedSmokableQuantity": {
+      "type": "number"
+    },
+    "HasSalesLimitExemption": {
+      "type": "boolean"
+    },
+    "OtherFacilitiesCount": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "PackageChangeItemRequest",
+  "type": "object",
+  "properties": {
+    "Label": {
+      "type": "string"
+    },
+    "Item": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Packages",
+  "type": "object",
+  "properties": {
+    "Label": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "PackageId": {
+      "type": "integer"
+    },
+    "PackageLabel": {
+      "type": "string"
+    },
+    "ProductName": {},
+    "ProductCategoryName": {},
+    "ItemStrainName": {},
+    "ItemUnitCbdPercent": {},
+    "ItemUnitCbdContent": {},
+    "ItemUnitCbdContentUnitOfMeasureName": {},
+    "ItemUnitCbdContentDose": {},
+    "ItemUnitCbdContentDoseUnitOfMeasureName": {},
+    "ItemUnitThcPercent": {},
+    "ItemUnitThcContent": {},
+    "ItemUnitThcContentUnitOfMeasureName": {},
+    "ItemUnitThcContentDose": {},
+    "ItemUnitThcContentDoseUnitOfMeasureName": {},
+    "ItemUnitVolume": {},
+    "ItemUnitVolumeUnitOfMeasureName": {},
+    "ItemUnitWeight": {},
+    "ItemUnitWeightUnitOfMeasureName": {},
+    "ItemServingSize": {},
+    "ItemSupplyDurationDays": {},
+    "ItemUnitQuantity": {},
+    "ItemUnitQuantityUnitOfMeasureName": {},
+    "UnitOfMeasureName": {
+      "type": "string"
+    },
+    "UnitOfMeasureAbbreviation": {},
+    "TotalPrice": {
+      "type": "number"
+    },
+    "RetailerDeliveryState": {},
+    "ArchivedDate": {},
+    "RecordedDateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "RecordedByUserName": {},
+    "CompletedDateTime": {},
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "IsOnRecall": {},
+    "DateTime": {
+      "type": "string",
+      "format": "date"
+    },
+    "EndQuantity": {
+      "type": "number"
+    },
+    "EndUnitOfMeasure": {
+      "type": "string"
+    },
+    "RemoveCurrentPackage": {
+      "type": "boolean"
+    },
+    "ItemName": {
+      "type": "string"
+    },
+    "PackagedDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "ExpirationDate": {},
+    "SellByDate": {},
+    "UseByDate": {},
+    "GrossWeight": {
+      "type": "number"
+    },
+    "GrossUnitOfWeightName": {
+      "type": "string"
+    },
+    "WholesalePrice": {},
+    "ExternalId": {
+      "type": "string"
+    }
+  }
+}

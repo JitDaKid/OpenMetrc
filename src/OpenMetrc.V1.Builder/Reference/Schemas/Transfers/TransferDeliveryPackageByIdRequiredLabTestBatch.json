@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TransferDeliveryPackageByIdRequiredLabTestBatch",
+  "type": "object",
+  "properties": {
+    "PackageId": {
+      "type": "integer"
+    },
+    "LabTestBatchId": {
+      "type": "integer"
+    },
+    "LabTestBatchName": {
+      "type": "string"
+    }
+  }
+}

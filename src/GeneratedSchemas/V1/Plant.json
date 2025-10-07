@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Plant",
+  "type": "object",
+  "properties": {
+    "Ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Id"
+      }
+    }
+  },
+  "definitions": {
+    "Id": {
+      "type": "integer"
+    }
+  }
+}

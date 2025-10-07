@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TagStaged",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "integer"
+    },
+    "TagInventoryTypeName": {
+      "type": "string"
+    },
+    "MaxGroupSize": {
+      "type": "integer"
+    },
+    "FacilityId": {
+      "type": "integer"
+    },
+    "Label": {
+      "type": "string"
+    },
+    "IsUsed": {
+      "type": "boolean"
+    },
+    "IsArchived": {
+      "type": "boolean"
+    },
+    "LastModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "IsStaged": {
+      "type": "boolean"
+    },
+    "ProductLabel": {
+      "x-nullable": true,
+      "$ref": "#/definitions/ProductLabel"
+    },
+    "QrCount": {
+      "type": "integer",
+      "x-nullable": true
+    }
+  },
+  "definitions": {
+    "ProductLabel": {
+      "title": "ProductLabel",
+      "type": "object",
+      "properties": {
+        "PackageId": {},
+        "TagId": {
+          "type": "integer"
+        },
+        "QrCount": {
+          "type": "integer"
+        },
+        "IsDiscontinued": {
+          "type": "boolean"
+        },
+        "IsChildFromParentWithLabel": {
+          "type": "boolean"
+        },
+        "LastLabelGenerationDate": {},
+        "IsActive": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

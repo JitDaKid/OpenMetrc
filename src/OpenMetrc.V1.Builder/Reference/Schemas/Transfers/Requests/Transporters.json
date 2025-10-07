@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Transporters",
+  "type": "object",
+  "properties": {
+    "TransporterFacilityLicenseNumber": {
+      "type": "string"
+    },
+    "DriverOccupationalLicenseNumber": {
+      "type": "string"
+    },
+    "DriverName": {
+      "type": "string"
+    },
+    "DriverLicenseNumber": {
+      "type": "string"
+    },
+    "DriverLayoverLeg": {
+      "type": "string"
+    },
+    "PhoneNumberForQuestions": {
+      "type": "string"
+    },
+    "VehicleMake": {
+      "type": "string"
+    },
+    "VehicleModel": {
+      "type": "string"
+    },
+    "VehicleLicensePlateNumber": {
+      "type": "string"
+    },
+    "IsLayover": {
+      "type": "boolean"
+    },
+    "EstimatedDepartureDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EstimatedArrivalDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "TransporterDetails": {}
+  }
+}
