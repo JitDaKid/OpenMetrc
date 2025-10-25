@@ -3,13 +3,14 @@
 public partial class MetrcService : ITransferClient
 {
     [MapsToApi(MetrcEndpoint.get_transfers_v2_hub)]
-    Task<TransferHubMetrcWrapper> ITransferClient.GetTransferHubAsync(string licenseNumber,
-        int? pageNumber, int? pageSize,
+    Task<TransferHubMetrcWrapper> ITransferClient.GetTransferHubAsync(
+        string licenseNumber, int? pageNumber, int? pageSize,
+        DateTimeOffset? salesDeliveryStartDate, DateTimeOffset? salesDeliveryEndDate,
         DateTimeOffset? lastModifiedStart, DateTimeOffset? lastModifiedEnd,
         CancellationToken cancellationToken) =>
         !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
             ? Task.FromResult(new TransferHubMetrcWrapper())
-            : TransferClient.GetTransferHubAsync(licenseNumber, pageNumber, pageSize, lastModifiedStart, lastModifiedEnd, cancellationToken);
+            : TransferClient.GetTransferHubAsync(licenseNumber, pageNumber, pageSize, salesDeliveryStartDate, salesDeliveryEndDate, lastModifiedStart, lastModifiedEnd, cancellationToken);
 
     [MapsToApi(MetrcEndpoint.get_transfers_v2_incoming)]
     Task<TransferMetrcWrapper> ITransferClient.GetTransferIncomingAsync(string licenseNumber,

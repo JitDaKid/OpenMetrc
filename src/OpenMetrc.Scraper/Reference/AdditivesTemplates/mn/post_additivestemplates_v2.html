@@ -1,0 +1,89 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="additivestemplates">
+		Additives Templates
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-mn.metrc.com/</code></h3>
+	<h3 id="post_additivestemplates_v2_">POST /additivestemplates/v2/</h3>
+	<p>Creates new additive templates for a specified Facility.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>Manage Additives</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to record the list of additives.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>POST /additivestemplates/v2/?licenseNumber=123-ABC<code>[
+  {
+    "Name": "Additive 1",
+    "AdditiveType": "Fertilizer",
+    "ApplicationDevice": "Sprayer",
+    "EpaRegistrationNumber": "123456",
+    "Note": "This is a note",
+    "ProductSupplier": "Supplier",
+    "ProductTradeName": "Trade Name",
+    "RestrictiveEntryIntervalQuantityDescription": "1",
+    "RestrictiveEntryIntervalTimeDescription": "1 day",
+    "ActiveIngredients": [
+      {
+        "Name": "Ingredient 1 1",
+        "Percentage": 1.1
+      },
+      {
+        "Name": "Ingredient 1 2",
+        "Percentage": 1.2
+      }
+    ]
+  },
+  {
+    "Name": "Additive 2",
+    "AdditiveType": "Pesticide",
+    "ApplicationDevice": "Dropper",
+    "EpaRegistrationNumber": "654321",
+    "Note": "This is a note",
+    "ProductSupplier": "Supplier",
+    "ProductTradeName": "Trade Name",
+    "RestrictiveEntryIntervalQuantityDescription": "2",
+    "RestrictiveEntryIntervalTimeDescription": "2 days",
+    "ActiveIngredients": [
+      {
+        "Name": "Ingredient 2 1",
+        "Percentage": 2.1
+      },
+      {
+        "Name": "Ingredient 2 2",
+        "Percentage": 2.2
+      }
+    ]
+  }
+]</code></pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "Ids": [
+    1,
+    2
+  ],
+  "Warnings": null
+}</code></pre>
+</section>

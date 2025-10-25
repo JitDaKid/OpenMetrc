@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-gu.metrc.com/</code></h3>
 	<h3 id="get_transfers_v2_{id}_deliveries">GET /transfers/v2/{id}/deliveries</h3>
-	<p><strong>Please note:</strong> The <code>{id}</code> parameter above represents a Transfer ID.</p>
+	<p>Retrieves a list of shipment deliveries for a given Transfer Id.<strong> Please note:</strong> The <code>{id}</code> parameter above represents a Transfer Id.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -33,20 +33,23 @@
 	</table>
 
 	<h4>Example Request</h4>
-	<pre>GET /transfers/v2/1&pageNumber=1&pageSize=10/deliveries</pre>
+	<pre>GET /transfers/v2/1/deliveries?pageNumber=1&pageSize=10</pre>
 
 	<h4>Example Response</h4>
 	<pre><code>{
   "Data": [
     {
       "Id": 1,
+      "ManifestNumber": null,
+      "DeliveryNumber": 0,
       "RecipientFacilityLicenseNumber": "123-ABC",
       "RecipientFacilityName": "Lofty Med-Cultivation A",
       "ShipmentTypeName": "Transfer",
       "ShipmentTransactionType": "Standard",
+      "InvoiceNumber": null,
       "EstimatedDepartureDateTime": "2016-10-11T14:48:30.000",
       "ActualDepartureDateTime": null,
-      "EstimatedArrivalDateTime": "2016-10-11T16:50:00.000",
+      "EstimatedArrivalDateTime": "2016-10-11T16:50:00Z",
       "ActualArrivalDateTime": null,
       "GrossWeight": null,
       "GrossUnitOfWeightId": null,
@@ -59,7 +62,8 @@
       "ActualReturnDepartureDateTime": null,
       "EstimatedReturnArrivalDateTime": null,
       "ActualReturnArrivalDateTime": null,
-      "RejectedPackagesReturned": false
+      "RejectedPackagesReturned": false,
+      "PDFDocumentFileSystemId": null
     }
   ],
   "Total": 1,

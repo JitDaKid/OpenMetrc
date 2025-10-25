@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-mi.metrc.com/</code></h3>
 	<h3 id="get_transfers_v2_templates_outgoing_deliveries_{id}_transporters">GET /transfers/v2/templates/outgoing/deliveries/{id}/transporters</h3>
-	<p><strong>Please note:</strong> The <code>{id}</code> parameter above represents a Transfer Template Delivery ID, not a Manifest Number.</p>
+	<p>Retrieves a list of transporter templates for a given Transfer Template Delivery Id.<strong> Please note:</strong> The <code>{id}</code> parameter above represents a Transfer Template Delivery Id, not a Manifest Number.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -33,7 +33,7 @@
 	</table>
 
 	<h4>Example Request</h4>
-	<pre>GET /transfers/v2/templates/outgoing/deliveries/1&pageNumber=1&pageSize=10/transporters</pre>
+	<pre>GET /transfers/v2/templates/outgoing/deliveries/1/transporters?pageNumber=1&pageSize=10</pre>
 
 	<h4>Example Response</h4>
 	<pre><code>{

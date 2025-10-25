@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-gu.metrc.com/</code></h3>
 	<h3 id="put_plants_v2_location">PUT /plants/v2/location</h3>
-	<p></p>
+	<p>Moves plant batches to new locations within a specified Facility.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to update the list of plants moved.</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to update the list of plants moved.</td></tr>
 		</tbody>
 	</table>
 
@@ -38,12 +38,14 @@
     "Id": null,
     "Label": "ABCDEF012345670000000001",
     "Location": "Plants Location",
+    "Sublocation": "Plants Sublocation",
     "ActualDate": "2015-12-15"
   },
   {
     "Id": 2,
     "Label": null,
     "Location": "Plants Location",
+    "Sublocation": "Plants Sublocation",
     "ActualDate": "2015-12-15"
   }
 ]</code></pre>

@@ -1,0 +1,203 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="items">
+		Items
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-ky.metrc.com/</code></h3>
+	<h3 id="post_items_v2_">POST /items/v2/</h3>
+	<p>Creates one or more new products for the specified Facility. NOTE: To include a photo with an item, first use POST /items/v2/photo to POST the photo, and then use the returned Id in the request body in this endpoint.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>Manage Items</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to create new items.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>POST /items/v2/?licenseNumber=123-ABC<code>[
+  {
+    "ItemCategory": "Buds",
+    "Name": "Buds Item",
+    "GlobalProductName": null,
+    "UnitOfMeasure": "Ounces",
+    "Strain": "Spring Hill Kush",
+    "ItemBrand": null,
+    "AdministrationMethod": null,
+    "UnitCbdPercent": null,
+    "UnitCbdContent": null,
+    "UnitCbdContentUnitOfMeasure": null,
+    "UnitCbdContentDose": null,
+    "UnitCbdContentDoseUnitOfMeasure": null,
+    "UnitThcPercent": null,
+    "UnitThcContent": null,
+    "UnitThcContentUnitOfMeasure": null,
+    "UnitThcContentDose": null,
+    "UnitThcContentDoseUnitOfMeasure": null,
+    "UnitCbdAPercent": null,
+    "UnitCbdAContent": null,
+    "UnitCbdAContentUnitOfMeasure": null,
+    "UnitCbdAContentDose": null,
+    "UnitCbdAContentDoseUnitOfMeasure": null,
+    "UnitThcAPercent": null,
+    "UnitThcAContent": null,
+    "UnitThcAContentUnitOfMeasure": null,
+    "UnitThcAContentDose": null,
+    "UnitThcAContentDoseUnitOfMeasure": null,
+    "UnitVolume": null,
+    "UnitVolumeUnitOfMeasure": null,
+    "UnitWeight": null,
+    "UnitWeightUnitOfMeasure": null,
+    "ServingSize": null,
+    "SupplyDurationDays": null,
+    "NumberOfDoses": null,
+    "PublicIngredients": null,
+    "ItemIngredients": null,
+    "Description": null,
+    "Allergens": null,
+    "ProductImageFileSystemIds": null,
+    "ProductPhotoDescription": null,
+    "LabelImageFileSystemIds": null,
+    "LabelPhotoDescription": null,
+    "PackagingImageFileSystemIds": null,
+    "PackagingPhotoDescription": null,
+    "ProductPDFFileSystemIds": null,
+    "ProcessingJobCategoryName": null,
+    "ProcessingJobTypeName": "PJT-1"
+  },
+  {
+    "ItemCategory": "Infused (edible)",
+    "Name": "Infused Item",
+    "GlobalProductName": null,
+    "UnitOfMeasure": "Each",
+    "Strain": null,
+    "ItemBrand": null,
+    "AdministrationMethod": null,
+    "UnitCbdPercent": null,
+    "UnitCbdContent": null,
+    "UnitCbdContentUnitOfMeasure": null,
+    "UnitCbdContentDose": null,
+    "UnitCbdContentDoseUnitOfMeasure": null,
+    "UnitThcPercent": null,
+    "UnitThcContent": 10.0,
+    "UnitThcContentUnitOfMeasure": "Milligrams",
+    "UnitThcContentDose": null,
+    "UnitThcContentDoseUnitOfMeasure": null,
+    "UnitCbdAPercent": null,
+    "UnitCbdAContent": null,
+    "UnitCbdAContentUnitOfMeasure": null,
+    "UnitCbdAContentDose": null,
+    "UnitCbdAContentDoseUnitOfMeasure": null,
+    "UnitThcAPercent": null,
+    "UnitThcAContent": null,
+    "UnitThcAContentUnitOfMeasure": null,
+    "UnitThcAContentDose": null,
+    "UnitThcAContentDoseUnitOfMeasure": null,
+    "UnitVolume": null,
+    "UnitVolumeUnitOfMeasure": null,
+    "UnitWeight": 150.0,
+    "UnitWeightUnitOfMeasure": "Milligrams",
+    "ServingSize": null,
+    "SupplyDurationDays": null,
+    "NumberOfDoses": null,
+    "PublicIngredients": null,
+    "ItemIngredients": null,
+    "Description": null,
+    "Allergens": "Allergens",
+    "ProductImageFileSystemIds": [
+      5
+    ],
+    "ProductPhotoDescription": "Product Photo Description",
+    "LabelImageFileSystemIds": [
+      3
+    ],
+    "LabelPhotoDescription": "Label Photo Description",
+    "PackagingImageFileSystemIds": [
+      22
+    ],
+    "PackagingPhotoDescription": "Packaging Photo Description",
+    "ProductPDFFileSystemIds": [
+      22
+    ],
+    "ProcessingJobCategoryName": null,
+    "ProcessingJobTypeName": "PJT-1"
+  },
+  {
+    "ItemCategory": "Infused (edible)",
+    "Name": "Infused Juice",
+    "GlobalProductName": null,
+    "UnitOfMeasure": "Each",
+    "Strain": null,
+    "ItemBrand": null,
+    "AdministrationMethod": null,
+    "UnitCbdPercent": null,
+    "UnitCbdContent": null,
+    "UnitCbdContentUnitOfMeasure": null,
+    "UnitCbdContentDose": null,
+    "UnitCbdContentDoseUnitOfMeasure": null,
+    "UnitThcPercent": null,
+    "UnitThcContent": 10.0,
+    "UnitThcContentUnitOfMeasure": "Milligrams",
+    "UnitThcContentDose": 5.0,
+    "UnitThcContentDoseUnitOfMeasure": "Milligrams",
+    "UnitCbdAPercent": null,
+    "UnitCbdAContent": null,
+    "UnitCbdAContentUnitOfMeasure": null,
+    "UnitCbdAContentDose": null,
+    "UnitCbdAContentDoseUnitOfMeasure": null,
+    "UnitThcAPercent": null,
+    "UnitThcAContent": null,
+    "UnitThcAContentUnitOfMeasure": null,
+    "UnitThcAContentDose": null,
+    "UnitThcAContentDoseUnitOfMeasure": null,
+    "UnitVolume": 150.0,
+    "UnitVolumeUnitOfMeasure": "Milliliters",
+    "UnitWeight": null,
+    "UnitWeightUnitOfMeasure": null,
+    "ServingSize": null,
+    "SupplyDurationDays": null,
+    "NumberOfDoses": 2.0,
+    "PublicIngredients": null,
+    "ItemIngredients": null,
+    "Description": null,
+    "Allergens": null,
+    "ProductImageFileSystemIds": null,
+    "ProductPhotoDescription": null,
+    "LabelImageFileSystemIds": null,
+    "LabelPhotoDescription": null,
+    "PackagingImageFileSystemIds": null,
+    "PackagingPhotoDescription": null,
+    "ProductPDFFileSystemIds": null,
+    "ProcessingJobCategoryName": "Category 1",
+    "ProcessingJobTypeName": "PJT-1"
+  }
+]</code></pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "Ids": [
+    1,
+    2,
+    3
+  ],
+  "Warnings": null
+}</code></pre>
+</section>

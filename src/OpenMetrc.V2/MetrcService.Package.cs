@@ -2,6 +2,31 @@
 
 public partial class MetrcService : IPackageClient
 {
+    [MapsToApi(MetrcEndpoint.get_packages_v2_transferred)]
+    Task<PackageTransferredMetrcWrapper> IPackageClient.GetPackageTransferredAsync(
+        string licenseNumber, int? pageNumber, int? pageSize,
+        DateTimeOffset? lastModifiedStart, DateTimeOffset? lastModifiedEnd,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PackageTransferredMetrcWrapper())
+            : PackageClient.GetPackageTransferredAsync(licenseNumber, pageNumber, pageSize, lastModifiedStart, lastModifiedEnd, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.put_packages_v2_decontaminate)]
+    Task IPackageClient.PutPackageDecontaminateAsync(
+        string licenseNumber, IEnumerable<PutPackageDecontaminateRequest> body,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : PackageClient.PutPackageDecontaminateAsync(licenseNumber, body, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.put_packages_v2_externalid)]
+    Task IPackageClient.PutPackageExternalidAsync(
+        string licenseNumber, IEnumerable<PutPackageExternalidRequest> body,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : PackageClient.PutPackageExternalidAsync(licenseNumber, body, cancellationToken);
+
     [MapsToApi(MetrcEndpoint.get_packages_v2_id)]
     Task<Package> IPackageClient.GetPackageByIdAsync(long id, string? licenseNumber,
         CancellationToken cancellationToken) =>

@@ -2,6 +2,14 @@
 
 public partial class MetrcService : ITagClient
 {
+    [MapsToApi(MetrcEndpoint.get_tags_v2_staged)]
+    Task<ICollection<StagedTag>> ITagClient.GetTagStagedAsync(
+        string licenseNumber,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult<ICollection<StagedTag>>(new List<StagedTag>())
+            : TagClient.GetTagStagedAsync(licenseNumber, cancellationToken);
+
     [MapsToApi(MetrcEndpoint.get_tags_v2_plant_available)]
     Task<ICollection<Tag>?> ITagClient.GetTagPlantAvailableAsync(string licenseNumber,
         CancellationToken cancellationToken) =>

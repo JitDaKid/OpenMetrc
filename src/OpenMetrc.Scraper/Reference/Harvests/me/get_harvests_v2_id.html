@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-me.metrc.com/</code></h3>
 	<h3 id="get_harvests_v2_{id}">GET /harvests/v2/{id}</h3>
-	<p></p>
+	<p>Retrieves a Harvest by its Id, optionally validated against a specified Facility License Number.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -45,6 +45,8 @@
   "Strains": [],
   "DryingLocationId": 1,
   "DryingLocationName": "Harvest Location",
+  "DryingSublocationId": 0,
+  "DryingSublocationName": null,
   "DryingLocationTypeName": null,
   "PatientLicenseNumber": null,
   "CurrentWeight": 0.0,
@@ -61,7 +63,6 @@
   "HarvestStartDate": "2014-11-19",
   "FinishedDate": null,
   "ArchivedDate": null,
-  "IsOnTrip": false,
   "LastModified": "2014-11-19T00:00:00+00:00"
 }</code></pre>
 </section>

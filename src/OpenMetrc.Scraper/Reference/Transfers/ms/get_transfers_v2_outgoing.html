@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-ms.metrc.com/</code></h3>
 	<h3 id="get_transfers_v2_outgoing">GET /transfers/v2/outgoing</h3>
-	<p></p>
+	<p>Retrieves a list of outgoing shipments for a Facility, optionally filtered by last modified date range.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to return outgoing transfers.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to return outgoing transfers.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
 		</tbody>
 	</table>
 
@@ -41,6 +41,7 @@
     {
       "Id": 1,
       "ManifestNumber": "0000000001",
+      "InvoiceNumber": null,
       "ShipmentLicenseType": 0,
       "ShipperFacilityLicenseNumber": "123-ABC",
       "ShipperFacilityName": "Lofty Med-Cultivation B",
@@ -83,7 +84,8 @@
       "EstimatedReturnDepartureDateTime": null,
       "ActualReturnDepartureDateTime": null,
       "EstimatedReturnArrivalDateTime": null,
-      "ActualReturnArrivalDateTime": null
+      "ActualReturnArrivalDateTime": null,
+      "OriginatingTemplateId": null
     }
   ],
   "Total": 1,

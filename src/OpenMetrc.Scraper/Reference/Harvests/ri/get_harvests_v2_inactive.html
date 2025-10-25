@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-ri.metrc.com/</code></h3>
 	<h3 id="get_harvests_v2_inactive">GET /harvests/v2/inactive</h3>
-	<p></p>
+	<p>Retrieves a list of inactive harvests for a specified Facility.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -28,7 +28,7 @@
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to return the list of inactive harvests.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to return the list of inactive harvests.</td></tr><tr><td><strong>pageNumber</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of the data page from which to return data.</td></tr><tr><td><strong>pageSize</strong><br><span class="text-muted"><em>optional</em></span><br></td><td>The number of records to return per page. Pagination is currently disabled by default. You can enable pagination on this query by specifying a value that does not exceed 20.</td></tr><tr><td><strong>lastModifiedStart</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified start timestamp</td></tr><tr><td><strong>lastModifiedEnd</strong><br><span class="text-muted"><em>optional</em></span></td><td>The last modified end timestamp</td></tr>
 		</tbody>
 	</table>
 
@@ -47,6 +47,8 @@
       "Strains": [],
       "DryingLocationId": 1,
       "DryingLocationName": "Harvest Location",
+      "DryingSublocationId": 0,
+      "DryingSublocationName": null,
       "DryingLocationTypeName": null,
       "PatientLicenseNumber": null,
       "CurrentWeight": 0.0,
@@ -63,7 +65,6 @@
       "HarvestStartDate": "2014-11-19",
       "FinishedDate": "2015-01-10",
       "ArchivedDate": null,
-      "IsOnTrip": false,
       "LastModified": "0001-01-01T00:00:00+00:00"
     },
     {
@@ -75,6 +76,8 @@
       "Strains": [],
       "DryingLocationId": 1,
       "DryingLocationName": "Harvest Location",
+      "DryingSublocationId": 0,
+      "DryingSublocationName": null,
       "DryingLocationTypeName": null,
       "PatientLicenseNumber": null,
       "CurrentWeight": 0.0,
@@ -91,7 +94,6 @@
       "HarvestStartDate": "2014-11-19",
       "FinishedDate": null,
       "ArchivedDate": "2015-02-01",
-      "IsOnTrip": false,
       "LastModified": "2014-11-19T00:00:00+00:00"
     }
   ],

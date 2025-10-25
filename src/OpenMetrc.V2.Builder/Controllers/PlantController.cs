@@ -5,6 +5,84 @@
 [Authorize]
 public class PlantController : PlantsControllerBase
 {
+
+    /// <inheritdoc cref="PlantsControllerBase.PutPlantAdjust" />
+    [MapsToApi(MetrcEndpoint.put_plants_v2_adjust)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public override Task PutPlantAdjust(
+        [Required] List<PutPlantAdjustRequest> request,
+        [Required] string licenseNumber) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.GetPlantMotherInactive" />
+    [MapsToApi(MetrcEndpoint.get_plants_v2_mother_inactive)]
+    [ProducesResponseType(typeof(MetrcWrapper<Plant>), StatusCodes.Status200OK)]
+    public override Task GetPlantMotherInactive(
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null,
+        DateTimeOffset? lastModifiedStart = null,
+        DateTimeOffset? lastModifiedEnd = null) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.GetPlantMother" />
+    [MapsToApi(MetrcEndpoint.get_plants_v2_mother)]
+    [ProducesResponseType(typeof(MetrcWrapper<Plant>), StatusCodes.Status200OK)]
+    public override Task GetPlantMother(
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null,
+        DateTimeOffset? lastModifiedStart = null,
+        DateTimeOffset? lastModifiedEnd = null) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.GetPlantWasteByIdPlant" />
+    [MapsToApi(MetrcEndpoint.get_plants_v2_waste_id_plant)]
+    [ProducesResponseType(typeof(MetrcWrapper<PlantWaste>), StatusCodes.Status200OK)]
+    public override Task GetPlantWasteByIdPlant(
+        long id,
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.GetPlantWasteByIdPackage" />
+    [MapsToApi(MetrcEndpoint.get_plants_v2_waste_id_package)]
+    [ProducesResponseType(typeof(MetrcWrapper<Package>), StatusCodes.Status200OK)]
+    public override Task GetPlantWasteByIdPackage(
+        long id,
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.GetPlantWaste" />
+    [MapsToApi(MetrcEndpoint.get_plants_v2_waste)]
+    [ProducesResponseType(typeof(MetrcWrapper<PlantWaste>), StatusCodes.Status200OK)]
+    public override Task GetPlantWaste(
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.GetPlantMotherOnHold" />
+    [MapsToApi(MetrcEndpoint.get_plants_v2_mother_onhold)]
+    [ProducesResponseType(typeof(MetrcWrapper<PlantMotherOnHold>), StatusCodes.Status200OK)]
+    public override Task GetPlantMotherOnHold(
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null,
+        DateTimeOffset? lastModifiedStart = null,
+        DateTimeOffset? lastModifiedEnd = null) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.PostPlantAdditiveByLocationUsingtemplate" />
+    [MapsToApi(MetrcEndpoint.post_plants_v2_additives_bylocation_usingtemplate)]
+    [ProducesResponseType(typeof(ProcessingResponse), StatusCodes.Status200OK)]
+    public override Task PostPlantAdditiveByLocationUsingtemplate(
+        [Required] List<PostPlantAdditiveByLocationUsingtemplateRequest> request,
+        [Required] string licenseNumber) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantsControllerBase.PostPlantAdditiveUsingtemplate" />
+    [MapsToApi(MetrcEndpoint.post_plants_v2_additives_usingtemplate)]
+    [ProducesResponseType(typeof(ProcessingResponse), StatusCodes.Status200OK)]
+    public override Task PostPlantAdditiveUsingtemplate(
+        [Required] List<PostPlantAdditiveUsingtemplateRequest> request,
+        [Required] string licenseNumber) => Task.CompletedTask;
+
     /// <inheritdoc cref="PlantsControllerBase.GetPlantAdditiveTypes" />
     [MapsToApi(MetrcEndpoint.get_plants_v2_additives_types)]
     [ProducesResponseType(typeof(MetrcWrapper<string>), StatusCodes.Status200OK)]

@@ -45,18 +45,20 @@ partial class MetrcService : ITransporterClient
             : TransporterClient.GetTransporterVehiclesAsync(licenseNumber, pageNumber, pageSize, cancellationToken);
 
     [MapsToApi(MetrcEndpoint.post_transporters_v2_vehicles)]
-    Task ITransporterClient.PostTransporterVehiclesAsync(string licenseNumber, IEnumerable<PostTransporterVehiclesRequest> body, string? data = null,
-        CancellationToken cancellationToken = default(CancellationToken)) =>
+    Task ITransporterClient.PostTransporterVehiclesAsync(
+        string licenseNumber, IEnumerable<PostTransporterVehiclesRequest> body,
+        CancellationToken cancellationToken) =>
         !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
-            ? Task.FromResult<TransporterDriverMetrcWrapper?>(new TransporterDriverMetrcWrapper())!
-            : TransporterClient.PostTransporterVehiclesAsync(licenseNumber, body, data, cancellationToken);
+            ? Task.CompletedTask
+            : TransporterClient.PostTransporterVehiclesAsync(licenseNumber, body, cancellationToken);
 
     [MapsToApi(MetrcEndpoint.put_transporters_v2_vehicles)]
-    Task ITransporterClient.PutTransporterVehiclesAsync(string licenseNumber, IEnumerable<PutTransporterVehiclesRequest> body, string? data = null,
-        CancellationToken cancellationToken = default(CancellationToken)) =>
+    Task ITransporterClient.PutTransporterVehiclesAsync(
+        string licenseNumber, IEnumerable<PutTransporterVehiclesRequest> body,
+        CancellationToken cancellationToken) =>
         !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
-            ? Task.FromResult<TransporterVehicleMetrcWrapper?>(new TransporterVehicleMetrcWrapper())!
-            : TransporterClient.PutTransporterVehiclesAsync(licenseNumber, body, data, cancellationToken);
+            ? Task.CompletedTask
+            : TransporterClient.PutTransporterVehiclesAsync(licenseNumber, body, cancellationToken);
 
     [MapsToApi(MetrcEndpoint.get_transporters_v2_vehicles_id)]
     Task<TransporterVehicle> ITransporterClient.GetTransporterVehicleByIdAsync(long id, string licenseNumber,

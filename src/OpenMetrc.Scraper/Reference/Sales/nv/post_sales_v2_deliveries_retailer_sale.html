@@ -16,19 +16,19 @@
 
 	<h3>Server: <code>https://api-nv.metrc.com/</code></h3>
 	<h3 id="post_sales_v2_deliveries_retailer_sale">POST /sales/v2/deliveries/retailer/sale</h3>
-	<p><strong>Please note:</strong> The <code>SalesDateTime</code> field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.</p>
+	<p>Records sales deliveries originating from a retailer delivery for a given License Number.<strong> Please note:</strong> The <code>SalesDateTime</code> field must be the actual date and time of the transaction without the time zone. This date/time must already be in the same time zone as the Facility recording the sales. For example, if the Facility is in Pacific Time, then this time must be in Pacific Standard (or Daylight Savings) Time and not in UTC.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>Manage Retailer Delivery</strong></td></tr>
+			<tr><td><strong>External Sources(ThirdPartyVendorV2)/Sales Deliveries(Write)</strong></td></tr><tr><td><strong>Industry/Facility Type/Retailer Delivery</strong></td></tr><tr><td><strong>Industry/Facility Type/Consumer Sales Delivery or Industry/Facility Type/Patient Sales Delivery</strong></td></tr><tr><td><strong>WebApi Sales Deliveries Read Write State (All or WriteOnly)</strong></td></tr><tr><td><strong>WebApi Retail ID Read Write State (All or WriteOnly) - Required for RID only.</strong></td></tr><tr><td><strong>External Sources(ThirdPartyVendorV2)/Retail ID(Write) - Required for RID only.</strong></td></tr>
 		</tbody>
 	</table>
 
 	<h4>Parameters</h4>
 	<table class="table">
 		<tbody>
-			<tr><td><strong>licenseNumber</strong><br></td><td>The license number of the facility for which to record sale from retailer delivery.</td></tr>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to record sale from retailer delivery.</td></tr>
 		</tbody>
 	</table>
 
@@ -45,6 +45,7 @@
     "RecipientAddressStreet1": "1 Someplace Road",
     "RecipientAddressStreet2": "Ste 9",
     "RecipientAddressCity": "Denver",
+    "RecipientZoneId": null,
     "RecipientAddressCounty": null,
     "RecipientAddressState": "CO",
     "RecipientAddressPostalCode": "11111",
@@ -92,7 +93,10 @@
         "DiscountAmount": null,
         "SubTotal": null,
         "SalesTax": null,
-        "QrCodes": null
+        "QrCodes": [
+          "https://1a4.com/q83vASNFZwAAAQkQAa",
+          "https://1a4.com/q83vASNFZwAAAQkQBb"
+        ]
       }
     ]
   }

@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-mi.metrc.com/</code></h3>
 	<h3 id="get_items_v2_{id}">GET /items/v2/{id}</h3>
-	<p></p>
+	<p>Retrieves detailed information about a specific Item by Id.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -39,6 +39,8 @@
 	<pre><code>{
   "Id": 1,
   "Name": "Buds",
+  "GlobalProductName": null,
+  "GlobalProductNumber": null,
   "ProductCategoryName": "Buds",
   "ProductCategoryType": "Buds",
   "IsExpirationDateRequired": false,
@@ -62,17 +64,28 @@
   "UnitCbdContentUnitOfMeasureName": null,
   "UnitCbdContentDose": null,
   "UnitCbdContentDoseUnitOfMeasureName": null,
+  "UnitCbdAPercent": null,
+  "UnitCbdAContent": null,
+  "UnitCbdAContentUnitOfMeasureName": null,
+  "UnitCbdAContentDose": null,
+  "UnitCbdAContentDoseUnitOfMeasureName": null,
+  "UnitThcAPercent": null,
+  "UnitThcAContent": null,
+  "UnitThcAContentUnitOfMeasureName": null,
+  "UnitThcAContentDose": null,
+  "UnitThcAContentDoseUnitOfMeasureId": null,
+  "UnitThcAContentDoseUnitOfMeasureName": null,
   "UnitThcPercent": null,
   "UnitThcContent": null,
   "UnitThcContentUnitOfMeasureName": null,
   "UnitThcContentDose": null,
+  "UnitThcContentDoseUnitOfMeasureId": null,
   "UnitThcContentDoseUnitOfMeasureName": null,
   "UnitVolume": null,
   "UnitVolumeUnitOfMeasureName": null,
   "UnitWeight": null,
   "UnitWeightUnitOfMeasureName": null,
   "ServingSize": null,
-  "SupplyDurationDays": null,
   "NumberOfDoses": null,
   "UnitQuantity": null,
   "UnitQuantityUnitOfMeasureName": null,
@@ -88,6 +101,8 @@
   "ProductPDFDocuments": [],
   "IsUsed": false,
   "LabTestBatchNames": [],
-  "ProcessingJobCategoryName": null
+  "ProcessingJobCategoryName": null,
+  "ProcessingJobTypeName": null,
+  "ProductBrandName": null
 }</code></pre>
 </section>

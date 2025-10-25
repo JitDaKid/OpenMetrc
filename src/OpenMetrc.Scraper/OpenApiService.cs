@@ -382,6 +382,11 @@ internal partial class OpenApiService
             code = DeleteMethodRegex().Replace(code,
                 $@"Task $1([System.ComponentModel.DataAnnotations.Required] List<{requestNamespace}.$1Request> request, [Microsoft.AspNetCore.Mvc.FromQuery] string licenseNumber");
 
+            // FIX: PostSandboxIntegratorSetup does not have a request body.
+            // Remove the body parameter that was incorrectly added by the loop above.
+            string fixPattern = $@"Task (PostSandboxIntegratorSetup)\(\[System\.ComponentModel\.DataAnnotations\.Required\] List<{requestNamespace}\.PostSandboxIntegratorSetupRequest> request, ";
+            code = Regex.Replace(code, fixPattern, "Task $1(");
+
             // The controller code is using the wrong enum values for the Http methods.
             code = code.Replace("HttpDELETE", "HttpDelete")
                 .Replace("HttpGET", "HttpGet")

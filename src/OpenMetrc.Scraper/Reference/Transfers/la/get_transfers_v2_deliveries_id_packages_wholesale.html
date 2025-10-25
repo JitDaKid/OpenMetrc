@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-la.metrc.com/</code></h3>
 	<h3 id="get_transfers_v2_deliveries_{id}_packages_wholesale">GET /transfers/v2/deliveries/{id}/packages/wholesale</h3>
-	<p><strong>Please note:</strong> The <code>{id}</code> parameter above represents a Transfer Delivery ID, not a Manifest Number.</p>
+	<p>Retrieves a list of wholesale shipment packages for a given Transfer Delivery Id.<strong> Please note:</strong> The <code>{id}</code> parameter above represents a Transfer Delivery Id, not a Manifest Number.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -33,7 +33,7 @@
 	</table>
 
 	<h4>Example Request</h4>
-	<pre>GET /transfers/v2/deliveries/2&pageNumber=1&pageSize=10/packages/wholesale</pre>
+	<pre>GET /transfers/v2/deliveries/2/packages/wholesale?pageNumber=1&pageSize=10</pre>
 
 	<h4>Example Response</h4>
 	<pre><code>{

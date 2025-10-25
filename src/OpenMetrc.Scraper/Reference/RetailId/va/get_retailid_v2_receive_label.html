@@ -1,0 +1,50 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="retailid">
+		Retail Id
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-va.metrc.com/</code></h3>
+	<h3 id="get_retailid_v2_receive_{label}">GET /retailid/v2/receive/{label}</h3>
+	<p>Get a list of eaches (Retail ID QR code URL) and sibling tags based on given Package label.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>External Sources(ThirdPartyVendorV2)/Manage RetailId</strong></td></tr><tr><td><strong>WebApi Retail ID Read Write State (All or ReadOnly)</strong></td></tr><tr><td><strong>Industry/View Packages</strong></td></tr><tr><td><strong>One of the following: Industry/Facility Type/Can Receive Associate Product Label, Licensee/Receive Associate Product Label or Admin/Employees/Packages Page/Product Labels(View or Manage)</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br><span class="text-muted"><em>optional</em></span></td><td>If specified, the Package will be validated against the specified License Number. If not specified, the Package will be validated against all of the User's current Facilities.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>GET /retailid/v2/receive/ABCDEF012345670000000024?licenseNumber=123-ABC</pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "Eaches": [
+    "id.1a4.com/some_qr_code_id",
+    "id.1a4.com/some_qr_code_id",
+    "id.1a4.com/some_qr_code_id"
+  ],
+  "SiblingTags": [
+    "abcdef012345670000012358"
+  ],
+  "RequiresVerification": true
+}</code></pre>
+</section>

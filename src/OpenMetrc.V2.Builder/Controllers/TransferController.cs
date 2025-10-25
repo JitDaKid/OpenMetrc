@@ -1,4 +1,5 @@
-﻿namespace OpenMetrc.V2.Builder.Controllers;
+﻿
+namespace OpenMetrc.V2.Builder.Controllers;
 
 /// <inheritdoc />
 [ApiController]
@@ -33,10 +34,10 @@ public class TransferController : TransfersControllerBase
     /// <inheritdoc cref="TransfersControllerBase.GetTransferHub" />
     [MapsToApi(MetrcEndpoint.get_transfers_v2_hub)]
     [ProducesResponseType(typeof(MetrcWrapper<TransferHub>), StatusCodes.Status200OK)]
-    public override Task GetTransferHub(
-        [Required] string licenseNumber,
-        int? pageNumber = null, int? pageSize = null,
-        DateTimeOffset? lastModifiedStart = null, DateTimeOffset? lastModifiedEnd = null) =>
+    public override Task GetTransferHub([Required] string licenseNumber, 
+         int? pageNumber = null, int? pageSize = null, 
+        DateTimeOffset? lastModifiedStart = null, DateTimeOffset? lastModifiedEnd = null, 
+        DateTimeOffset? estimatedArrivalStart = null, DateTimeOffset? estimatedArrivalEnd = null) =>
         Task.CompletedTask;
 
     /// <inheritdoc cref="TransfersControllerBase.GetTransferByIdDeliveries" />
@@ -170,6 +171,6 @@ public class TransferController : TransfersControllerBase
     public override Task DeleteTransferTemplateOutgoingById(
         [Required] long id,
         [Required] string licenseNumber) => Task.CompletedTask;
-
+    
     #endregion Templates
 }

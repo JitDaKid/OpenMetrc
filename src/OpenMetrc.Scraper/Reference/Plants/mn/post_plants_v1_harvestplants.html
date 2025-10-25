@@ -16,7 +16,7 @@
 
 	<h3>Server: <code>https://api-mn.metrc.com/</code></h3>
 	<h3 id="post_plants_v1_harvestplants">POST /plants/v1/harvestplants</h3>
-	<p></p>
+	<p>NOTE: If <code>HarvestName</code> is excluded from the request body, or if it is passed in as null, the harvest name is auto-generated.</p>
 
 	<h4>Permissions Required</h4>
 	<table class="table">
@@ -39,6 +39,7 @@
     "Weight": 100.23,
     "UnitOfWeight": "Grams",
     "DryingLocation": "Harvest Location",
+    "DryingSublocation": "Harvest Sublocation1",
     "HarvestName": "2015-12-15-Harvest Location-H",
     "PatientLicenseNumber": "X00001",
     "ActualDate": "2015-12-15"
@@ -48,6 +49,7 @@
     "Weight": 10.15,
     "UnitOfWeight": "Grams",
     "DryingLocation": "Harvest Location",
+    "DryingSublocation": "Harvest Sublocation2",
     "HarvestName": null,
     "PatientLicenseNumber": "X00002",
     "ActualDate": "2015-12-15"

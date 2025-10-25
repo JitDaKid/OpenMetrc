@@ -21,6 +21,13 @@ public class ItemController : ItemsControllerBase
         DateTimeOffset? lastModifiedStart = null,
         DateTimeOffset? lastModifiedEnd = null) => Task.CompletedTask;
 
+    /// <inheritdoc cref="ItemsControllerBase.GetItemFileById" />
+    [MapsToApi(MetrcEndpoint.get_items_v2_file_id)]
+    [ProducesResponseType(typeof(ProcessingResponse), StatusCodes.Status200OK)]
+    public override Task GetItemFileById(
+        long id,
+        [FromQuery] string? licenseNumber = null) => Task.CompletedTask;
+
     /// <inheritdoc cref="ItemsControllerBase.GetItemInactive" />
     [MapsToApi(MetrcEndpoint.get_items_v2_inactive)]
     [ProducesResponseType(typeof(MetrcWrapper<Item>), StatusCodes.Status200OK)]
@@ -95,4 +102,11 @@ public class ItemController : ItemsControllerBase
     public override Task PutItemBrand(
         [Required] List<PutItemBrandRequest> request,
         [Required] string licenseNumber) => Task.CompletedTask;
+
+    /// <inheritdoc cref="ItemsControllerBase.PostItemFile" />
+    [MapsToApi(MetrcEndpoint.post_items_v2_file)]
+    [ProducesResponseType(typeof(ProcessingResponse), StatusCodes.Status200OK)]
+    public override Task PostItemFile(
+        [Required] List<PostItemFileRequest> request,
+        [FromQuery] string licenseNumber) => Task.CompletedTask;
 }

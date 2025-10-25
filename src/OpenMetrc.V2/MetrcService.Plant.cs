@@ -2,6 +2,81 @@
 
 public partial class MetrcService : IPlantClient
 {
+    [MapsToApi(MetrcEndpoint.put_plants_v2_adjust)]
+    Task IPlantClient.PutPlantAdjustAsync(
+        string licenseNumber, IEnumerable<PutPlantAdjustRequest> body,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : PlantClient.PutPlantAdjustAsync(licenseNumber, body, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.get_plants_v2_mother_inactive)]
+    Task<PlantMetrcWrapper> IPlantClient.GetPlantMotherInactiveAsync(
+        string licenseNumber, int? pageNumber, int? pageSize,
+        DateTimeOffset? lastModifiedStart, DateTimeOffset? lastModifiedEnd,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PlantMetrcWrapper())
+            : PlantClient.GetPlantMotherInactiveAsync(licenseNumber, pageNumber, pageSize, lastModifiedStart, lastModifiedEnd, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.get_plants_v2_mother)]
+    Task<PlantMetrcWrapper> IPlantClient.GetPlantMotherAsync(
+        string licenseNumber, int? pageNumber, int? pageSize,
+        DateTimeOffset? lastModifiedStart, DateTimeOffset? lastModifiedEnd,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PlantMetrcWrapper())
+            : PlantClient.GetPlantMotherAsync(licenseNumber, pageNumber, pageSize, lastModifiedStart, lastModifiedEnd, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.get_plants_v2_waste_id_plant)]
+    Task<PlantWasteMetrcWrapper> IPlantClient.GetPlantWasteByIdPlantAsync(
+        long id, string licenseNumber, int? pageNumber, int? pageSize,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PlantWasteMetrcWrapper())
+            : PlantClient.GetPlantWasteByIdPlantAsync(id, licenseNumber, pageNumber, pageSize, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.get_plants_v2_waste_id_package)]
+    Task<PackageMetrcWrapper> IPlantClient.GetPlantWasteByIdPackageAsync(
+        long id, string licenseNumber, int? pageNumber, int? pageSize,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PackageMetrcWrapper())
+            : PlantClient.GetPlantWasteByIdPackageAsync(id, licenseNumber, pageNumber, pageSize, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.get_plants_v2_waste)]
+    Task<PlantWasteMetrcWrapper> IPlantClient.GetPlantWasteAsync( // Assuming PlantWasteMetrcWrapper exists
+        string licenseNumber, int? pageNumber, int? pageSize,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PlantWasteMetrcWrapper())
+            : PlantClient.GetPlantWasteAsync(licenseNumber, pageNumber, pageSize, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.get_plants_v2_mother_onhold)]
+    Task<PlantMotherOnHoldMetrcWrapper> IPlantClient.GetPlantMotherOnHoldAsync(
+        string licenseNumber, int? pageNumber, int? pageSize,
+        DateTimeOffset? lastModifiedStart, DateTimeOffset? lastModifiedEnd,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PlantMotherOnHoldMetrcWrapper())
+            : PlantClient.GetPlantMotherOnHoldAsync(licenseNumber, pageNumber, pageSize, lastModifiedStart, lastModifiedEnd, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.post_plants_v2_additives_bylocation_usingtemplate)]
+    Task IPlantClient.PostPlantAdditiveByLocationUsingtemplateAsync(
+        string licenseNumber, IEnumerable<PostPlantAdditiveByLocationUsingtemplateRequest> body,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : PlantClient.PostPlantAdditiveByLocationUsingtemplateAsync(licenseNumber, body, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.post_plants_v2_additives_usingtemplate)]
+    Task IPlantClient.PostPlantAdditiveUsingtemplateAsync(
+        string licenseNumber, IEnumerable<PostPlantAdditiveUsingtemplateRequest> body,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : PlantClient.PostPlantAdditiveUsingtemplateAsync(licenseNumber, body, cancellationToken);
+
     [MapsToApi(MetrcEndpoint.get_plants_v2_id)]
     Task<Plant> IPlantClient.GetPlantByIdAsync(long id, string? licenseNumber, CancellationToken cancellationToken) =>
         !CheckEndpointAvailability(MethodBase.GetCurrentMethod())

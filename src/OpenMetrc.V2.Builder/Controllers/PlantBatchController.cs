@@ -5,6 +5,28 @@
 [Authorize]
 public class PlantBatchController : PlantBatchesControllerBase
 {
+    /// <inheritdoc cref="PlantBatchesControllerBase.GetPlantBatchWaste" />
+    [MapsToApi(MetrcEndpoint.get_plantbatches_v2_waste)]
+    [ProducesResponseType(typeof(MetrcWrapper<PlantBatchWaste>), StatusCodes.Status200OK)]
+    public override Task GetPlantBatchWaste(
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantBatchesControllerBase.PostPlantBatchAdditiveUsingtemplate" />
+    [MapsToApi(MetrcEndpoint.post_plantbatches_v2_additives_usingtemplate)]
+    [ProducesResponseType(typeof(ProcessingResponse), StatusCodes.Status200OK)]
+    public override Task PostPlantBatchAdditiveUsingtemplate(
+        [Required] List<PostPlantBatchAdditiveUsingtemplateRequest> request,
+        [Required] string licenseNumber) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PlantBatchesControllerBase.PutPlantBatchName" />
+    [MapsToApi(MetrcEndpoint.put_plantbatches_v2_name)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public override Task PutPlantBatchName(
+        [Required] List<PutPlantBatchNameRequest> request,
+        [Required] string licenseNumber) => Task.CompletedTask;
+
     /// <inheritdoc cref="PlantBatchesControllerBase.GetPlantBatchById" />
     [MapsToApi(MetrcEndpoint.get_plantbatches_v2_id)]
     [ProducesResponseType(typeof(PlantBatch), StatusCodes.Status200OK)]

@@ -1,0 +1,47 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="sandbox">
+		Sandbox
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-ms.metrc.com/</code></h3>
+	<h3 id="post_sandbox_v2_integrator_setup">POST /sandbox/v2/integrator/setup</h3>
+	<p>This endpoint is used to handle the setup of an external integrator for sandbox environments. It processes a request to create a new sandbox user for integration based on an external source's API key. It checks whether the API key is valid, manages the user creation process, and returns an appropriate status based on the current state of the request.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td class="text-muted"><em>None</em></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>userKey</strong><br><span class="text-muted"><em>optional</em></span></td><td>An existing user key to reuse for integrator setup. Provide this if you already have a user key that you want to continue using. If you don't already have a user key, or you would like a new one, do not provide a value.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>POST /sandbox/v2/integrator/setup?userKey=123-ABC</pre>
+
+	<h4>Example Response</h4>
+	
+<p>Response codes:</p>
+<ul>
+<li>HTTP 201: <code>User queued for creation</code></li>
+<li>HTTP 202: <code>User creation is in process</code></li>
+<li>HTTP 200: <code>User Key sent to email on file</code></li>
+<li>HTTP 204: <code>User Key not found</code></li>
+</ul>
+</section>

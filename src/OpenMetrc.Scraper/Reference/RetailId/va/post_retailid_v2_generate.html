@@ -1,0 +1,45 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="retailid">
+		Retail Id
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-va.metrc.com/</code></h3>
+	<h3 id="post_retailid_v2_generate">POST /retailid/v2/generate</h3>
+	<p>Allows you to generate a specific quantity of QR codes. Id value returned (issuance ID) could be used for printing.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>External Sources(ThirdPartyVendorV2)/Retail ID(Write)</strong></td></tr><tr><td><strong>WebApi Retail ID Read Write State (All or WriteOnly)</strong></td></tr><tr><td><strong>Industry/View Packages</strong></td></tr><tr><td><strong>One of the following: Industry/Facility Type/Can Download Product Label, Licensee/Download Product Label or Admin/Employees/Packages Page/Product Labels(Manage)</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility for which to associate the packages and QR codes provided.</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>POST /retailid/v2/generate?licenseNumber=123-ABC<code>{
+  "PackageLabel": "ABCDEF012345670000010041",
+  "Quantity": 10
+}</code></pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "IssuanceId": "652714e9db1b524f7c9ec246"
+}</code></pre>
+</section>

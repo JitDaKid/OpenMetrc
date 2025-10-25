@@ -42,6 +42,35 @@ internal static class StateService
         Console.WriteLine(@$"A summary of all METRC states has been written to: {path}");
     }
 
+    internal static async Task<List<StateSummary>> ReadStateSummary()
+    {
+        const string path = "../../../../../state-summaries.json";
+        if (!File.Exists(path))
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Error: Summary file not found at {path}");
+            Console.ResetColor();
+            return new List<StateSummary>();
+        }
+
+        try
+        {
+            var json = await File.ReadAllTextAsync(path);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+            return JsonSerializer.Deserialize<List<StateSummary>>(json, options) ?? new List<StateSummary>();
+        }
+        catch (Exception ex)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Error reading or deserializing summary file: {ex.Message}");
+            Console.ResetColor();
+            return new List<StateSummary>();
+        }
+    }
+
     private static async Task WriteEndpointDocument(string state, string section, string endpoint, string? content)
     {
         if (string.IsNullOrWhiteSpace(content))

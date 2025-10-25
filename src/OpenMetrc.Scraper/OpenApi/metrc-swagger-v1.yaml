@@ -467,7 +467,7 @@ paths:
       tags:
       - Items
       summary: ''
-      description: '<b>Permissions Required</b>: Manage Items'
+      description: 'NOTE: To include a photo with an item, first use POST /items/v1/photo to POST the photo, and then use the returned ID in the request body in this endpoint.</br><b>Permissions Required</b>: Manage Items'
       externalDocs:
         x-doc-key: post_items_v1_create
       operationId: PostItemCreate
@@ -476,7 +476,7 @@ paths:
         name: licenseNumber
         in: query
         required: true
-        description: ''
+        description: The license number of the facility for which to create new items.
         format: ''
       responses:
         200:
@@ -486,7 +486,7 @@ paths:
       tags:
       - Items
       summary: ''
-      description: '<b>Permissions Required</b>: Manage Items'
+      description: 'This endpoint allows only BMP, GIF, JPG, and PNG files and uploaded files can be no more than 5 MB in size.</br><b>Permissions Required</b>: Manage Items'
       externalDocs:
         x-doc-key: post_items_v1_photo
       operationId: PostItemPhoto
@@ -495,7 +495,7 @@ paths:
         name: licenseNumber
         in: query
         required: true
-        description: ''
+        description: The license number of the facility for which to add an image.
         format: ''
       responses:
         200:
@@ -2043,7 +2043,7 @@ paths:
       tags:
       - Plants
       summary: ''
-      description: '<b>Permissions Required</b>: View Veg/Flower Plants • Manicure/Harvest Veg/Flower Plants'
+      description: 'NOTE: If HarvestName is excluded from the request body, or if it is passed in as null, the harvest name is auto-generated.</br><b>Permissions Required</b>: View Veg/Flower Plants • Manicure/Harvest Veg/Flower Plants'
       externalDocs:
         x-doc-key: post_plants_v1_harvestplants
       operationId: PostPlantHarvestPlants

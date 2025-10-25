@@ -58,6 +58,16 @@ public class PackageController : PackagesControllerBase
         DateTimeOffset? lastModifiedStart = null,
         DateTimeOffset? lastModifiedEnd = null) => Task.CompletedTask;
 
+    /// <inheritdoc cref="PackagesControllerBase.GetPackageTransferred" />
+    [MapsToApi(MetrcEndpoint.get_packages_v2_transferred)]
+    [ProducesResponseType(typeof(MetrcWrapper<PackageTransferred>), StatusCodes.Status200OK)]
+    public override Task GetPackageTransferred(
+        [Required] string licenseNumber,
+        int? pageNumber = null,
+        int? pageSize = null,
+        DateTimeOffset? lastModifiedStart = null,
+        DateTimeOffset? lastModifiedEnd = null) => Task.CompletedTask;
+
     /// <inheritdoc cref="PackagesControllerBase.GetPackageByIdSourceHarvests" />
     [MapsToApi(MetrcEndpoint.get_packages_v2_id_source_harvests)]
     [ProducesResponseType(typeof(MetrcWrapper<PackageSourceHarvest>), StatusCodes.Status200OK)]
@@ -97,10 +107,24 @@ public class PackageController : PackagesControllerBase
         [Required] List<PostPackageTestingRequest> request,
         [Required] string licenseNumber) => Task.CompletedTask;
 
+    /// <inheritdoc cref="PackagesControllerBase.PutPackageDecontaminate" />
+    [MapsToApi(MetrcEndpoint.put_packages_v2_decontaminate)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public override Task PutPackageDecontaminate(
+        [Required] List<PutPackageDecontaminateRequest> request,
+        [Required] string licenseNumber) => Task.CompletedTask;
+
     /// <inheritdoc cref="PackagesControllerBase.PutPackageDonationFlag" />
     [MapsToApi(MetrcEndpoint.put_packages_v2_donation_flag)]
     public override Task PutPackageDonationFlag(
         [Required] List<PutPackageDonationFlagRequest> request,
+        [Required] string licenseNumber) => Task.CompletedTask;
+
+    /// <inheritdoc cref="PackagesControllerBase.PutPackageExternalid" />
+    [MapsToApi(MetrcEndpoint.put_packages_v2_externalid)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public override Task PutPackageExternalid(
+        [Required] List<PutPackageExternalidRequest> request,
         [Required] string licenseNumber) => Task.CompletedTask;
 
     /// <inheritdoc cref="PackagesControllerBase.PutPackageDonationUnflag" />

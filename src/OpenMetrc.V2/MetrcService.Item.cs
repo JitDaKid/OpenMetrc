@@ -2,6 +2,21 @@
 
 public partial class MetrcService : IItemClient
 {
+    [MapsToApi(MetrcEndpoint.post_items_v2_file)]
+    Task IItemClient.PostItemFileAsync(
+        IEnumerable<PostItemFileRequest> body, string licenseNumber,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : ItemClient.PostItemFileAsync(body, licenseNumber, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.get_items_v2_file_id)]
+    Task<ProcessingResponse> IItemClient.GetItemFileByIdAsync(
+        long id, string? licenseNumber,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new ProcessingResponse())
+            : ItemClient.GetItemFileByIdAsync(id, licenseNumber, cancellationToken);
 
     [MapsToApi(MetrcEndpoint.get_items_v2_id)]
     Task<Item> IItemClient.GetItemByIdAsync(long id, string? licenseNumber, CancellationToken cancellationToken) =>

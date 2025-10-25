@@ -1,0 +1,96 @@
+
+
+
+
+
+<section>
+	<div class="js-non-printable pull-right">
+		<button id="printable-method-documenation" class="btn btn-info" title="View printer-friendly version of this page." type="button"><span class="oi oi-print" aria-hidden="true"></span> This</button>
+		<button id="printable-documentation" class="btn btn-info" title="View printer-friendly version of the entire documentation." type="button"><span class="oi oi-print" aria-hidden="true"></span> All</button>
+	</div>
+
+	<h1 id="retailid">
+		Retail Id
+	</h1>
+	<p class="lead"></p>
+
+	<h3>Server: <code>https://api-ny.metrc.com/</code></h3>
+	<h3 id="post_retailid_v2_packages_info">POST /retailid/v2/packages/info</h3>
+	<p>Retrieves Package information for given list of Package labels.</p>
+
+	<h4>Permissions Required</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>External Sources(ThirdPartyVendorV2)/Retail ID(Write)</strong></td></tr><tr><td><strong>WebApi Retail ID Read Write State (All or WriteOnly)</strong></td></tr><tr><td><strong>Industry/View Packages</strong></td></tr><tr><td><strong>Admin/Employees/Packages Page/Product Labels(Manage)</strong></td></tr>
+		</tbody>
+	</table>
+
+	<h4>Parameters</h4>
+	<table class="table">
+		<tbody>
+			<tr><td><strong>licenseNumber</strong><br></td><td>The License Number of the Facility</td></tr>
+		</tbody>
+	</table>
+
+	<h4>Example Request</h4>
+	<pre>POST /retailid/v2/packages/info?licenseNumber=123-ABC<code>{
+  "packageLabels": [
+    "ABCDEF012345670000010041",
+    "ABCDEF012345670000010042",
+    "ABCDEF012345670000010043"
+  ]
+}</code></pre>
+
+	<h4>Example Response</h4>
+	<pre><code>{
+  "Packages": [
+    {
+      "Tag": "ABCDEF012345670000010041",
+      "QrCount": 5,
+      "EstimatedBalance": 5,
+      "SiblingCount": 2,
+      "IssuanceId": "ABCDEF012345670000010041",
+      "Issuances": [
+        {
+          "LabelSet": 0,
+          "LabelQuantity": 2,
+          "CreatedAt": "2014-11-19T00:00:00+00:00"
+        },
+        {
+          "LabelSet": 1,
+          "LabelQuantity": 3,
+          "CreatedAt": "2014-11-20T00:00:00+00:00"
+        }
+      ],
+      "HasQrs": true,
+      "RequiresVerification": true
+    },
+    {
+      "Tag": "ABCDEF012345670000010042",
+      "QrCount": 4,
+      "EstimatedBalance": 0,
+      "SiblingCount": 0,
+      "IssuanceId": "ABCDEF012345670000010042",
+      "Issuances": [
+        {
+          "LabelSet": 0,
+          "LabelQuantity": 4,
+          "CreatedAt": "2014-11-19T00:00:00+00:00"
+        }
+      ],
+      "HasQrs": true,
+      "RequiresVerification": false
+    },
+    {
+      "Tag": "ABCDEF012345670000010043",
+      "QrCount": 0,
+      "EstimatedBalance": 0,
+      "SiblingCount": 0,
+      "IssuanceId": null,
+      "Issuances": null,
+      "HasQrs": false,
+      "RequiresVerification": false
+    }
+  ]
+}</code></pre>
+</section>

@@ -1,4 +1,5 @@
-﻿namespace OpenMetrc.V2.Builder.Controllers;
+﻿
+namespace OpenMetrc.V2.Builder.Controllers;
 
 /// <inheritdoc />
 [ApiController]
@@ -55,12 +56,12 @@ public class TransporterController : TransportersControllerBase
     /// <inheritdoc cref="TransportersControllerBase.PostTransporterVehicles" />
     [MapsToApi(MetrcEndpoint.post_transporters_v2_vehicles)]
     [ProducesResponseType(typeof(ProcessingResponse), StatusCodes.Status200OK)]
-    public override Task PostTransporterVehicles([Required] List<PostTransporterVehiclesRequest> request, [Required] string licenseNumber, string data) => Task.CompletedTask;
+    public override Task PostTransporterVehicles([Required] List<PostTransporterVehiclesRequest> request, [Required] string licenseNumber) => Task.CompletedTask;
 
     /// <inheritdoc cref="TransportersControllerBase.PutTransporterVehicles" />
     [MapsToApi(MetrcEndpoint.put_transporters_v2_vehicles)]
     [ProducesResponseType(typeof(ProcessingResponse), StatusCodes.Status200OK)]
-    public override Task PutTransporterVehicles([Required] List<PutTransporterVehiclesRequest> request, [Required] string licenseNumber, string data) => Task.CompletedTask;
+    public override Task PutTransporterVehicles([Required] List<PutTransporterVehiclesRequest> request, [Required] string licenseNumber) => Task.CompletedTask;
 
     /// <inheritdoc cref="TransportersControllerBase.DeleteTransporterVehicleById" />
     [MapsToApi(MetrcEndpoint.delete_transporters_v2_vehicles_id)]

@@ -2,6 +2,30 @@
 
 public partial class MetrcService : IPlantBatchClient
 {
+    [MapsToApi(MetrcEndpoint.get_plantbatches_v2_waste)]
+    Task<PlantBatchWasteMetrcWrapper> IPlantBatchClient.GetPlantBatchWasteAsync(
+        string licenseNumber, int? pageNumber, int? pageSize,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.FromResult(new PlantBatchWasteMetrcWrapper())
+            : PlantBatchClient.GetPlantBatchWasteAsync(licenseNumber, pageNumber, pageSize, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.post_plantbatches_v2_additives_usingtemplate)]
+    Task IPlantBatchClient.PostPlantBatchAdditiveUsingtemplateAsync(
+        string licenseNumber, IEnumerable<PostPlantBatchAdditiveUsingtemplateRequest> body,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : PlantBatchClient.PostPlantBatchAdditiveUsingtemplateAsync(licenseNumber, body, cancellationToken);
+
+    [MapsToApi(MetrcEndpoint.put_plantbatches_v2_name)]
+    Task IPlantBatchClient.PutPlantBatchNameAsync(
+        string licenseNumber, IEnumerable<PutPlantBatchNameRequest> body,
+        CancellationToken cancellationToken) =>
+        !CheckEndpointAvailability(MethodBase.GetCurrentMethod())
+            ? Task.CompletedTask
+            : PlantBatchClient.PutPlantBatchNameAsync(licenseNumber, body, cancellationToken);
+
     [MapsToApi(MetrcEndpoint.get_plantbatches_v2_id)]
     Task<PlantBatch> IPlantBatchClient.GetPlantBatchByIdAsync(long id, string? licenseNumber,
         CancellationToken cancellationToken) =>
